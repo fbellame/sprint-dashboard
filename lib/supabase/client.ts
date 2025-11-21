@@ -15,4 +15,3 @@ if (!supabaseUrl || !supabaseAnonKey) {
  * This client respects Row Level Security (RLS) policies
  */
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
-

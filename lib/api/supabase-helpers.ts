@@ -1,6 +1,6 @@
 /**
  * Supabase Database Helpers
- * 
+ *
  * Utility functions for common database operations using Supabase.
  * These helpers provide type-safe wrappers around Supabase queries.
  */
@@ -283,7 +283,9 @@ export async function getStoriesByState(sprintId: string) {
 export async function getTopFeatures(
   sprintId: string,
   limit = 5
-): Promise<Array<{ feature_name: string; story_count: number; story_points: number }>> {
+): Promise<
+  Array<{ feature_name: string; story_count: number; story_points: number }>
+> {
   const { data, error } = await supabaseAdmin
     .from('top_features')
     .select('*')
@@ -323,4 +325,3 @@ export async function getSprintConfiguration(
 
   return data as SprintConfiguration;
 }
-

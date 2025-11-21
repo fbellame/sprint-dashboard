@@ -424,9 +424,7 @@
 
 ### Week 2
 
--
+- ***
 
----
-
-**Last Updated**: 2024-01-15  
-**Next Standup**: 2024-01-16
+  **Last Updated**: 2024-01-15  
+  **Next Standup**: 2024-01-16

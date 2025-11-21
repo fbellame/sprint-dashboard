@@ -1,6 +1,6 @@
 /**
  * Error Handling Utilities
- * 
+ *
  * Client-side error handling utilities for formatting and displaying errors
  * to users in a user-friendly way.
  */
@@ -116,7 +116,10 @@ function isRetryableError(error: ClientApiError): boolean {
 /**
  * Log error to console (and potentially to error tracking service)
  */
-export function logError(error: unknown, context?: Record<string, unknown>): void {
+export function logError(
+  error: unknown,
+  context?: Record<string, unknown>
+): void {
   const formattedError = formatError(error);
 
   console.error('Error:', {
@@ -168,4 +171,3 @@ export function shouldShowError(error: unknown): boolean {
   // Show all other errors
   return true;
 }
-

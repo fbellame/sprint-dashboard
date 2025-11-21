@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 /**
  * Test API route to verify Supabase connection
  * GET /api/test-db
- * 
+ *
  * This route tests the database connection using the admin client.
  * Remove this route after verifying the connection works.
  */
@@ -64,4 +64,3 @@ export async function GET() {
     );
   }
 }
-

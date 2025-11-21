@@ -42,19 +42,21 @@
   ```
 
   - [ ] Version is 18.x or 20.x: ☐
-  - [ ] Version: ******\_\_\_\_******
+  - [ ] Version: **\*\***\_\_\_\_**\*\***
 
 - [ ] **npm Installed**
+
   ```bash
   npm --version
   ```
 
   - [ ] npm is installed: ☐
-  - [ ] Version: ******\_\_\_\_******
+  - [ ] Version: **\*\***\_\_\_\_**\*\***
 
 #### Git
 
 - [ ] **Git Installed and Configured**
+
   ```bash
   git --version
   git config --global user.name "Your Name"

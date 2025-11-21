@@ -37,7 +37,8 @@ yarn-error.log*
 next-env.d.ts
 
 # IDE
-.vscode/
+# Note: .vscode/ is included for team consistency, but can be removed if preferred
+# .vscode/
 .idea/
 *.swp
 *.swo

@@ -15,14 +15,9 @@ if (!supabaseUrl || !supabaseServiceRoleKey) {
  * This client bypasses Row Level Security (RLS) policies
  * NEVER expose the service role key to the client
  */
-export const supabaseAdmin = createClient(
-  supabaseUrl,
-  supabaseServiceRoleKey,
-  {
-    auth: {
-      autoRefreshToken: false,
-      persistSession: false,
-    },
-  }
-);
-
+export const supabaseAdmin = createClient(supabaseUrl, supabaseServiceRoleKey, {
+  auth: {
+    autoRefreshToken: false,
+    persistSession: false,
+  },
+});

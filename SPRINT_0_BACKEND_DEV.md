@@ -61,12 +61,13 @@
   - See: https://supabase.com/docs/guides/cli/getting-started
 
 - [ ] **Verify Installation**
+
   ```bash
   supabase --version
   ```
 
   - [ ] Version displayed: ☐
-  - [ ] Version: ******\_\_\_\_******
+  - [ ] Version: **\*\***\_\_\_\_**\*\***
 
 #### Docker Installation (Required for Local Supabase)
 
@@ -76,6 +77,7 @@
   - [ ] Start Docker Desktop application
   - [ ] Docker is running: ☐
 - [ ] **Verify Docker Installation**
+
   ```bash
   docker --version
   docker-compose --version
@@ -87,6 +89,7 @@
 #### Supabase CLI Authentication
 
 - [ ] **Login to Supabase CLI**
+
   ```bash
   supabase login
   ```
@@ -422,6 +425,7 @@ Before starting Story 0.2, verify:
   supabase --version
   ```
 - [ ] **Initialize Supabase in project** (if not already done):
+
   ```bash
   supabase init
   ```
@@ -429,6 +433,7 @@ Before starting Story 0.2, verify:
   - [ ] Creates `supabase/` directory
   - [ ] Creates `supabase/config.toml`
   - [ ] Creates `supabase/migrations/` directory
+
 - [ ] **Link to Remote Project** (optional, for pushing migrations):
 
   ```bash
@@ -658,6 +663,7 @@ Before starting Story 0.2, verify:
 **After Local Testing**:
 
 - [ ] **Push Migrations to Remote** (when ready):
+
   ```bash
   supabase db push
   ```

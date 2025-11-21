@@ -5,7 +5,7 @@ import { ReactNode, useState } from 'react';
 
 /**
  * React Query Provider
- * 
+ *
  * Wraps the application with React Query for server state management.
  * Provides default query options for caching and refetching behavior.
  */
@@ -36,4 +36,3 @@ export function QueryProvider({ children }: { children: ReactNode }) {
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
 }
-
