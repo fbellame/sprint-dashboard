@@ -62,8 +62,14 @@
 **dev2_front**:
 
 - Yesterday: N/A (Sprint start)
-- Today: Waiting for Story 0.1, reviewing Story 0.5 requirements
-- Blockers: Blocked by Story 0.1
+- Today: ✅ **COMPLETED Story 0.5** - Dev Tools & Git Hooks configured
+  - ✅ ESLint, Prettier, Husky configured
+  - ✅ Git hooks working (pre-commit, pre-push)
+  - ✅ VS Code settings configured
+  - ✅ Comprehensive README with troubleshooting
+  - ✅ Code review approved
+- Blockers: None
+- **Next**: Can start Story 0.6 (Vercel Deployment) or Story 0.8 (Testing Framework)
 
 **dev_backend**:
 
@@ -179,9 +185,10 @@
 
 | ID  | Description                                     | Owner       | Due Date   | Status         | Notes                |
 | --- | ----------------------------------------------- | ----------- | ---------- | -------------- | -------------------- |
-| A1  | Complete Story 0.1 - Initialize Next.js Project | dev1_front  | 2024-01-17 | 🟡 In Progress | Critical path        |
-| A2  | Verify pre-sprint setup checklist               | team_lead   | 2024-01-15 | 🟡 In Progress | Ongoing              |
-| A3  | Share Supabase credentials (after Story 0.2)    | dev_backend | TBD        | 🔴 Pending     | Depends on Story 0.2 |
+| A1  | Complete Story 0.1 - Initialize Next.js Project | dev1_front  | 2024-01-17 | ✅ Completed | Completed Day 1      |
+| A2  | Verify pre-sprint setup checklist               | team_lead   | 2024-01-15 | ✅ Completed | Completed            |
+| A3  | Share Supabase credentials (after Story 0.2)    | dev_backend | 2024-01-15 | ✅ Completed | Story 0.2 complete   |
+| A4  | Complete Story 0.5 - Dev Tools & Git Hooks      | dev2_front  | 2024-01-15 | ✅ Completed | Completed Day 1      |
 
 ---
 
