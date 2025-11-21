@@ -17,12 +17,12 @@ An automated visualization tool that generates sprint overview documents from Az
 - Story 0.3: Create Database Schema (8 points)
 - Story 0.4: State Management Setup (5 points)
 - Story 0.5: Dev Tools & Git Hooks (3 points)
+- Story 0.8: Testing Framework (5 points) - [PR #7](https://github.com/fbellame/sprint-dashboard/pull/7)
 
 ### In Progress / Ready 🟡
 
 - Story 0.6: Vercel Deployment (5 points) - Ready to start
 - Story 0.7: Design System (5 points) - Ready to start
-- Story 0.8: Testing Framework (5 points) - Ready to start
 
 ## Quick Start
 
@@ -182,8 +182,8 @@ sprint-dashboard/
 
 ## Sprint 0 Stories
 
-**Sprint Status**: 🟡 In Progress (62.5% Complete - 5/8 stories)  
-**Story Points**: 24/39 completed  
+**Sprint Status**: 🟡 In Progress (75% Complete - 6/8 stories)  
+**Story Points**: 29/39 completed  
 **Last Updated**: 2024-01-15
 
 | Story | Title                      | Assignee    | Status   | Points | Notes                                   |
@@ -195,7 +195,7 @@ sprint-dashboard/
 | 0.5   | Dev Tools & Git Hooks      | dev2_front  | ✅ Done  | 3      | Approved - Excellent DX setup           |
 | 0.6   | Vercel Deployment          | dev2_front  | 🟡 Ready | 5      | Can start (needs Story 0.2 credentials) |
 | 0.7   | Design System              | dev1_front  | 🟡 Ready | 5      | Can start now                           |
-| 0.8   | Testing Framework          | dev2_front  | 🟡 Ready | 5      | Can start now                           |
+| 0.8   | Testing Framework          | dev2_front  | ✅ Done  | 5      | Approved - Excellent testing setup      |
 
 **Legend**:
 
