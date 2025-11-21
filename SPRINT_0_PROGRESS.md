@@ -19,16 +19,16 @@
 
 ## Story Progress
 
-| Story ID | Story Title                | Assignee    | Status     | Points | Started    | Completed  | PR Link | Notes                                       |
-| -------- | -------------------------- | ----------- | ---------- | ------ | ---------- | ---------- | ------- | ------------------------------------------- |
-| 0.1      | Initialize Next.js Project | dev1_front  | ✅ Done    | 3      | 2024-01-15 | 2024-01-15 | -       | ✅ **APPROVED** - Code review complete |
-| 0.2      | Set Up Supabase            | dev_backend | ✅ Done    | 5      | 2024-01-15 | 2024-01-15 | -       | ✅ **APPROVED** - Exceeds requirements |
-| 0.3      | Create Database Schema     | dev_backend | ✅ Done    | 8      | 2024-01-15 | 2024-01-15 | -       | ✅ **APPROVED** - Excellent schema design |
-| 0.4      | State Management Setup     | dev1_front  | ✅ Done    | 5      | 2024-01-15 | 2024-01-15 | -       | ✅ **APPROVED** - Production-ready |
-| 0.5      | Dev Tools & Git Hooks      | dev2_front  | ✅ Done    | 3      | 2024-01-15 | 2024-01-15 | -       | ✅ **APPROVED** - Excellent DX setup |
-| 0.6      | Vercel Deployment          | dev2_front  | 🟡 Ready   | 5      | -          | -          | -       | ✅ Stories 0.1, 0.2 complete - Can start |
-| 0.7      | Design System              | dev1_front  | 🟡 Ready   | 5      | -          | -          | -       | ✅ Story 0.1 complete - Can start now       |
-| 0.8      | Testing Framework          | dev2_front  | 🟡 Ready   | 5      | -          | -          | -       | ✅ Story 0.1 complete - Can start now       |
+| Story ID | Story Title                | Assignee    | Status   | Points | Started    | Completed  | PR Link | Notes                                     |
+| -------- | -------------------------- | ----------- | -------- | ------ | ---------- | ---------- | ------- | ----------------------------------------- |
+| 0.1      | Initialize Next.js Project | dev1_front  | ✅ Done  | 3      | 2024-01-15 | 2024-01-15 | -       | ✅ **APPROVED** - Code review complete    |
+| 0.2      | Set Up Supabase            | dev_backend | ✅ Done  | 5      | 2024-01-15 | 2024-01-15 | -       | ✅ **APPROVED** - Exceeds requirements    |
+| 0.3      | Create Database Schema     | dev_backend | ✅ Done  | 8      | 2024-01-15 | 2024-01-15 | -       | ✅ **APPROVED** - Excellent schema design |
+| 0.4      | State Management Setup     | dev1_front  | ✅ Done  | 5      | 2024-01-15 | 2024-01-15 | -       | ✅ **APPROVED** - Production-ready        |
+| 0.5      | Dev Tools & Git Hooks      | dev2_front  | ✅ Done  | 3      | 2024-01-15 | 2024-01-15 | -       | ✅ **APPROVED** - Excellent DX setup      |
+| 0.6      | Vercel Deployment          | dev2_front  | 🟡 Ready | 5      | -          | -          | -       | ✅ Stories 0.1, 0.2 complete - Can start  |
+| 0.7      | Design System              | dev1_front  | 🟡 Ready | 5      | -          | -          | -       | ✅ Story 0.1 complete - Can start now     |
+| 0.8      | Testing Framework          | dev2_front  | 🟡 Ready | 5      | -          | -          | -       | ✅ Story 0.1 complete - Can start now     |
 
 **Legend**:
 
@@ -117,10 +117,10 @@
 
 ## Velocity Tracking
 
-| Week   | Planned Points | Completed Points | Velocity | Notes                       |
-| ------ | -------------- | ---------------- | -------- | --------------------------- |
+| Week   | Planned Points | Completed Points | Velocity | Notes                             |
+| ------ | -------------- | ---------------- | -------- | --------------------------------- |
 | Week 1 | 39             | 24               | 24       | Stories 0.1-0.5 completed (Day 1) |
-| Week 2 | -              | -                | -        | -                           |
+| Week 2 | -              | -                | -        | -                                 |
 
 **Target Velocity**: 39 points (2 weeks)  
 **Current Velocity**: 0 points
@@ -183,12 +183,12 @@
 
 ## Action Items
 
-| ID  | Description                                     | Owner       | Due Date   | Status         | Notes                |
-| --- | ----------------------------------------------- | ----------- | ---------- | -------------- | -------------------- |
-| A1  | Complete Story 0.1 - Initialize Next.js Project | dev1_front  | 2024-01-17 | ✅ Completed | Completed Day 1      |
-| A2  | Verify pre-sprint setup checklist               | team_lead   | 2024-01-15 | ✅ Completed | Completed            |
-| A3  | Share Supabase credentials (after Story 0.2)    | dev_backend | 2024-01-15 | ✅ Completed | Story 0.2 complete   |
-| A4  | Complete Story 0.5 - Dev Tools & Git Hooks      | dev2_front  | 2024-01-15 | ✅ Completed | Completed Day 1      |
+| ID  | Description                                     | Owner       | Due Date   | Status       | Notes              |
+| --- | ----------------------------------------------- | ----------- | ---------- | ------------ | ------------------ |
+| A1  | Complete Story 0.1 - Initialize Next.js Project | dev1_front  | 2024-01-17 | ✅ Completed | Completed Day 1    |
+| A2  | Verify pre-sprint setup checklist               | team_lead   | 2024-01-15 | ✅ Completed | Completed          |
+| A3  | Share Supabase credentials (after Story 0.2)    | dev_backend | 2024-01-15 | ✅ Completed | Story 0.2 complete |
+| A4  | Complete Story 0.5 - Dev Tools & Git Hooks      | dev2_front  | 2024-01-15 | ✅ Completed | Completed Day 1    |
 
 ---
 
