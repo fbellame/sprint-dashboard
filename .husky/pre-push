@@ -1,10 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# Only run tests if test script exists (Story 0.8)
-if npm run test --dry-run > /dev/null 2>&1; then
-  npm test
-else
-  echo "⚠️  Test script not found. Skipping tests. (Will be set up in Story 0.8)"
-fi
+# Run tests before pushing (Story 0.8)
+npm test -- --run
 

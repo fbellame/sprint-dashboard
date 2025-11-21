@@ -11,6 +11,7 @@ An automated visualization tool that generates sprint overview documents from Az
 **Status**: 🟡 In Progress - Ahead of Schedule
 
 ### Completed Stories ✅
+
 - Story 0.1: Initialize Next.js Project (3 points)
 - Story 0.2: Set Up Supabase (5 points)
 - Story 0.3: Create Database Schema (8 points)
@@ -18,6 +19,7 @@ An automated visualization tool that generates sprint overview documents from Az
 - Story 0.5: Dev Tools & Git Hooks (3 points)
 
 ### In Progress / Ready 🟡
+
 - Story 0.6: Vercel Deployment (5 points) - Ready to start
 - Story 0.7: Design System (5 points) - Ready to start
 - Story 0.8: Testing Framework (5 points) - Ready to start
@@ -184,18 +186,19 @@ sprint-dashboard/
 **Story Points**: 24/39 completed  
 **Last Updated**: 2024-01-15
 
-| Story | Title                      | Assignee    | Status     | Points | Notes                    |
-| ----- | -------------------------- | ----------- | ---------- | ------ | ------------------------ |
-| 0.1   | Initialize Next.js Project | dev1_front  | ✅ Done    | 3      | Approved - Production-ready |
-| 0.2   | Set Up Supabase            | dev_backend | ✅ Done    | 5      | Approved - Exceeds requirements |
-| 0.3   | Create Database Schema     | dev_backend | ✅ Done    | 8      | Approved - Excellent schema design |
-| 0.4   | State Management Setup     | dev1_front  | ✅ Done    | 5      | Approved - Production-ready |
-| 0.5   | Dev Tools & Git Hooks      | dev2_front  | ✅ Done    | 3      | Approved - Excellent DX setup |
-| 0.6   | Vercel Deployment          | dev2_front  | 🟡 Ready   | 5      | Can start (needs Story 0.2 credentials) |
-| 0.7   | Design System              | dev1_front  | 🟡 Ready   | 5      | Can start now |
-| 0.8   | Testing Framework          | dev2_front  | 🟡 Ready   | 5      | Can start now |
+| Story | Title                      | Assignee    | Status   | Points | Notes                                   |
+| ----- | -------------------------- | ----------- | -------- | ------ | --------------------------------------- |
+| 0.1   | Initialize Next.js Project | dev1_front  | ✅ Done  | 3      | Approved - Production-ready             |
+| 0.2   | Set Up Supabase            | dev_backend | ✅ Done  | 5      | Approved - Exceeds requirements         |
+| 0.3   | Create Database Schema     | dev_backend | ✅ Done  | 8      | Approved - Excellent schema design      |
+| 0.4   | State Management Setup     | dev1_front  | ✅ Done  | 5      | Approved - Production-ready             |
+| 0.5   | Dev Tools & Git Hooks      | dev2_front  | ✅ Done  | 3      | Approved - Excellent DX setup           |
+| 0.6   | Vercel Deployment          | dev2_front  | 🟡 Ready | 5      | Can start (needs Story 0.2 credentials) |
+| 0.7   | Design System              | dev1_front  | 🟡 Ready | 5      | Can start now                           |
+| 0.8   | Testing Framework          | dev2_front  | 🟡 Ready | 5      | Can start now                           |
 
 **Legend**:
+
 - ✅ Done - Story complete and approved
 - 🟡 Ready - Can start (dependencies met)
 - 🔴 Blocked - Waiting for dependencies
@@ -239,6 +242,39 @@ import { useSprintStore } from '@/stores';
 
 const { selectedSprintId, setSelectedSprintId } = useSprintStore();
 ```
+
+## Testing
+
+This project uses **Vitest** for unit testing and **React Testing Library** for component testing.
+
+### Running Tests
+
+```bash
+# Run all tests
+npm test
+
+# Run tests in watch mode (for development)
+npm test
+
+# Run tests with UI
+npm run test:ui
+
+# Run tests with coverage report
+npm run test:coverage
+```
+
+### Writing Tests
+
+- **Component tests**: Place next to component files (e.g., `Button.test.tsx`)
+- **API route tests**: Place next to route files (e.g., `route.test.ts`)
+- **Test utilities**: Use `lib/test-utils/index.tsx` for `renderWithProviders`
+- **Mocks and fixtures**: Use `lib/test-utils/mocks.ts` and `lib/test-utils/fixtures.ts`
+
+### Test Coverage
+
+We aim for **80%+ coverage** on critical paths and **60%+ overall**. Coverage reports are generated with `npm run test:coverage`.
+
+For detailed testing guidelines, see [Testing Guide](./docs/TESTING.md).
 
 ### Error Handling
 
