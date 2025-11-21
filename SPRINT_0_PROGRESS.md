@@ -117,10 +117,10 @@
 
 ## Velocity Tracking
 
-| Week   | Planned Points | Completed Points | Velocity | Notes                             |
-| ------ | -------------- | ---------------- | -------- | --------------------------------- |
+| Week   | Planned Points | Completed Points | Velocity | Notes                                  |
+| ------ | -------------- | ---------------- | -------- | -------------------------------------- |
 | Week 1 | 39             | 29               | 29       | Stories 0.1-0.5, 0.8 completed (Day 1) |
-| Week 2 | -              | -                | -        | -                                 |
+| Week 2 | -              | -                | -        | -                                      |
 
 **Target Velocity**: 39 points (2 weeks)  
 **Current Velocity**: 0 points
