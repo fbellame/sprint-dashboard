@@ -1,6 +1,6 @@
 /**
  * API Client
- * 
+ *
  * Client-side utilities for making API requests to Next.js API routes.
  * Provides a consistent interface for fetching data with error handling.
  */
@@ -126,7 +126,11 @@ export const apiClient = {
   /**
    * POST request
    */
-  async post<T>(url: string, body?: unknown, options?: RequestInit): Promise<T> {
+  async post<T>(
+    url: string,
+    body?: unknown,
+    options?: RequestInit
+  ): Promise<T> {
     const response = await apiFetch<T>(url, {
       ...options,
       method: 'POST',
@@ -158,4 +162,3 @@ export const apiClient = {
     return response.data as T;
   },
 };
-

@@ -2,18 +2,18 @@ import { create } from 'zustand';
 
 /**
  * Sprint Store
- * 
+ *
  * Client-side state management for sprint-related UI state.
  * Use this for UI state that doesn't need to be synced with the server.
  */
 interface SprintState {
   selectedSprintId: string | null;
   setSelectedSprintId: (id: string | null) => void;
-  
+
   // UI state
   isUploading: boolean;
   setIsUploading: (isUploading: boolean) => void;
-  
+
   // Filters and view preferences
   filters: {
     workItemType: string[] | null;
@@ -28,11 +28,11 @@ export const useSprintStore = create<SprintState>((set) => ({
   // Selected sprint
   selectedSprintId: null,
   setSelectedSprintId: (id) => set({ selectedSprintId: id }),
-  
+
   // Upload state
   isUploading: false,
   setIsUploading: (isUploading) => set({ isUploading }),
-  
+
   // Filters
   filters: {
     workItemType: null,
@@ -52,4 +52,3 @@ export const useSprintStore = create<SprintState>((set) => ({
       },
     }),
 }));
-

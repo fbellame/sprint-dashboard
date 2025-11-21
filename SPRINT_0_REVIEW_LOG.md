@@ -65,15 +65,11 @@
 
 **Comments**:
 
--
+- **Action Items**:
 
-**Action Items**:
+- **Decision**: ☐ Approved | ☐ Changes Requested | ☐ Rejected
 
--
-
-**Decision**: ☐ Approved | ☐ Changes Requested | ☐ Rejected
-
----
+  ***
 
 ### Review #2: [Story 0.2 - Set Up Supabase]
 
@@ -96,15 +92,11 @@
 
 **Comments**:
 
--
+- **Action Items**:
 
-**Action Items**:
+- **Decision**: ☐ Approved | ☐ Changes Requested | ☐ Rejected
 
--
-
-**Decision**: ☐ Approved | ☐ Changes Requested | ☐ Rejected
-
----
+  ***
 
 ### Review #3: [Story 0.3 - Create Database Schema]
 
@@ -127,15 +119,11 @@
 
 **Comments**:
 
--
+- **Action Items**:
 
-**Action Items**:
+- **Decision**: ☐ Approved | ☐ Changes Requested | ☐ Rejected
 
--
-
-**Decision**: ☐ Approved | ☐ Changes Requested | ☐ Rejected
-
----
+  ***
 
 ### Review #4: [Story 0.4 - State Management Setup]
 
@@ -157,15 +145,11 @@
 
 **Comments**:
 
--
+- **Action Items**:
 
-**Action Items**:
+- **Decision**: ☐ Approved | ☐ Changes Requested | ☐ Rejected
 
--
-
-**Decision**: ☐ Approved | ☐ Changes Requested | ☐ Rejected
-
----
+  ***
 
 ### Review #5: [Story 0.5 - Dev Tools & Git Hooks]
 
@@ -186,15 +170,11 @@
 
 **Comments**:
 
--
+- **Action Items**:
 
-**Action Items**:
+- **Decision**: ☐ Approved | ☐ Changes Requested | ☐ Rejected
 
--
-
-**Decision**: ☐ Approved | ☐ Changes Requested | ☐ Rejected
-
----
+  ***
 
 ### Review #6: [Story 0.6 - Vercel Deployment]
 
@@ -215,15 +195,11 @@
 
 **Comments**:
 
--
+- **Action Items**:
 
-**Action Items**:
+- **Decision**: ☐ Approved | ☐ Changes Requested | ☐ Rejected
 
--
-
-**Decision**: ☐ Approved | ☐ Changes Requested | ☐ Rejected
-
----
+  ***
 
 ### Review #7: [Story 0.7 - Design System]
 
@@ -245,15 +221,11 @@
 
 **Comments**:
 
--
+- **Action Items**:
 
-**Action Items**:
+- **Decision**: ☐ Approved | ☐ Changes Requested | ☐ Rejected
 
--
-
-**Decision**: ☐ Approved | ☐ Changes Requested | ☐ Rejected
-
----
+  ***
 
 ### Review #8: [Story 0.8 - Testing Framework]
 
@@ -275,15 +247,11 @@
 
 **Comments**:
 
--
+- **Action Items**:
 
-**Action Items**:
+- **Decision**: ☐ Approved | ☐ Changes Requested | ☐ Rejected
 
--
-
-**Decision**: ☐ Approved | ☐ Changes Requested | ☐ Rejected
-
----
+  ***
 
 ## Review Statistics
 
@@ -310,9 +278,7 @@
 
 ### Areas for Improvement
 
--
+- ***
 
----
-
-**Last Updated**: 2024-01-15  
-**Next Update**: As reviews are completed
+  **Last Updated**: 2024-01-15  
+  **Next Update**: As reviews are completed

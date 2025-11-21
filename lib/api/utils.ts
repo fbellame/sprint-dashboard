@@ -1,6 +1,6 @@
 /**
  * API Utility Functions
- * 
+ *
  * Common utilities for API routes including error handling,
  * response formatting, and validation helpers.
  */
@@ -25,7 +25,10 @@ export class ApiError extends Error {
 }
 
 export class ValidationError extends ApiError {
-  constructor(message: string, public errors?: ZodError['issues']) {
+  constructor(
+    message: string,
+    public errors?: ZodError['issues']
+  ) {
     super(400, message, 'VALIDATION_ERROR', errors);
     this.name = 'ValidationError';
   }
@@ -153,10 +156,7 @@ export async function parseBody<T>(
 /**
  * Get query parameter
  */
-export function getQueryParam(
-  request: Request,
-  key: string
-): string | null {
+export function getQueryParam(request: Request, key: string): string | null {
   const url = new URL(request.url);
   return url.searchParams.get(key);
 }
@@ -250,4 +250,3 @@ export function parseUUID(id: string, resourceName = 'Resource'): string {
   }
   return id;
 }
-

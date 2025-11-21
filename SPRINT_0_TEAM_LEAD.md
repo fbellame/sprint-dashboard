@@ -44,11 +44,11 @@ This ensures all developers have the necessary accounts, tools, and access to be
 #### GitHub Account & Repository Access
 
 - [ ] **GitHub Account**: Each developer has a GitHub account
-  - [ ] Username: ******\_\_\_\_******
+  - [ ] Username: **\*\***\_\_\_\_**\*\***
   - [ ] Email verified: ☐
   - [ ] 2FA enabled: ☐ (recommended)
 - [ ] **Repository Access**: All developers have access to the repository
-  - [ ] Repository URL: ******\_\_\_\_******
+  - [ ] Repository URL: **\*\***\_\_\_\_**\*\***
   - [ ] Access level: Write (not just Read)
   - [ ] Can clone repository: ☐
   - [ ] Can create branches: ☐
@@ -96,17 +96,17 @@ This ensures all developers have the necessary accounts, tools, and access to be
 
 - [ ] **Supabase Account**: dev_backend has Supabase account
   - [ ] Account created: ☐
-  - [ ] Email: ******\_\_\_\_******
+  - [ ] Email: **\*\***\_\_\_\_**\*\***
   - [ ] Can access Supabase dashboard: ☐
 - [ ] **Supabase Project**: Project created (or will be created in Story 0.2)
   - [ ] Project name: Sprint Dashboard
-  - [ ] Region selected: ******\_\_\_\_******
-  - [ ] Project URL: ******\_\_\_\_******
-  - [ ] Project ID: ******\_\_\_\_******
+  - [ ] Region selected: **\*\***\_\_\_\_**\*\***
+  - [ ] Project URL: **\*\***\_\_\_\_**\*\***
+  - [ ] Project ID: **\*\***\_\_\_\_**\*\***
 - [ ] **Supabase CLI Installed**: Required for local development
   - [ ] Installation method: `npm install -g supabase` OR `brew install supabase/tap/supabase`
   - [ ] Verify: `supabase --version` works
-  - [ ] Version: ******\_\_\_\_******
+  - [ ] Version: **\*\***\_\_\_\_**\*\***
 - [ ] **Supabase CLI Login**: Authenticated with Supabase
   - [ ] Run: `supabase login`
   - [ ] Successfully authenticated: ☐
@@ -144,12 +144,12 @@ This ensures all developers have the necessary accounts, tools, and access to be
 
 - [ ] **Vercel Account**: dev2_front has Vercel account
   - [ ] Account created: ☐
-  - [ ] Email: ******\_\_\_\_******
+  - [ ] Email: **\*\***\_\_\_\_**\*\***
   - [ ] Can access Vercel dashboard: ☐
 - [ ] **Vercel CLI Installed** (optional but recommended)
   - [ ] Installation: `npm install -g vercel`
   - [ ] Verify: `vercel --version` works
-  - [ ] Version: ******\_\_\_\_******
+  - [ ] Version: **\*\***\_\_\_\_**\*\***
 - [ ] **Vercel CLI Login**: Authenticated with Vercel
   - [ ] Run: `vercel login`
   - [ ] Successfully authenticated: ☐

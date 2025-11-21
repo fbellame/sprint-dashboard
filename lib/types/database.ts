@@ -1,9 +1,9 @@
 /**
  * Database TypeScript Types
- * 
+ *
  * These types correspond to the database schema defined in:
  * supabase/migrations/20240115000000_initial_schema.sql
- * 
+ *
  * Story: 0.3 - Create Database Schema
  */
 
@@ -192,10 +192,7 @@ export const WORK_ITEM_STATES = {
 /**
  * Insert Sprint input
  */
-export type InsertSprint = Omit<
-  Sprint,
-  'id' | 'created_at' | 'updated_at'
->;
+export type InsertSprint = Omit<Sprint, 'id' | 'created_at' | 'updated_at'>;
 
 /**
  * Update Sprint input
@@ -205,10 +202,7 @@ export type UpdateSprint = Partial<Omit<Sprint, 'id' | 'created_at'>>;
 /**
  * Insert Work Item input
  */
-export type InsertWorkItem = Omit<
-  WorkItem,
-  'id' | 'created_at' | 'updated_at'
->;
+export type InsertWorkItem = Omit<WorkItem, 'id' | 'created_at' | 'updated_at'>;
 
 /**
  * Update Work Item input
@@ -231,4 +225,3 @@ export type InsertSprintConfiguration = Omit<
 export type UpdateSprintConfiguration = Partial<
   Omit<SprintConfiguration, 'id' | 'sprint_id' | 'created_at'>
 >;
-

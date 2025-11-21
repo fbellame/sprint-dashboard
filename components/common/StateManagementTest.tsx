@@ -2,10 +2,10 @@
 
 /**
  * State Management Test Component
- * 
+ *
  * This component tests that React Query and Zustand are properly configured.
  * This is a temporary component for Story 0.4 verification.
- * 
+ *
  * TODO: Remove this component after Story 0.4 is complete and verified.
  */
 
@@ -21,13 +21,7 @@ export function StateManagementTest() {
     useSprintStore();
 
   // Test React Query (using a simple API endpoint that should exist)
-  const {
-    data,
-    isLoading,
-    isFetching,
-    isError,
-    error,
-  } = useQuery({
+  const { data, isLoading, isFetching, isError, error } = useQuery({
     queryKey: ['test'],
     queryFn: async () => {
       // This will fail, but that's OK - we're just testing the setup
@@ -41,7 +35,12 @@ export function StateManagementTest() {
     retry: false,
   });
 
-  const loadingState = createLoadingState(isLoading, isFetching, isError, error);
+  const loadingState = createLoadingState(
+    isLoading,
+    isFetching,
+    isError,
+    error
+  );
 
   return (
     <div className="p-4 border rounded-lg space-y-4">
@@ -100,4 +99,3 @@ export function StateManagementTest() {
     </div>
   );
 }
-

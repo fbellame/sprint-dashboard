@@ -1,6 +1,6 @@
 /**
  * API Types
- * 
+ *
  * Type definitions for API requests and responses.
  * These types should match the API route response structures.
  */
@@ -139,4 +139,3 @@ export interface FeatureMetrics {
   story_count: number;
   story_points: number;
 }
-

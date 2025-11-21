@@ -1,6 +1,6 @@
 /**
  * Loading State Utilities
- * 
+ *
  * Utilities for managing loading states consistently across the application.
  */
 
@@ -79,7 +79,7 @@ export function getErrorMessage(loadingState: LoadingState): string | null {
 
 /**
  * Extract loading state from React Query result
- * 
+ *
  * Usage:
  * ```tsx
  * const { data, isLoading, isFetching, isError, error } = useQuery(...);
@@ -131,4 +131,3 @@ export function getLoadingMessage(loadingState: LoadingState): string {
   }
   return '';
 }
-

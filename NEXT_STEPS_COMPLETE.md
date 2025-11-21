@@ -19,10 +19,12 @@ After completing Stories 0.2 and 0.3, I've created foundational utilities and he
 **File**: `scripts/apply-migration.sh`
 
 A helper script to apply the database migration to Supabase using either:
+
 - **CLI method**: Uses Supabase CLI to push migrations
 - **Dashboard method**: Provides instructions for using Supabase SQL Editor
 
 **Usage**:
+
 ```bash
 # Using CLI (default)
 ./scripts/apply-migration.sh cli
@@ -32,6 +34,7 @@ A helper script to apply the database migration to Supabase using either:
 ```
 
 **Features**:
+
 - Checks for Supabase CLI installation
 - Validates migration file exists
 - Provides clear error messages
@@ -44,6 +47,7 @@ A helper script to apply the database migration to Supabase using either:
 Common utilities for API routes including:
 
 **Error Handling**:
+
 - `ApiError` - Base error class for API errors
 - `ValidationError` - For request validation errors
 - `NotFoundError` - For resource not found errors
@@ -51,21 +55,25 @@ Common utilities for API routes including:
 - `withErrorHandling()` - Wrapper for automatic error handling
 
 **Response Helpers**:
+
 - `successResponse()` - Standardized success response
 - `errorResponse()` - Standardized error response
 - `paginatedResponse()` - Paginated response formatter
 
 **Validation**:
+
 - `parseBody()` - Parse and validate request body with Zod
 - `getQueryParam()` - Get single query parameter
 - `getQueryParams()` - Get all query parameters
 - `parsePagination()` - Parse pagination parameters
 
 **ID Validation**:
+
 - `isValidUUID()` - Validate UUID format
 - `parseUUID()` - Validate and parse UUID from request
 
 **Benefits**:
+
 - Consistent error handling across all API routes
 - Type-safe request parsing
 - Standardized response formats
@@ -78,6 +86,7 @@ Common utilities for API routes including:
 Type-safe database operation helpers:
 
 **Sprint Operations**:
+
 - `getSprintById()` - Get sprint by ID
 - `getSprintByNumber()` - Get sprint by sprint number
 - `getAllSprints()` - Get all sprints
@@ -86,6 +95,7 @@ Type-safe database operation helpers:
 - `deleteSprint()` - Delete sprint (cascades)
 
 **Work Item Operations**:
+
 - `getWorkItemsBySprint()` - Get all work items for a sprint
 - `getWorkItemById()` - Get work item by ID
 - `createWorkItem()` - Create work item
@@ -94,14 +104,17 @@ Type-safe database operation helpers:
 - `deleteWorkItem()` - Delete work item
 
 **View Operations**:
+
 - `getTeamBacklogMetrics()` - Get team backlog metrics
 - `getStoriesByState()` - Get stories breakdown by state
 - `getTopFeatures()` - Get top features by story points
 
 **Sprint Configuration**:
+
 - `getSprintConfiguration()` - Get sprint configuration
 
 **Benefits**:
+
 - Type-safe database operations
 - Consistent error handling
 - Reusable across all API routes
@@ -135,7 +148,7 @@ import { getSprintById } from '@/lib/api/supabase-helpers';
 export const GET = withErrorHandling(async (request: Request) => {
   const url = new URL(request.url);
   const id = parseUUID(url.pathname.split('/').pop() || '');
-  
+
   const sprint = await getSprintById(id);
   return successResponse(sprint);
 });
@@ -166,7 +179,10 @@ export const POST = withErrorHandling(async (request: Request) => {
 ### Example 3: Using Database Views
 
 ```typescript
-import { getTeamBacklogMetrics, getTopFeatures } from '@/lib/api/supabase-helpers';
+import {
+  getTeamBacklogMetrics,
+  getTopFeatures,
+} from '@/lib/api/supabase-helpers';
 
 // Get metrics for dashboard
 const metrics = await getTeamBacklogMetrics(sprintId);
@@ -222,4 +238,3 @@ With these utilities in place, Sprint 1 API development will be much faster:
 
 **Status**: ✅ Complete  
 **Ready for**: Sprint 1 API Development
-

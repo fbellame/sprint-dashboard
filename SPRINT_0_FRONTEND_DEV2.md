@@ -58,9 +58,10 @@
   ```
 
   - [ ] Version displayed: ☐
-  - [ ] Version: ******\_\_\_\_******
+  - [ ] Version: **\*\***\_\_\_\_**\*\***
 
 - [ ] **Login to Vercel CLI**
+
   ```bash
   vercel login
   ```

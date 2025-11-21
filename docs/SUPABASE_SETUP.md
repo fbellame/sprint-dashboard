@@ -48,11 +48,13 @@ This document provides step-by-step instructions for setting up Supabase for the
 ## Step 3: Configure Environment Variables
 
 1. **Create `.env.local` File**
+
    ```bash
    cp .env.example .env.local
    ```
 
 2. **Add Your Credentials**
+
    ```env
    NEXT_PUBLIC_SUPABASE_URL=https://xxx.supabase.co
    NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGc...
@@ -66,6 +68,7 @@ This document provides step-by-step instructions for setting up Supabase for the
 ## Step 4: Test Connection
 
 1. **Start Development Server**
+
    ```bash
    npm run dev
    ```
@@ -86,9 +89,7 @@ This document provides step-by-step instructions for setting up Supabase for the
 import { supabase } from '@/lib/supabase';
 
 // In React components
-const { data, error } = await supabase
-  .from('sprints')
-  .select('*');
+const { data, error } = await supabase.from('sprints').select('*');
 ```
 
 ### Server-Side Usage (API Routes)
@@ -98,10 +99,8 @@ import { supabaseAdmin } from '@/lib/supabase/server';
 
 // In API routes
 export async function GET() {
-  const { data, error } = await supabaseAdmin
-    .from('sprints')
-    .select('*');
-  
+  const { data, error } = await supabaseAdmin.from('sprints').select('*');
+
   return NextResponse.json(data);
 }
 ```
@@ -134,11 +133,13 @@ supabase status
 ### Local Development Workflow
 
 1. **Create Migrations Locally**
+
    ```bash
    supabase migration new migration_name
    ```
 
 2. **Test Migrations Locally**
+
    ```bash
    supabase db reset  # Applies all migrations
    ```
@@ -206,4 +207,3 @@ After completing this setup:
 
 **Last Updated**: 2024-01-15  
 **Story**: 0.2 - Set Up Supabase
-
