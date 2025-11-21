@@ -87,11 +87,70 @@ sprint-dashboard/
 | 0.1   | Initialize Next.js Project | dev1_front  | ✅ Done        |
 | 0.2   | Set Up Supabase            | dev_backend | ✅ Done        |
 | 0.3   | Create Database Schema     | dev_backend | ✅ Done        |
-| 0.4   | State Management Setup     | dev1_front  | 🟡 Ready       |
+| 0.4   | State Management Setup     | dev1_front  | ✅ Done        |
 | 0.5   | Dev Tools & Git Hooks      | dev2_front  | 🟡 Ready       |
 | 0.6   | Vercel Deployment          | dev2_front  | 🔴 Blocked     |
 | 0.7   | Design System              | dev1_front  | 🟡 Ready       |
 | 0.8   | Testing Framework          | dev2_front  | 🟡 Ready       |
+
+## State Management
+
+This project uses a combination of **React Query** (for server state) and **Zustand** (for client state).
+
+### React Query (Server State)
+
+React Query is configured in `lib/providers/QueryProvider.tsx` and wraps the entire application. Use it for:
+
+- Fetching data from API routes
+- Caching and automatic refetching
+- Loading and error states
+
+**Example Usage:**
+```tsx
+import { useQuery } from '@tanstack/react-query';
+import { apiClient } from '@/lib/api';
+
+const { data, isLoading, error } = useQuery({
+  queryKey: ['sprints'],
+  queryFn: () => apiClient.get('/api/sprints'),
+});
+```
+
+### Zustand (Client State)
+
+Zustand stores are located in `stores/`. Use them for:
+
+- UI state (selected items, filters, modals)
+- Client-side preferences
+- Temporary state that doesn't need server sync
+
+**Example Usage:**
+```tsx
+import { useSprintStore } from '@/stores';
+
+const { selectedSprintId, setSelectedSprintId } = useSprintStore();
+```
+
+### Error Handling
+
+Use `lib/utils/errors.ts` for consistent error formatting:
+
+```tsx
+import { formatError } from '@/lib/utils/errors';
+
+const formattedError = formatError(error);
+console.log(formattedError.userMessage);
+```
+
+### Loading States
+
+Use `lib/utils/loading.ts` for consistent loading state management:
+
+```tsx
+import { createLoadingState } from '@/lib/utils/loading';
+
+const loadingState = createLoadingState(isLoading, isFetching, isError, error);
+```
 
 ## Documentation
 
