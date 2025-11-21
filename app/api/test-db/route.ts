@@ -1,4 +1,3 @@
-import { supabaseAdmin } from '@/lib/supabase/server';
 import { NextResponse } from 'next/server';
 
 /**
@@ -9,7 +8,25 @@ import { NextResponse } from 'next/server';
  * Remove this route after verifying the connection works.
  */
 export async function GET() {
+  // Check if environment variables are available
+  if (
+    !process.env.NEXT_PUBLIC_SUPABASE_URL ||
+    !process.env.SUPABASE_SERVICE_ROLE_KEY
+  ) {
+    return NextResponse.json(
+      {
+        success: false,
+        message: 'Supabase environment variables not configured',
+        hint: 'This is expected during build or if .env.local is not set up',
+      },
+      { status: 503 }
+    );
+  }
+
   try {
+    // Dynamically import to avoid build-time errors
+    const { supabaseAdmin } = await import('@/lib/supabase/server');
+
     // Test query - try to query a system table that should always exist
     const { data, error } = await supabaseAdmin
       .from('sprints')
