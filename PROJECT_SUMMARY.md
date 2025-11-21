@@ -51,15 +51,18 @@ The Sprint Dashboard is an automated visualization tool that generates sprint ov
 ### MVP Features (v1.0)
 
 ✅ **Sprint Management**
+
 - Create, view, update, delete sprints
 - Sprint list with navigation
 
 ✅ **CSV Import**
+
 - Upload Azure DevOps CSV exports
 - Parse and validate CSV data
 - Transform and store work items
 
 ✅ **Dashboard Display**
+
 - Sprint header with visual design
 - PI Commitments with status indicators
 - Sprint Goals with status indicators
@@ -71,6 +74,7 @@ The Sprint Dashboard is an automated visualization tool that generates sprint ov
 - Status legend
 
 ✅ **Metrics & Calculations**
+
 - Accurate story point aggregations
 - State-based counting
 - Feature grouping
@@ -78,6 +82,7 @@ The Sprint Dashboard is an automated visualization tool that generates sprint ov
 - Status indicator logic
 
 ✅ **Export Functionality**
+
 - PDF export
 - HTML export
 - Print-friendly formatting
@@ -96,9 +101,11 @@ The Sprint Dashboard is an automated visualization tool that generates sprint ov
 ## Sprint Breakdown
 
 ### Sprint 0: Infrastructure & Foundation (2 weeks, 39 points)
+
 **Goal**: Establish foundational infrastructure and development environment
 
 **Key Deliverables**:
+
 - Next.js project with TypeScript
 - Supabase database with schema
 - CI/CD pipeline
@@ -110,9 +117,11 @@ The Sprint Dashboard is an automated visualization tool that generates sprint ov
 ---
 
 ### Sprint 1: Sprint Management & CSV Upload (2 weeks, 57 points)
+
 **Goal**: Enable sprint creation and CSV data ingestion
 
 **Key Deliverables**:
+
 - Sprint CRUD APIs
 - Sprint creation and list pages
 - CSV upload component
@@ -124,9 +133,11 @@ The Sprint Dashboard is an automated visualization tool that generates sprint ov
 ---
 
 ### Sprint 2: Dashboard Components & Data Display (2 weeks, 53 points)
+
 **Goal**: Build all dashboard UI components
 
 **Key Deliverables**:
+
 - Sprint header component
 - Status indicator component
 - PI Commitments component
@@ -140,9 +151,11 @@ The Sprint Dashboard is an automated visualization tool that generates sprint ov
 ---
 
 ### Sprint 3: Metrics & Calculations (2 weeks, 49 points)
+
 **Goal**: Implement all calculations and metrics APIs
 
 **Key Deliverables**:
+
 - Dashboard metrics API
 - Team backlog calculations
 - Stories by state calculations
@@ -155,9 +168,11 @@ The Sprint Dashboard is an automated visualization tool that generates sprint ov
 ---
 
 ### Sprint 4: Export & Polish (2 weeks, 56 points)
+
 **Goal**: Implement export functionality and polish for production
 
 **Key Deliverables**:
+
 - PDF export functionality
 - HTML export functionality
 - Loading states and error handling
@@ -173,19 +188,20 @@ The Sprint Dashboard is an automated visualization tool that generates sprint ov
 ## Team & Capacity
 
 ### Team Composition
+
 - **2 Full Stack Developers**
 - **1 Product Owner** (25% time)
 - **1 QA/Testing** (50% time in Sprints 3-4)
 
 ### Capacity Planning
 
-| Sprint | Points | Team Capacity | Utilization | Status |
-|--------|--------|---------------|-------------|--------|
-| Sprint 0 | 39 | 40 | 98% | ✅ Feasible |
-| Sprint 1 | 57 | 40 | 143% | ⚠️ Over capacity |
-| Sprint 2 | 53 | 40 | 133% | ⚠️ Over capacity |
-| Sprint 3 | 49 | 40 | 123% | ⚠️ Over capacity |
-| Sprint 4 | 56 | 40 | 140% | ⚠️ Over capacity |
+| Sprint   | Points | Team Capacity | Utilization | Status           |
+| -------- | ------ | ------------- | ----------- | ---------------- |
+| Sprint 0 | 39     | 40            | 98%         | ✅ Feasible      |
+| Sprint 1 | 57     | 40            | 143%        | ⚠️ Over capacity |
+| Sprint 2 | 53     | 40            | 133%        | ⚠️ Over capacity |
+| Sprint 3 | 49     | 40            | 123%        | ⚠️ Over capacity |
+| Sprint 4 | 56     | 40            | 140%        | ⚠️ Over capacity |
 
 **⚠️ Recommendation**: Extend Sprints 1-4 to 3 weeks each, or add a third developer.
 
@@ -194,18 +210,21 @@ The Sprint Dashboard is an automated visualization tool that generates sprint ov
 ## Timeline
 
 ### Option 1: Extended Sprints (Recommended)
+
 - **Sprint 0**: 2 weeks
 - **Sprints 1-4**: 3 weeks each
 - **Total**: 14 weeks
 - **Completion**: 2024-04-22
 
 ### Option 2: Current Plan
+
 - **All Sprints**: 2 weeks each
 - **Total**: 10 weeks + 1 week buffer
 - **Completion**: 2024-04-01
 - **Risk**: High (over capacity)
 
 ### Option 3: Additional Developer
+
 - **All Sprints**: 2 weeks each
 - **Team Capacity**: 60 points per sprint
 - **Total**: 10 weeks + 1 week buffer
@@ -231,6 +250,7 @@ Buffer & Final Testing
 ```
 
 **Critical Dependencies**:
+
 1. Database schema → Sprint 1
 2. CSV upload → Sprint 2
 3. Dashboard components → Sprint 3
@@ -242,12 +262,12 @@ Buffer & Final Testing
 
 ### High-Risk Areas
 
-| Risk | Impact | Probability | Mitigation |
-|------|--------|-------------|------------|
-| CSV format variations | High | High | Flexible parsing, validation |
-| Calculation accuracy | High | Medium | Comprehensive testing, peer review |
-| Team capacity | High | High | Extend sprints or add developer |
-| Export formatting | Medium | Medium | Early prototyping |
+| Risk                  | Impact | Probability | Mitigation                         |
+| --------------------- | ------ | ----------- | ---------------------------------- |
+| CSV format variations | High   | High        | Flexible parsing, validation       |
+| Calculation accuracy  | High   | Medium      | Comprehensive testing, peer review |
+| Team capacity         | High   | High        | Extend sprints or add developer    |
+| Export formatting     | Medium | Medium      | Early prototyping                  |
 
 ### Risk Mitigation Strategies
 
@@ -261,12 +281,14 @@ Buffer & Final Testing
 ## Success Metrics
 
 ### Technical Metrics
+
 - ✅ Page load time < 2 seconds
 - ✅ CSV processing < 10 seconds for 10MB file
 - ✅ API response time < 500ms (p95)
 - ✅ Zero critical bugs in calculations
 
 ### Business Metrics
+
 - ✅ 80% reduction in reporting time
 - ✅ 100% user adoption in sprint reviews
 - ✅ Zero manual data entry errors
@@ -277,6 +299,7 @@ Buffer & Final Testing
 ## Technology Stack
 
 ### Frontend
+
 - **Next.js 14.x** (App Router)
 - **TypeScript 5.x**
 - **React 18.x**
@@ -285,16 +308,19 @@ Buffer & Final Testing
 - **Zustand** (state management)
 
 ### Backend
+
 - **Next.js API Routes** (serverless)
 - **Supabase** (PostgreSQL database)
 - **PapaParse** (CSV parsing)
 - **Zod** (validation)
 
 ### Infrastructure
+
 - **Vercel** (hosting, CDN, serverless functions)
 - **Supabase** (database, storage)
 
 ### Development Tools
+
 - **ESLint** (linting)
 - **Prettier** (formatting)
 - **Vitest** (testing)
@@ -304,20 +330,21 @@ Buffer & Final Testing
 
 ## Key Milestones
 
-| Milestone | Date | Description | Success Criteria |
-|-----------|------|-------------|------------------|
-| M1: Infrastructure Ready | Jan 29, 2024 | Sprint 0 complete | Project running, database deployed |
-| M2: Data Ingestion Working | Feb 12, 2024 | Sprint 1 complete | CSV upload functional |
-| M3: Dashboard Functional | Feb 26, 2024 | Sprint 2 complete | All components displaying |
-| M4: Metrics Accurate | Mar 11, 2024 | Sprint 3 complete | Calculations verified |
-| M5: MVP Complete | Mar 25, 2024 | Sprint 4 complete | Export working, ready for UAT |
-| M6: Production Ready | Apr 1, 2024 | Buffer complete | Deployed, tested, documented |
+| Milestone                  | Date         | Description       | Success Criteria                   |
+| -------------------------- | ------------ | ----------------- | ---------------------------------- |
+| M1: Infrastructure Ready   | Jan 29, 2024 | Sprint 0 complete | Project running, database deployed |
+| M2: Data Ingestion Working | Feb 12, 2024 | Sprint 1 complete | CSV upload functional              |
+| M3: Dashboard Functional   | Feb 26, 2024 | Sprint 2 complete | All components displaying          |
+| M4: Metrics Accurate       | Mar 11, 2024 | Sprint 3 complete | Calculations verified              |
+| M5: MVP Complete           | Mar 25, 2024 | Sprint 4 complete | Export working, ready for UAT      |
+| M6: Production Ready       | Apr 1, 2024  | Buffer complete   | Deployed, tested, documented       |
 
 ---
 
 ## Next Steps
 
 ### Immediate Actions (Week 1)
+
 1. ✅ Review all project documents
 2. ✅ Validate story point estimates with team
 3. ✅ Decide on sprint duration (2 vs 3 weeks)
@@ -325,6 +352,7 @@ Buffer & Final Testing
 5. ✅ Begin Sprint 0 planning meeting
 
 ### Sprint 0 Planning
+
 1. Review Sprint 0 stories with team
 2. Assign stories to developers
 3. Set up development environment
@@ -333,6 +361,7 @@ Buffer & Final Testing
 6. Set up Supabase project
 
 ### Ongoing Activities
+
 - Daily standups (15 min)
 - Weekly sprint reviews
 - Weekly retrospectives
@@ -352,18 +381,17 @@ Buffer & Final Testing
 
 ## Document Versions
 
-| Document | Version | Last Updated | Status |
-|----------|--------|--------------|--------|
-| PRD.md | 1.0 | 2024-01-15 | Approved |
-| SOLUTION_ARCHITECTURE.md | 1.0 | 2024-01-15 | Approved |
-| USER_STORIES.md | 1.1 | 2024-01-15 | Enhanced |
-| SPRINT_PLANNING_TEMPLATE.md | 1.0 | 2024-01-15 | Ready |
-| PROJECT_TIMELINE.md | 1.0 | 2024-01-15 | Ready |
-| PROJECT_SUMMARY.md | 1.0 | 2024-01-15 | Current |
+| Document                    | Version | Last Updated | Status   |
+| --------------------------- | ------- | ------------ | -------- |
+| PRD.md                      | 1.0     | 2024-01-15   | Approved |
+| SOLUTION_ARCHITECTURE.md    | 1.0     | 2024-01-15   | Approved |
+| USER_STORIES.md             | 1.1     | 2024-01-15   | Enhanced |
+| SPRINT_PLANNING_TEMPLATE.md | 1.0     | 2024-01-15   | Ready    |
+| PROJECT_TIMELINE.md         | 1.0     | 2024-01-15   | Ready    |
+| PROJECT_SUMMARY.md          | 1.0     | 2024-01-15   | Current  |
 
 ---
 
 **Document Status**: Complete  
 **Ready for**: Sprint Planning & Execution  
 **Last Updated**: 2024-01-15
-

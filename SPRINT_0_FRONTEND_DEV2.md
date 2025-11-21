@@ -10,11 +10,11 @@
 
 ## Assigned Stories (13 points)
 
-| Story ID | Title | Points | Status | Priority |
-|----------|-------|--------|--------|----------|
-| 0.5 | Dev Tools & Git Hooks | 3 | To Do | P1 |
-| 0.6 | Vercel Deployment | 5 | To Do | P1 |
-| 0.8 | Testing Framework | 5 | To Do | P1 |
+| Story ID | Title                 | Points | Status | Priority |
+| -------- | --------------------- | ------ | ------ | -------- |
+| 0.5      | Dev Tools & Git Hooks | 3      | To Do  | P1       |
+| 0.6      | Vercel Deployment     | 5      | To Do  | P1       |
+| 0.8      | Testing Framework     | 5      | To Do  | P1       |
 
 ---
 
@@ -25,6 +25,7 @@
 ### Required Accounts
 
 #### Vercel Account
+
 - [ ] **Create Vercel Account** (if you don't have one)
   - [ ] Go to https://vercel.com
   - [ ] Sign up with GitHub (recommended) or email
@@ -45,22 +46,25 @@
 ### Required Tools Installation
 
 #### Vercel CLI Installation (Optional but Recommended)
+
 - [ ] **Install Vercel CLI**
   ```bash
   npm install -g vercel
   ```
-  
 - [ ] **Verify Installation**
+
   ```bash
   vercel --version
   ```
+
   - [ ] Version displayed: ☐
-  - [ ] Version: ________________
+  - [ ] Version: ******\_\_\_\_******
 
 - [ ] **Login to Vercel CLI**
   ```bash
   vercel login
   ```
+
   - [ ] Follow browser prompt to authenticate
   - [ ] Successfully logged in: ☐
   - [ ] Can access your projects: ☐
@@ -68,6 +72,7 @@
 ### Verification Checklist
 
 Before starting Story 0.6, verify:
+
 - [ ] Vercel account created and accessible
 - [ ] GitHub account connected to Vercel
 - [ ] Repository access granted in Vercel
@@ -78,6 +83,7 @@ Before starting Story 0.6, verify:
 ### Troubleshooting
 
 #### Vercel Account Issues
+
 - **Problem**: Cannot create Vercel account
   - **Solution**: Try signing up with GitHub instead of email
   - **Solution**: Check email for verification link
@@ -88,6 +94,7 @@ Before starting Story 0.6, verify:
   - **Solution**: Check repository is not private (or upgrade Vercel plan)
 
 #### Vercel CLI Issues
+
 - **Problem**: `vercel: command not found`
   - **Solution**: Ensure npm global bin is in PATH
   - **Solution**: Try `npm install -g vercel` again
@@ -98,6 +105,7 @@ Before starting Story 0.6, verify:
   - **Solution**: Check network/firewall settings
 
 ### Resources
+
 - [Vercel Documentation](https://vercel.com/docs)
 - [Vercel CLI Documentation](https://vercel.com/docs/cli)
 - [GitHub Integration Guide](https://vercel.com/docs/concepts/git)
@@ -111,6 +119,7 @@ Before starting Story 0.6, verify:
 **Dependencies**: Story 0.1 (must be complete)
 
 ### Acceptance Criteria
+
 - [ ] ESLint configured with Next.js rules
 - [ ] Prettier configured with consistent formatting rules
 - [ ] Husky installed and configured
@@ -123,6 +132,7 @@ Before starting Story 0.6, verify:
 ### Detailed Tasks
 
 #### Task 1: Verify ESLint Configuration (30 min)
+
 - [ ] Check `.eslintrc.json` exists (created in Story 0.1)
 - [ ] Verify Next.js ESLint config is included
 - [ ] Add any custom rules needed
@@ -130,15 +140,18 @@ Before starting Story 0.6, verify:
 - [ ] Fix any linting errors in existing code
 
 #### Task 2: Verify Prettier Configuration (30 min)
+
 - [ ] Check `.prettierrc` exists (created in Story 0.1)
 - [ ] Verify Prettier config matches team standards
 - [ ] Test: `npm run format` works correctly
 - [ ] Test: `npm run format:check` works correctly
 
 #### Task 3: Install and Configure Husky (1.5 hours)
+
 - [ ] Install Husky: `npm install -D husky`
 - [ ] Initialize Husky: `npx husky init`
 - [ ] Create pre-commit hook: `.husky/pre-commit`:
+
   ```bash
   #!/usr/bin/env sh
   . "$(dirname -- "$0")/_/husky.sh"
@@ -146,19 +159,23 @@ Before starting Story 0.6, verify:
   npm run lint
   npm run format:check
   ```
+
 - [ ] Make hook executable: `chmod +x .husky/pre-commit`
 - [ ] Test pre-commit hook (make a commit)
 - [ ] Create pre-push hook: `.husky/pre-push`:
+
   ```bash
   #!/usr/bin/env sh
   . "$(dirname -- "$0")/_/husky.sh"
 
   npm test
   ```
+
 - [ ] Make hook executable: `chmod +x .husky/pre-push`
 - [ ] Test pre-push hook (will fail until tests are set up - that's OK)
 
 #### Task 4: Configure VS Code Settings (1 hour)
+
 - [ ] Create `.vscode/settings.json`:
   ```json
   {
@@ -184,8 +201,10 @@ Before starting Story 0.6, verify:
 - [ ] Test: Save a file - should auto-format
 
 #### Task 5: Configure .gitignore (30 min)
+
 - [ ] Verify `.gitignore` exists (created by Next.js)
 - [ ] Add additional entries if needed:
+
   ```
   # Environment variables
   .env.local
@@ -205,9 +224,11 @@ Before starting Story 0.6, verify:
   .DS_Store
   Thumbs.db
   ```
+
 - [ ] Test: Verify sensitive files are ignored
 
 #### Task 6: Update README.md (1 hour)
+
 - [ ] Add setup instructions:
   - [ ] Prerequisites (Node.js version, npm)
   - [ ] Installation steps
@@ -223,7 +244,9 @@ Before starting Story 0.6, verify:
 - [ ] Add links to documentation
 
 #### Task 7: Create .editorconfig (Optional, 30 min)
+
 - [ ] Create `.editorconfig`:
+
   ```ini
   root = true
 
@@ -235,9 +258,11 @@ Before starting Story 0.6, verify:
   trim_trailing_whitespace = true
   insert_final_newline = true
   ```
+
 - [ ] Test: Verify editor respects settings
 
 ### Definition of Done
+
 - [ ] All tasks completed
 - [ ] Code reviewed by Team Lead
 - [ ] Pre-commit hook working (tested with a commit)
@@ -246,9 +271,11 @@ Before starting Story 0.6, verify:
 - [ ] All team members can use the development tools
 
 ### Blockers
+
 - Must wait for Story 0.1 to be complete
 
 ### Notes
+
 - Can start this as soon as Story 0.1 is complete
 - This enables better developer experience for the team
 - Test hooks with actual commits to ensure they work
@@ -262,6 +289,7 @@ Before starting Story 0.6, verify:
 **Dependencies**: Story 0.1 (must be complete)
 
 ### Acceptance Criteria
+
 - [ ] Vitest or Jest installed and configured
 - [ ] React Testing Library installed
 - [ ] Test utilities created (`lib/test-utils.tsx`)
@@ -273,6 +301,7 @@ Before starting Story 0.6, verify:
 ### Detailed Tasks
 
 #### Task 1: Install Testing Dependencies (30 min)
+
 - [ ] Install Vitest: `npm install -D vitest @vitest/ui`
 - [ ] Install React Testing Library: `npm install -D @testing-library/react @testing-library/jest-dom`
 - [ ] Install jsdom: `npm install -D jsdom`
@@ -280,11 +309,13 @@ Before starting Story 0.6, verify:
 - [ ] Verify packages in `package.json`
 
 #### Task 2: Configure Vitest (1.5 hours)
+
 - [ ] Create `vitest.config.ts`:
+
   ```typescript
-  import { defineConfig } from 'vitest/config'
-  import react from '@vitejs/plugin-react'
-  import path from 'path'
+  import { defineConfig } from 'vitest/config';
+  import react from '@vitejs/plugin-react';
+  import path from 'path';
 
   export default defineConfig({
     plugins: [react()],
@@ -298,8 +329,9 @@ Before starting Story 0.6, verify:
         '@': path.resolve(__dirname, './'),
       },
     },
-  })
+  });
   ```
+
 - [ ] Install Vite React plugin: `npm install -D @vitejs/plugin-react`
 - [ ] Update `package.json` scripts:
   ```json
@@ -312,7 +344,9 @@ Before starting Story 0.6, verify:
 - [ ] Test: `npm test` should run (may have no tests yet)
 
 #### Task 3: Create Test Utilities (1 hour)
+
 - [ ] Create `lib/test-utils.tsx`:
+
   ```typescript
   import { render } from '@testing-library/react'
   import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
@@ -339,12 +373,15 @@ Before starting Story 0.6, verify:
 
   export * from '@testing-library/react'
   ```
+
 - [ ] Create `lib/test-utils/mocks.ts` for common mocks
 - [ ] Create `lib/test-utils/fixtures.ts` for test data
 
 #### Task 4: Write Sample Component Test (1.5 hours)
+
 - [ ] Create a simple test component: `components/common/Button.test.tsx`
 - [ ] Write test for Button component:
+
   ```typescript
   import { describe, it, expect } from 'vitest'
   import { render, screen } from '@/lib/test-utils'
@@ -357,10 +394,12 @@ Before starting Story 0.6, verify:
     })
   })
   ```
+
 - [ ] Run test: `npm test` - should pass
 - [ ] Add more test cases (variants, sizes, etc.)
 
 #### Task 5: Write Sample API Route Test (1.5 hours)
+
 - [ ] Create test for API route: `app/api/sprints/route.test.ts`
 - [ ] Mock Supabase client
 - [ ] Write test for GET endpoint
@@ -369,6 +408,7 @@ Before starting Story 0.6, verify:
 - [ ] Run tests: `npm test` - should pass
 
 #### Task 6: Configure Test Coverage (1 hour)
+
 - [ ] Install coverage tool: `npm install -D @vitest/coverage-v8`
 - [ ] Update `vitest.config.ts` with coverage config:
   ```typescript
@@ -397,6 +437,7 @@ Before starting Story 0.6, verify:
   ```
 
 #### Task 7: Create Test Documentation (1 hour)
+
 - [ ] Update README.md with testing section:
   - [ ] How to run tests
   - [ ] How to write tests
@@ -410,6 +451,7 @@ Before starting Story 0.6, verify:
   - [ ] Best practices
 
 ### Definition of Done
+
 - [ ] All tasks completed
 - [ ] Code reviewed by Team Lead
 - [ ] Sample tests written and passing
@@ -418,10 +460,12 @@ Before starting Story 0.6, verify:
 - [ ] Pre-push hook runs tests (from Story 0.5)
 
 ### Blockers
+
 - Must wait for Story 0.1 to be complete
 - Pre-push hook from Story 0.5 will use these tests
 
 ### Notes
+
 - Can start this as soon as Story 0.1 is complete
 - Use Vitest for faster test execution
 - Focus on setting up the framework - detailed tests come in later sprints
@@ -435,6 +479,7 @@ Before starting Story 0.6, verify:
 **Dependencies**: Story 0.1, Story 0.2 (must be complete)
 
 ### Acceptance Criteria
+
 - [ ] Vercel project created and linked to repository
 - [ ] `vercel.json` configuration file created
 - [ ] Environment variables configured in Vercel dashboard
@@ -446,6 +491,7 @@ Before starting Story 0.6, verify:
 ### Detailed Tasks
 
 #### Task 1: Create Vercel Project (1 hour)
+
 - [ ] Sign in to Vercel (or use team account)
 - [ ] Create new project from GitHub repository
 - [ ] Link repository to Vercel project
@@ -456,6 +502,7 @@ Before starting Story 0.6, verify:
   - [ ] Output directory: `.next`
 
 #### Task 2: Configure vercel.json (1 hour)
+
 - [ ] Create `vercel.json`:
   ```json
   {
@@ -475,6 +522,7 @@ Before starting Story 0.6, verify:
 - [ ] Verify build works: `vercel build`
 
 #### Task 3: Configure Environment Variables (1 hour)
+
 - [ ] Get Supabase credentials from Backend Dev (Story 0.2)
 - [ ] Add environment variables in Vercel dashboard:
   - [ ] `NEXT_PUBLIC_SUPABASE_URL`
@@ -484,7 +532,9 @@ Before starting Story 0.6, verify:
 - [ ] Verify variables are set correctly
 
 #### Task 4: Set Up GitHub Actions (2 hours)
+
 - [ ] Create `.github/workflows/deploy.yml`:
+
   ```yaml
   name: Deploy
   on:
@@ -504,6 +554,7 @@ Before starting Story 0.6, verify:
             vercel-org-id: ${{ secrets.ORG_ID }}
             vercel-project-id: ${{ secrets.PROJECT_ID }}
   ```
+
 - [ ] Add Vercel secrets to GitHub:
   - [ ] `VERCEL_TOKEN`
   - [ ] `ORG_ID`
@@ -512,6 +563,7 @@ Before starting Story 0.6, verify:
 - [ ] Test workflow: Merge to main and verify production deployment
 
 #### Task 5: Configure Deployment Settings (1 hour)
+
 - [ ] Set up automatic deployments:
   - [ ] Production: Deploy on push to `main`
   - [ ] Preview: Deploy on PR creation
@@ -520,6 +572,7 @@ Before starting Story 0.6, verify:
 - [ ] Configure custom domain (if needed)
 
 #### Task 6: Test Deployment (1 hour)
+
 - [ ] Make a test commit and push to `main`
 - [ ] Verify deployment triggers
 - [ ] Verify build succeeds
@@ -528,6 +581,7 @@ Before starting Story 0.6, verify:
 - [ ] Verify environment variables are available
 
 #### Task 7: Create Deployment Documentation (1 hour)
+
 - [ ] Update README.md with deployment section:
   - [ ] How to deploy manually
   - [ ] How preview deployments work
@@ -541,6 +595,7 @@ Before starting Story 0.6, verify:
   - [ ] Rollback procedures
 
 ### Definition of Done
+
 - [ ] All tasks completed
 - [ ] Code reviewed by Team Lead
 - [ ] Vercel project created and linked
@@ -551,10 +606,12 @@ Before starting Story 0.6, verify:
 - [ ] Application accessible at Vercel URL
 
 ### Blockers
+
 - Must wait for Story 0.1 to be complete
 - Must wait for Story 0.2 to get Supabase credentials
 
 ### Notes
+
 - This is the last story to complete
 - Coordinate with dev_backend to get Supabase credentials
 - Test thoroughly before marking as done
@@ -565,10 +622,12 @@ Before starting Story 0.6, verify:
 ## Weekly Timeline
 
 ### Week 1 (Jan 15-19)
+
 - **Day 1-2**: Wait for Story 0.1 to complete
 - **Day 3-5**: Complete Story 0.5 (Dev Tools & Git Hooks), Start Story 0.8 (Testing Framework)
 
 ### Week 2 (Jan 22-26)
+
 - **Day 1**: Complete Story 0.8 (Testing Framework)
 - **Day 2-5**: Complete Story 0.6 (Vercel Deployment) - wait for Story 0.2 for Supabase credentials
 
@@ -608,4 +667,3 @@ Before starting Story 0.6, verify:
 **Document Version**: 1.0  
 **Last Updated**: 2024-01-15  
 **Status**: Ready for Sprint Execution
-

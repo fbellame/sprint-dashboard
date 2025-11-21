@@ -3,6 +3,7 @@
 ## Sprint Planning Meeting Guide
 
 ### Pre-Planning Checklist
+
 - [ ] Product Owner has prioritized stories
 - [ ] Technical dependencies identified
 - [ ] Team capacity confirmed
@@ -23,11 +24,11 @@
 ### Team Capacity
 
 | Team Member | Available Days | Story Points Capacity | Notes |
-|-------------|----------------|---------------------|-------|
-| Developer 1 | [X] days | [X] points | |
-| Developer 2 | [X] days | [X] points | |
-| Developer 3 | [X] days | [X] points | |
-| **Total** | **[X] days** | **[X] points** | |
+| ----------- | -------------- | --------------------- | ----- |
+| Developer 1 | [X] days       | [X] points            |       |
+| Developer 2 | [X] days       | [X] points            |       |
+| Developer 3 | [X] days       | [X] points            |       |
+| **Total**   | **[X] days**   | **[X] points**        |       |
 
 **Average Velocity**: [X] story points per sprint  
 **Planned Capacity**: [X] story points (80% of total capacity)
@@ -36,11 +37,11 @@
 
 ### Sprint Backlog
 
-| Story ID | Story Title | Story Points | Assignee | Status | Notes |
-|----------|-------------|--------------|----------|--------|-------|
-| 0.1 | Initialize Next.js Project | 3 | | To Do | |
-| 0.2 | Set Up Supabase | 5 | | To Do | |
-| | | | | | |
+| Story ID | Story Title                | Story Points | Assignee | Status | Notes |
+| -------- | -------------------------- | ------------ | -------- | ------ | ----- |
+| 0.1      | Initialize Next.js Project | 3            |          | To Do  |       |
+| 0.2      | Set Up Supabase            | 5            |          | To Do  |       |
+|          |                            |              |          |        |       |
 
 **Total Story Points**: [X]  
 **Remaining Points**: [X]
@@ -50,6 +51,7 @@
 ### Story Breakdown
 
 #### Story [ID]: [Title]
+
 - **Story Points**: [X]
 - **Assignee**: [Name]
 - **Status**: [To Do / In Progress / Review / Done]
@@ -60,6 +62,7 @@
 - **Notes**: [Any additional notes]
 
 **Tasks**:
+
 - [ ] Task 1
 - [ ] Task 2
 - [ ] Task 3
@@ -71,10 +74,10 @@
 **Date**: [YYYY-MM-DD]
 
 | Team Member | Yesterday | Today | Blockers |
-|-------------|-----------|-------|----------|
-| Developer 1 | | | |
-| Developer 2 | | | |
-| Developer 3 | | | |
+| ----------- | --------- | ----- | -------- |
+| Developer 1 |           |       |          |
+| Developer 2 |           |       |          |
+| Developer 3 |           |       |          |
 
 ---
 
@@ -82,18 +85,18 @@
 
 **Sprint Burndown Chart**
 
-| Day | Planned Points | Completed Points | Remaining Points |
-|-----|----------------|------------------|------------------|
-| Day 1 | [X] | [X] | [X] |
-| Day 2 | [X] | [X] | [X] |
-| Day 3 | [X] | [X] | [X] |
-| Day 4 | [X] | [X] | [X] |
-| Day 5 | [X] | [X] | [X] |
-| Day 6 | [X] | [X] | [X] |
-| Day 7 | [X] | [X] | [X] |
-| Day 8 | [X] | [X] | [X] |
-| Day 9 | [X] | [X] | [X] |
-| Day 10 | [X] | [X] | [X] |
+| Day    | Planned Points | Completed Points | Remaining Points |
+| ------ | -------------- | ---------------- | ---------------- |
+| Day 1  | [X]            | [X]              | [X]              |
+| Day 2  | [X]            | [X]              | [X]              |
+| Day 3  | [X]            | [X]              | [X]              |
+| Day 4  | [X]            | [X]              | [X]              |
+| Day 5  | [X]            | [X]              | [X]              |
+| Day 6  | [X]            | [X]              | [X]              |
+| Day 7  | [X]            | [X]              | [X]              |
+| Day 8  | [X]            | [X]              | [X]              |
+| Day 9  | [X]            | [X]              | [X]              |
+| Day 10 | [X]            | [X]              | [X]              |
 
 ---
 
@@ -147,21 +150,25 @@ For each story to be considered "Done", it must meet ALL of the following:
 **Duration**: 1 hour
 
 #### What Went Well
+
 - [Item 1]
 - [Item 2]
 - [Item 3]
 
 #### What Could Be Improved
+
 - [Item 1]
 - [Item 2]
 - [Item 3]
 
 #### Action Items
+
 - [ ] Action 1 (Owner: [Name], Due: [Date])
 - [ ] Action 2 (Owner: [Name], Due: [Date])
 - [ ] Action 3 (Owner: [Name], Due: [Date])
 
 #### Metrics
+
 - **Velocity**: [X] story points
 - **Sprint Goal Achievement**: [X]%
 - **Stories Completed**: [X] / [X]
@@ -172,25 +179,25 @@ For each story to be considered "Done", it must meet ALL of the following:
 
 ### Risk Register
 
-| Risk ID | Risk Description | Probability | Impact | Mitigation | Owner | Status |
-|---------|------------------|-------------|--------|------------|-------|--------|
-| R1 | [Description] | High/Med/Low | High/Med/Low | [Strategy] | [Name] | Open/Mitigated/Closed |
+| Risk ID | Risk Description | Probability  | Impact       | Mitigation | Owner  | Status                |
+| ------- | ---------------- | ------------ | ------------ | ---------- | ------ | --------------------- |
+| R1      | [Description]    | High/Med/Low | High/Med/Low | [Strategy] | [Name] | Open/Mitigated/Closed |
 
 ---
 
 ### Dependencies & Blockers
 
-| Dependency ID | Description | Blocking Story | Owner | Status | Resolution Date |
-|---------------|-------------|----------------|-------|--------|-----------------|
-| D1 | [Description] | [Story ID] | [Name] | Open/Resolved | [Date] |
+| Dependency ID | Description   | Blocking Story | Owner  | Status        | Resolution Date |
+| ------------- | ------------- | -------------- | ------ | ------------- | --------------- |
+| D1            | [Description] | [Story ID]     | [Name] | Open/Resolved | [Date]          |
 
 ---
 
 ### Technical Decisions Log
 
-| Decision ID | Date | Decision | Rationale | Impacted Stories |
-|-------------|------|----------|-----------|------------------|
-| TD1 | [Date] | [Decision] | [Rationale] | [Story IDs] |
+| Decision ID | Date   | Decision   | Rationale   | Impacted Stories |
+| ----------- | ------ | ---------- | ----------- | ---------------- |
+| TD1         | [Date] | [Decision] | [Rationale] | [Story IDs]      |
 
 ---
 
@@ -206,26 +213,26 @@ For each story to be considered "Done", it must meet ALL of the following:
 
 ### Team Capacity
 
-| Team Member | Available Days | Story Points Capacity |
-|-------------|----------------|---------------------|
-| Full Stack Dev 1 | 10 days | 20 points |
-| Full Stack Dev 2 | 10 days | 20 points |
-| **Total** | **20 days** | **40 points** |
+| Team Member      | Available Days | Story Points Capacity |
+| ---------------- | -------------- | --------------------- |
+| Full Stack Dev 1 | 10 days        | 20 points             |
+| Full Stack Dev 2 | 10 days        | 20 points             |
+| **Total**        | **20 days**    | **40 points**         |
 
 **Planned Capacity**: 39 story points (matches sprint backlog)
 
 ### Sprint Backlog
 
-| Story ID | Story Title | Story Points | Priority | Dependencies |
-|----------|-------------|--------------|----------|--------------|
-| 0.1 | Initialize Next.js Project | 3 | P0 | None |
-| 0.2 | Set Up Supabase | 5 | P0 | 0.1 |
-| 0.3 | Create Database Schema | 8 | P0 | 0.2 |
-| 0.4 | State Management Setup | 5 | P1 | 0.1 |
-| 0.5 | Dev Tools & Git Hooks | 3 | P1 | 0.1 |
-| 0.6 | Vercel Deployment | 5 | P1 | 0.1, 0.2 |
-| 0.7 | Design System | 5 | P1 | 0.1 |
-| 0.8 | Testing Framework | 5 | P2 | 0.1 |
+| Story ID | Story Title                | Story Points | Priority | Dependencies |
+| -------- | -------------------------- | ------------ | -------- | ------------ |
+| 0.1      | Initialize Next.js Project | 3            | P0       | None         |
+| 0.2      | Set Up Supabase            | 5            | P0       | 0.1          |
+| 0.3      | Create Database Schema     | 8            | P0       | 0.2          |
+| 0.4      | State Management Setup     | 5            | P1       | 0.1          |
+| 0.5      | Dev Tools & Git Hooks      | 3            | P1       | 0.1          |
+| 0.6      | Vercel Deployment          | 5            | P1       | 0.1, 0.2     |
+| 0.7      | Design System              | 5            | P1       | 0.1          |
+| 0.8      | Testing Framework          | 5            | P2       | 0.1          |
 
 **Total Story Points**: 39
 
@@ -237,9 +244,11 @@ For each story to be considered "Done", it must meet ALL of the following:
 ### Parallel Work Streams
 
 **Stream 1 (Infrastructure)**:
+
 - Story 0.1 → Story 0.2 → Story 0.3 → Story 0.6
 
 **Stream 2 (Frontend Foundation)**:
+
 - Story 0.1 → Story 0.4 → Story 0.5 → Story 0.7 → Story 0.8
 
 ---
@@ -247,6 +256,7 @@ For each story to be considered "Done", it must meet ALL of the following:
 ## Story Point Estimation Guide
 
 ### Fibonacci Scale
+
 - **1 point**: Trivial task (< 2 hours)
 - **2 points**: Simple task (2-4 hours)
 - **3 points**: Small task (4-8 hours)
@@ -256,6 +266,7 @@ For each story to be considered "Done", it must meet ALL of the following:
 - **21 points**: Epic (5+ days) - must be broken down
 
 ### Estimation Factors
+
 - **Complexity**: How complex is the implementation?
 - **Uncertainty**: How well do we understand the requirements?
 - **Risk**: What are the technical risks?
@@ -268,13 +279,13 @@ For each story to be considered "Done", it must meet ALL of the following:
 
 ### Sprint Velocity History
 
-| Sprint | Planned Points | Completed Points | Velocity | Notes |
-|--------|----------------|------------------|----------|-------|
-| Sprint 0 | 39 | [X] | [X] | Infrastructure |
-| Sprint 1 | 57 | [X] | [X] | CSV Upload |
-| Sprint 2 | 53 | [X] | [X] | Dashboard Components |
-| Sprint 3 | 49 | [X] | [X] | Metrics |
-| Sprint 4 | 56 | [X] | [X] | Export & Polish |
+| Sprint   | Planned Points | Completed Points | Velocity | Notes                |
+| -------- | -------------- | ---------------- | -------- | -------------------- |
+| Sprint 0 | 39             | [X]              | [X]      | Infrastructure       |
+| Sprint 1 | 57             | [X]              | [X]      | CSV Upload           |
+| Sprint 2 | 53             | [X]              | [X]      | Dashboard Components |
+| Sprint 3 | 49             | [X]              | [X]      | Metrics              |
+| Sprint 4 | 56             | [X]              | [X]      | Export & Polish      |
 
 **Average Velocity**: [X] story points per sprint
 
@@ -297,4 +308,3 @@ For each story to be considered "Done", it must meet ALL of the following:
 
 **Template Version**: 1.0  
 **Last Updated**: 2024-01-15
-

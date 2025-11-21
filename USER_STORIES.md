@@ -23,11 +23,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 0.1: Initialize Next.js Project with TypeScript
+
 **As a** developer  
 **I want** a Next.js project initialized with TypeScript and Tailwind CSS  
 **So that** I have a solid foundation for building the Sprint Dashboard application
 
 **Acceptance Criteria**:
+
 - [ ] Next.js 14.x project created with App Router
 - [ ] TypeScript 5.x configured with strict mode
 - [ ] Tailwind CSS 3.x installed and configured
@@ -41,6 +43,7 @@ This document contains all user stories for the Sprint Dashboard application, or
 **Technical Notes**: Use `npx create-next-app@latest` with TypeScript and Tailwind flags
 
 **Implementation Details**:
+
 - Command: `npx create-next-app@latest sprint-dashboard --typescript --tailwind --app --no-src-dir`
 - Project structure:
   ```
@@ -58,6 +61,7 @@ This document contains all user stories for the Sprint Dashboard application, or
 - Prettier: Configure with 2-space indentation, single quotes, trailing commas
 
 **Testing**:
+
 - Verify dev server starts: `npm run dev`
 - Verify build succeeds: `npm run build`
 - Verify linting passes: `npm run lint`
@@ -65,11 +69,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 0.2: Set Up Supabase Project and Database Connection
+
 **As a** developer  
 **I want** a Supabase project created and connected to the Next.js application  
 **So that** I can store and retrieve sprint data
 
 **Acceptance Criteria**:
+
 - [ ] Supabase project created
 - [ ] Environment variables configured (`.env.local` and Vercel)
 - [ ] Supabase client library installed (`@supabase/supabase-js`)
@@ -85,11 +91,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 0.3: Create Database Schema and Migrations
+
 **As a** developer  
 **I want** the database schema created with all required tables and views  
 **So that** sprint data can be stored and queried efficiently
 
 **Acceptance Criteria**:
+
 - [ ] `sprints` table created with all required fields
 - [ ] `work_items` table created with all required fields and foreign keys
 - [ ] `sprint_configurations` table created
@@ -107,6 +115,7 @@ This document contains all user stories for the Sprint Dashboard application, or
 **Technical Notes**: Use Supabase CLI for migrations or SQL editor
 
 **Implementation Details**:
+
 - Create migration file: `supabase/migrations/YYYYMMDDHHMMSS_initial_schema.sql`
 - Tables to create:
   - `sprints`: id (UUID), sprint_number (INT), sprint_name (VARCHAR), start_date (DATE), end_date (DATE), team_name (VARCHAR), timestamps
@@ -120,6 +129,7 @@ This document contains all user stories for the Sprint Dashboard application, or
 - Test migrations: Rollback and reapply to verify
 
 **Edge Cases**:
+
 - Handle NULL story_points in aggregations (use COALESCE or FILTER)
 - Handle empty tags arrays
 - Handle missing feature names in top_features view
@@ -128,11 +138,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 0.4: Set Up State Management and Data Fetching
+
 **As a** developer  
 **I want** state management and data fetching libraries configured  
 **So that** I can efficiently manage application state and API calls
 
 **Acceptance Criteria**:
+
 - [ ] Zustand installed and configured for client state
 - [ ] React Query (`@tanstack/react-query`) installed and configured
 - [ ] React Query provider added to root layout
@@ -148,11 +160,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 0.5: Configure Development Tools and Git Hooks
+
 **As a** developer  
 **I want** development tools and Git hooks configured  
 **So that** code quality is maintained and development workflow is smooth
 
 **Acceptance Criteria**:
+
 - [ ] ESLint configured with Next.js rules
 - [ ] Prettier configured with consistent formatting rules
 - [ ] Husky installed and configured
@@ -169,11 +183,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 0.6: Set Up Vercel Deployment and CI/CD
+
 **As a** developer  
 **I want** Vercel deployment configured with CI/CD pipeline  
 **So that** the application can be deployed automatically
 
 **Acceptance Criteria**:
+
 - [ ] Vercel project created and linked to repository
 - [ ] `vercel.json` configuration file created
 - [ ] Environment variables configured in Vercel dashboard
@@ -189,11 +205,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 0.7: Create Design System and Base Components
+
 **As a** developer  
 **I want** a design system with base components and color palette  
 **So that** UI components can be built consistently
 
 **Acceptance Criteria**:
+
 - [ ] Tailwind color palette configured matching PRD:
   - [ ] Primary green (#22c55e)
   - [ ] Status colors (green, orange #f97316, red #ef4444)
@@ -202,7 +220,7 @@ This document contains all user stories for the Sprint Dashboard application, or
 - [ ] Base button component created
 - [ ] Base input component created
 - [ ] Base table component created
-- [ ] Status indicator component created (✓, ✗, |, *)
+- [ ] Status indicator component created (✓, ✗, |, \*)
 - [ ] Design tokens documented
 
 **Story Points**: 5  
@@ -212,11 +230,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 0.8: Set Up Testing Framework
+
 **As a** developer  
 **I want** a testing framework configured  
 **So that** I can write and run tests for the application
 
 **Acceptance Criteria**:
+
 - [ ] Vitest or Jest installed and configured
 - [ ] React Testing Library installed
 - [ ] Test utilities created (`lib/test-utils.tsx`)
@@ -245,11 +265,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 1.1: Create Sprint Management API Endpoints
+
 **As a** developer  
 **I want** API endpoints for sprint CRUD operations  
 **So that** sprints can be created, read, updated, and deleted
 
 **Acceptance Criteria**:
+
 - [ ] `POST /api/sprints` - Create new sprint
 - [ ] `GET /api/sprints` - List all sprints
 - [ ] `GET /api/sprints/:id` - Get sprint details
@@ -267,11 +289,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 1.2: Build Sprint Creation Form
+
 **As a** product manager  
 **I want** to create a new sprint with basic information  
 **So that** I can start tracking sprint data
 
 **Acceptance Criteria**:
+
 - [ ] Form page at `/sprints/new`
 - [ ] Form fields:
   - [ ] Sprint number (required, integer)
@@ -291,11 +315,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 1.3: Build Sprint List Page
+
 **As a** product manager  
 **I want** to see a list of all sprints  
 **So that** I can navigate to existing sprints
 
 **Acceptance Criteria**:
+
 - [ ] Home page (`/`) displays list of sprints
 - [ ] Sprint cards show:
   - [ ] Sprint number and name
@@ -315,11 +341,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 1.4: Implement CSV Upload Component
+
 **As a** product manager  
 **I want** to upload CSV files from Azure DevOps  
 **So that** I can import sprint work items
 
 **Acceptance Criteria**:
+
 - [ ] CSV uploader component with drag-and-drop
 - [ ] File type validation (CSV only)
 - [ ] File size validation (max 10MB)
@@ -336,11 +364,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 1.5: Create CSV Upload API Endpoint
+
 **As a** developer  
 **I want** an API endpoint to handle CSV file uploads  
 **So that** CSV files can be processed and stored
 
 **Acceptance Criteria**:
+
 - [ ] `POST /api/sprints/:id/upload` endpoint
 - [ ] Accepts multipart/form-data with CSV file
 - [ ] Validates file type and size
@@ -356,11 +386,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 1.6: Implement CSV Parsing and Validation
+
 **As a** developer  
 **I want** CSV files to be parsed and validated  
 **So that** work item data can be extracted correctly
 
 **Acceptance Criteria**:
+
 - [ ] PapaParse library integrated
 - [ ] CSV parsing handles:
   - [ ] Headers detection
@@ -381,18 +413,22 @@ This document contains all user stories for the Sprint Dashboard application, or
 **Technical Notes**: Use PapaParse with proper error handling, validate with Zod
 
 **Implementation Details**:
+
 - Install: `npm install papaparse @types/papaparse`
 - Create Zod schema for CSV row validation:
   ```typescript
   const CSVRowSchema = z.object({
     'Work Item ID': z.string().min(1),
-    'Title': z.string().min(1),
+    Title: z.string().min(1),
     'Work Item Type': z.string().min(1),
-    'State': z.string().min(1),
-    'Story Points': z.string().optional().transform(val => val ? parseInt(val) : null),
+    State: z.string().min(1),
+    'Story Points': z
+      .string()
+      .optional()
+      .transform((val) => (val ? parseInt(val) : null)),
     'Assigned To': z.string().optional(),
     'Area Path': z.string().optional(),
-    'Tags': z.string().optional(),
+    Tags: z.string().optional(),
     'Created Date': z.string().optional(),
     'Changed Date': z.string().optional(),
     'Closed Date': z.string().optional(),
@@ -411,6 +447,7 @@ This document contains all user stories for the Sprint Dashboard application, or
 - Performance: Stream parsing for large files (>5MB), chunk processing
 
 **Edge Cases**:
+
 - CSV with BOM (Byte Order Mark)
 - CSV with different delimiters (comma, semicolon, tab)
 - CSV with quoted fields containing commas
@@ -423,11 +460,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 1.7: Implement CSV Data Transformation
+
 **As a** developer  
 **I want** parsed CSV data to be transformed into work items  
 **So that** data matches the database schema
 
 **Acceptance Criteria**:
+
 - [ ] Transform CSV rows to work item objects
 - [ ] Extract feature name from Area Path
 - [ ] Parse tags from comma-separated string to array
@@ -444,32 +483,38 @@ This document contains all user stories for the Sprint Dashboard application, or
 **Technical Notes**: Create transformation utility functions, use Zod for validation
 
 **Implementation Details**:
+
 - Create `lib/transformers/csvToWorkItem.ts`:
+
   ```typescript
   function extractFeatureName(areaPath: string | null): string | null {
     if (!areaPath) return null;
     const parts = areaPath.split('\\');
     return parts.length >= 2 ? parts[1] : null;
   }
-  
+
   function parseTags(tags: string | null): string[] {
     if (!tags) return [];
-    return tags.split(',').map(t => t.trim()).filter(t => t.length > 0);
+    return tags
+      .split(',')
+      .map((t) => t.trim())
+      .filter((t) => t.length > 0);
   }
-  
+
   function parseDate(dateString: string | null): Date | null {
     if (!dateString) return null;
     const date = new Date(dateString);
     return isNaN(date.getTime()) ? null : date;
   }
-  
+
   function determineStatusIndicator(state: string, tags: string[]): string {
-    if (tags.some(t => t.toLowerCase().includes('team focus'))) return '*';
+    if (tags.some((t) => t.toLowerCase().includes('team focus'))) return '*';
     if (['Closed', 'Done', 'Completed'].includes(state)) return '✓';
     if (['Active', 'Resolved', 'In Progress'].includes(state)) return '|';
     return '✗';
   }
   ```
+
 - Date parsing: Handle multiple formats (ISO 8601, US format, etc.)
 - Tag matching: Case-insensitive, partial matches
 - Status logic: Priority order (Team Focus > Done > Ongoing > Not Done)
@@ -477,6 +522,7 @@ This document contains all user stories for the Sprint Dashboard application, or
 - Store raw data: `raw_data: JSONB` for debugging and future flexibility
 
 **Edge Cases**:
+
 - Area Path with single backslash or forward slashes
 - Tags with extra spaces or special characters
 - Invalid date formats (log warning, set to null)
@@ -487,11 +533,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 1.8: Implement Work Items Storage
+
 **As a** developer  
 **I want** transformed work items to be stored in the database  
 **So that** they can be retrieved for dashboard display
 
 **Acceptance Criteria**:
+
 - [ ] `POST /api/sprints/:id/process` endpoint
 - [ ] Bulk insert/update work items
 - [ ] Handle duplicate work items (update existing)
@@ -508,11 +556,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 1.9: Build CSV Upload Page
+
 **As a** product manager  
 **I want** a dedicated page to upload CSV files for a sprint  
 **So that** I can import work items easily
 
 **Acceptance Criteria**:
+
 - [ ] Upload page at `/sprints/[id]/upload`
 - [ ] CSV uploader component integrated
 - [ ] Display sprint information (sprint number, name)
@@ -542,11 +592,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 2.1: Build Sprint Header Component
+
 **As a** product manager  
 **I want** to see the sprint title and visual header  
 **So that** I can identify which sprint I'm viewing
 
 **Acceptance Criteria**:
+
 - [ ] Sprint header component displays:
   - [ ] Sprint name/number (e.g., "Sprint 31 Overview")
   - [ ] Green vertical accent strip on left
@@ -564,13 +616,15 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 2.2: Build Status Indicator Component
+
 **As a** developer  
 **I want** a reusable status indicator component  
 **So that** status symbols are consistent across the dashboard
 
 **Acceptance Criteria**:
+
 - [ ] Status indicator component supports:
-  - [ ] Green asterisk (*) - Team Focus
+  - [ ] Green asterisk (\*) - Team Focus
   - [ ] Green checkmark (✓) - Done
   - [ ] Orange vertical bar (|) - Ongoing
   - [ ] Red X (✗) - Not Done
@@ -586,15 +640,17 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 2.3: Build PI Commitments Component
+
 **As a** product manager  
 **I want** to see PI commitments with their status  
 **So that** I can track progress on program-level objectives
 
 **Acceptance Criteria**:
+
 - [ ] PI Commitments component displays list of objectives
 - [ ] Each objective shows:
   - [ ] Title/description
-  - [ ] Status indicator (✓, ✗, |, *)
+  - [ ] Status indicator (✓, ✗, |, \*)
 - [ ] Displays up to 5-10 commitments
 - [ ] Filters work items tagged with "PI Commitment"
 - [ ] Empty state when no commitments exist
@@ -608,15 +664,17 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 2.4: Build Sprint Goals Component
+
 **As a** product manager  
 **I want** to see sprint goals with their status  
 **So that** I can track progress on sprint objectives
 
 **Acceptance Criteria**:
+
 - [ ] Sprint Goals component displays list of goals
 - [ ] Each goal shows:
   - [ ] Goal description
-  - [ ] Status indicator (✓, ✗, |, *)
+  - [ ] Status indicator (✓, ✗, |, \*)
 - [ ] Displays 3-7 sprint goals
 - [ ] Supports work items tagged with "Sprint Goal"
 - [ ] Supports manual entry in sprint configuration
@@ -631,11 +689,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 2.5: Build Sprint Highlights Component
+
 **As a** product manager  
 **I want** to see sprint highlights  
 **So that** I can communicate key achievements to stakeholders
 
 **Acceptance Criteria**:
+
 - [ ] Sprint Highlights component displays bullet-point list
 - [ ] Each highlight shows:
   - [ ] Achievement description
@@ -654,11 +714,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 2.6: Build Team Backlog Table Component
+
 **As a** scrum master  
 **I want** to see team backlog metrics  
 **So that** I can track sprint scope changes
 
 **Acceptance Criteria**:
+
 - [ ] Team Backlog table displays:
   - [ ] Stories/Bugs Planned: Story Points and Story Count
   - [ ] Stories Removed mid-sprint: Story Points and Story Count
@@ -677,11 +739,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 2.7: Build Stories Table Component
+
 **As a** scrum master  
 **I want** to see stories broken down by state  
 **So that** I can track sprint progress
 
 **Acceptance Criteria**:
+
 - [ ] Stories table displays two sections:
   - [ ] User Stories:
     - [ ] New: Count
@@ -705,11 +769,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 2.8: Build Top Features Table Component
+
 **As a** team lead  
 **I want** to see top features impacted by the sprint  
 **So that** I can understand feature delivery progress
 
 **Acceptance Criteria**:
+
 - [ ] Top Features table displays:
   - [ ] Feature name
   - [ ] Committed Story Points in S[#]
@@ -728,11 +794,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 2.9: Build Team Velocity Display Component
+
 **As a** scrum master  
 **I want** to see team velocity  
 **So that** I can track team capacity
 
 **Acceptance Criteria**:
+
 - [ ] Velocity display shows "Team Velocity: [number]"
 - [ ] Prominent display
 - [ ] Location: Below Team Backlog table
@@ -746,11 +814,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 2.10: Build Status Legend Component
+
 **As a** product manager  
 **I want** to see a legend explaining status symbols  
 **So that** I can understand what each symbol means
 
 **Acceptance Criteria**:
+
 - [ ] Legend component displays at bottom of page
 - [ ] Explains all status indicators:
   - [ ] Green asterisk: Team Focus
@@ -768,11 +838,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 2.11: Build Dashboard Layout and Integration
+
 **As a** product manager  
 **I want** all dashboard components integrated into a single page  
 **So that** I can see a complete sprint overview
 
 **Acceptance Criteria**:
+
 - [ ] Dashboard page at `/sprints/[id]`
 - [ ] All components integrated:
   - [ ] Sprint Header
@@ -812,11 +884,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 3.1: Create Dashboard Metrics API Endpoint
+
 **As a** developer  
 **I want** a single API endpoint that returns all dashboard metrics  
 **So that** the dashboard can load all data efficiently
 
 **Acceptance Criteria**:
+
 - [ ] `GET /api/sprints/:id/dashboard` endpoint
 - [ ] Returns aggregated dashboard data:
   - [ ] Sprint information
@@ -839,11 +913,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 3.2: Implement Team Backlog Calculations
+
 **As a** developer  
 **I want** accurate team backlog metrics calculated  
 **So that** sprint scope changes are tracked correctly
 
 **Acceptance Criteria**:
+
 - [ ] Planned items: Created before sprint start date
 - [ ] Removed items: State = "Removed" or "Deleted"
 - [ ] Added items: Created after sprint start date
@@ -859,10 +935,11 @@ This document contains all user stories for the Sprint Dashboard application, or
 **Technical Notes**: Use SQL FILTER clauses, test edge cases
 
 **Implementation Details**:
+
 - SQL View Implementation:
   ```sql
   CREATE VIEW team_backlog_metrics AS
-  SELECT 
+  SELECT
     sprint_id,
     COUNT(*) FILTER (WHERE created_date < (SELECT start_date FROM sprints WHERE id = work_items.sprint_id)) AS planned_count,
     COALESCE(SUM(story_points) FILTER (WHERE created_date < (SELECT start_date FROM sprints WHERE id = work_items.sprint_id)), 0) AS planned_story_points,
@@ -883,6 +960,7 @@ This document contains all user stories for the Sprint Dashboard application, or
 - Edge case: Item removed but was planned → counts in both planned and removed
 
 **Testing Scenarios**:
+
 - Sprint with no work items
 - Sprint with only planned items
 - Sprint with items added mid-sprint
@@ -894,11 +972,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 3.3: Implement Stories by State Calculations
+
 **As a** developer  
 **I want** accurate story counts by state calculated  
 **So that** sprint progress is tracked correctly
 
 **Acceptance Criteria**:
+
 - [ ] Counts stories by work item type (User Story, Support Ticket)
 - [ ] Counts by state (New, Active, Resolved, Closed)
 - [ ] Closed in sprint: Items closed during sprint period
@@ -914,11 +994,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 3.4: Implement Top Features Aggregation
+
 **As a** developer  
 **I want** top features calculated by story points  
 **So that** feature impact is displayed correctly
 
 **Acceptance Criteria**:
+
 - [ ] Groups work items by feature name
 - [ ] Aggregates story points per feature
 - [ ] Aggregates story count per feature
@@ -935,11 +1017,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 3.5: Implement Status Indicator Logic
+
 **As a** developer  
 **I want** status indicators determined automatically  
 **So that** PI commitments and sprint goals show correct status
 
 **Acceptance Criteria**:
+
 - [ ] Status indicator logic:
   - [ ] `*` (Team Focus): Tag contains "Team Focus"
   - [ ] `✓` (Done): State = "Closed" or "Done"
@@ -957,11 +1041,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 3.6: Implement Feature Name Extraction
+
 **As a** developer  
 **I want** feature names extracted from Area Path  
 **So that** features can be grouped correctly
 
 **Acceptance Criteria**:
+
 - [ ] Parse Area Path format: "Project\\Feature\\SubFeature"
 - [ ] Extract feature name (second level)
 - [ ] Handle different path formats
@@ -976,11 +1062,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 3.7: Create Individual Metrics API Endpoints
+
 **As a** developer  
 **I want** separate API endpoints for each metric type  
 **So that** components can fetch specific data if needed
 
 **Acceptance Criteria**:
+
 - [ ] `GET /api/sprints/:id/metrics` - Team backlog metrics
 - [ ] `GET /api/sprints/:id/pi-commitments` - PI commitments list
 - [ ] `GET /api/sprints/:id/sprint-goals` - Sprint goals list
@@ -997,11 +1085,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 3.8: Implement Sprint Configuration Management
+
 **As a** product manager  
 **I want** to configure sprint settings (velocity, goals, highlights)  
 **So that** I can customize sprint data
 
 **Acceptance Criteria**:
+
 - [ ] `GET /api/sprints/:id/config` - Get sprint configuration
 - [ ] `PUT /api/sprints/:id/config` - Update sprint configuration
 - [ ] Configuration includes:
@@ -1020,11 +1110,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 3.9: Implement Data Validation and Error Handling
+
 **As a** developer  
 **I want** comprehensive data validation and error handling  
 **So that** the application handles edge cases gracefully
 
 **Acceptance Criteria**:
+
 - [ ] Validate all API inputs with Zod schemas
 - [ ] Handle missing/null values in calculations
 - [ ] Handle empty datasets gracefully
@@ -1054,11 +1146,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 4.1: Implement PDF Export Functionality
+
 **As a** product manager  
 **I want** to export the dashboard as a PDF  
 **So that** I can share sprint overviews with stakeholders
 
 **Acceptance Criteria**:
+
 - [ ] Export button on dashboard page
 - [ ] `GET /api/sprints/:id/export/pdf` endpoint
 - [ ] PDF generation using jsPDF or similar
@@ -1079,6 +1173,7 @@ This document contains all user stories for the Sprint Dashboard application, or
 **Technical Notes**: Use jsPDF or react-pdf, consider server-side generation
 
 **Implementation Details**:
+
 - Option 1: Client-side with jsPDF
   - Install: `npm install jspdf jspdf-autotable`
   - Generate PDF in browser, trigger download
@@ -1092,7 +1187,10 @@ This document contains all user stories for the Sprint Dashboard application, or
 - Implementation approach:
   ```typescript
   // API Route: app/api/sprints/[id]/export/pdf/route.ts
-  export async function GET(request: Request, { params }: { params: { id: string } }) {
+  export async function GET(
+    request: Request,
+    { params }: { params: { id: string } }
+  ) {
     const dashboardData = await getDashboardData(params.id);
     const html = await renderDashboardToHTML(dashboardData);
     const pdf = await generatePDF(html);
@@ -1114,6 +1212,7 @@ This document contains all user stories for the Sprint Dashboard application, or
 - File naming: `Sprint-{sprintNumber}-Overview-{YYYY-MM-DD}.pdf`
 
 **Edge Cases**:
+
 - Very long lists (PI commitments, highlights) - paginate
 - Wide tables - scale or split across pages
 - Missing data - show "N/A" or empty state
@@ -1122,11 +1221,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 4.2: Implement HTML Export Functionality
+
 **As a** product manager  
 **I want** to export the dashboard as HTML  
 **So that** I can share sprint overviews via email or web
 
 **Acceptance Criteria**:
+
 - [ ] Export button on dashboard page
 - [ ] `GET /api/sprints/:id/export/html` endpoint
 - [ ] HTML export includes all dashboard sections
@@ -1143,11 +1244,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 4.3: Add Loading States and Error Boundaries
+
 **As a** product manager  
 **I want** clear loading and error states  
 **So that** I understand what's happening in the application
 
 **Acceptance Criteria**:
+
 - [ ] Loading skeletons for all data sections
 - [ ] Error boundaries for component errors
 - [ ] Error messages are user-friendly
@@ -1163,11 +1266,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 4.4: Implement Responsive Design
+
 **As a** product manager  
 **I want** the dashboard to work on tablets and desktops  
 **So that** I can view it on different devices
 
 **Acceptance Criteria**:
+
 - [ ] Dashboard responsive on:
   - [ ] Desktop (1920px+)
   - [ ] Laptop (1024px+)
@@ -1185,11 +1290,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 4.5: Add Data Refresh and Update Functionality
+
 **As a** product manager  
 **I want** to refresh sprint data with updated CSV  
 **So that** I can update the dashboard mid-sprint
 
 **Acceptance Criteria**:
+
 - [ ] Re-upload CSV replaces existing work items
 - [ ] Dashboard updates automatically after upload
 - [ ] Metrics recalculate correctly
@@ -1204,11 +1311,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 4.6: Implement Performance Optimizations
+
 **As a** developer  
 **I want** the application to be performant  
 **So that** users have a fast experience
 
 **Acceptance Criteria**:
+
 - [ ] Dashboard loads in < 2 seconds
 - [ ] CSV processing completes in < 10 seconds for 10MB file
 - [ ] API response times < 500ms (p95)
@@ -1225,11 +1334,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 4.7: Add Comprehensive Error Handling
+
 **As a** product manager  
 **I want** clear error messages when something goes wrong  
 **So that** I can understand and fix issues
 
 **Acceptance Criteria**:
+
 - [ ] CSV parsing errors displayed clearly
 - [ ] Validation errors show specific field issues
 - [ ] Database errors handled gracefully
@@ -1246,11 +1357,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 4.8: Write Integration Tests
+
 **As a** developer  
 **I want** integration tests for critical workflows  
 **So that** I can ensure the application works end-to-end
 
 **Acceptance Criteria**:
+
 - [ ] Test: Create sprint → Upload CSV → View dashboard
 - [ ] Test: CSV parsing and data transformation
 - [ ] Test: Dashboard metrics calculations
@@ -1267,11 +1380,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 4.9: Documentation and User Guide
+
 **As a** product manager  
 **I want** documentation on how to use the application  
 **So that** I can use it effectively
 
 **Acceptance Criteria**:
+
 - [ ] README with setup instructions
 - [ ] User guide for:
   - [ ] Creating sprints
@@ -1290,11 +1405,13 @@ This document contains all user stories for the Sprint Dashboard application, or
 ---
 
 ### Story 4.10: Final UI/UX Polish
+
 **As a** product manager  
 **I want** a polished, professional-looking dashboard  
 **So that** it's suitable for stakeholder presentations
 
 **Acceptance Criteria**:
+
 - [ ] Visual design matches PRD reference image
 - [ ] Consistent spacing and alignment
 - [ ] Professional color scheme
@@ -1318,24 +1435,24 @@ This document contains all user stories for the Sprint Dashboard application, or
 
 ### Total Story Points by Sprint
 
-| Sprint | Story Points | Focus | Duration | Team Size |
-|--------|--------------|-------|----------|-----------|
-| Sprint 0 | 39 | Infrastructure | 2 weeks | 2 devs |
-| Sprint 1 | 57 | Sprint Management & CSV Upload | 2 weeks | 2 devs |
-| Sprint 2 | 53 | Dashboard Components | 2 weeks | 2 devs |
-| Sprint 3 | 49 | Metrics & Calculations | 2 weeks | 2 devs |
-| Sprint 4 | 56 | Export & Polish | 2 weeks | 2 devs |
-| **Total** | **254** | **MVP Complete** | **10 weeks** | **2 devs** |
+| Sprint    | Story Points | Focus                          | Duration     | Team Size  |
+| --------- | ------------ | ------------------------------ | ------------ | ---------- |
+| Sprint 0  | 39           | Infrastructure                 | 2 weeks      | 2 devs     |
+| Sprint 1  | 57           | Sprint Management & CSV Upload | 2 weeks      | 2 devs     |
+| Sprint 2  | 53           | Dashboard Components           | 2 weeks      | 2 devs     |
+| Sprint 3  | 49           | Metrics & Calculations         | 2 weeks      | 2 devs     |
+| Sprint 4  | 56           | Export & Polish                | 2 weeks      | 2 devs     |
+| **Total** | **254**      | **MVP Complete**               | **10 weeks** | **2 devs** |
 
 ### Story Point Distribution
 
-| Story Size | Count | Total Points | Percentage |
-|------------|-------|--------------|------------|
-| 3 points | 12 | 36 | 14% |
-| 5 points | 20 | 100 | 39% |
-| 8 points | 12 | 96 | 38% |
-| 13+ points | 0 | 0 | 0% |
-| **Total** | **44** | **254** | **100%** |
+| Story Size | Count  | Total Points | Percentage |
+| ---------- | ------ | ------------ | ---------- |
+| 3 points   | 12     | 36           | 14%        |
+| 5 points   | 20     | 100          | 39%        |
+| 8 points   | 12     | 96           | 38%        |
+| 13+ points | 0      | 0            | 0%         |
+| **Total**  | **44** | **254**      | **100%**   |
 
 **Note**: All stories are sized appropriately (≤8 points). No stories require breakdown.
 
@@ -1356,6 +1473,7 @@ Sprint 4 (Export & Polish) ←──────┘
 ### MVP Completion Criteria
 
 The MVP is complete when all stories in Sprints 0-4 are done and:
+
 - [ ] User can create sprints
 - [ ] User can upload ADO CSV exports
 - [ ] Dashboard displays all required sections with accurate data
@@ -1369,18 +1487,21 @@ The MVP is complete when all stories in Sprints 0-4 are done and:
 ## Future Sprints (Post-MVP)
 
 ### Sprint 5: Enhancements
+
 - Direct Azure DevOps API integration
 - Historical velocity tracking
 - Sprint comparison view
 - Enhanced error recovery
 
 ### Sprint 6: User Experience
+
 - User authentication (Supabase Auth)
 - Multi-team support
 - Customizable dashboard layouts
 - Advanced filtering and search
 
 ### Sprint 7: Analytics
+
 - Historical trend charts
 - Velocity forecasting
 - Sprint health metrics
@@ -1393,18 +1514,21 @@ The MVP is complete when all stories in Sprints 0-4 are done and:
 ### Story Point Estimation Rationale
 
 **3 Points** (12 stories):
+
 - Simple, well-defined tasks
 - Minimal dependencies
 - Clear acceptance criteria
 - Examples: Component creation, basic setup, simple UI
 
 **5 Points** (20 stories):
+
 - Moderate complexity
 - Some dependencies
 - Multiple acceptance criteria
 - Examples: Forms, API endpoints, data processing
 
 **8 Points** (12 stories):
+
 - Complex functionality
 - Multiple dependencies
 - Extensive acceptance criteria
@@ -1422,25 +1546,28 @@ These stories must be completed in order and on time:
 
 ### High-Risk Stories
 
-| Story ID | Risk Level | Risk Description | Mitigation |
-|----------|------------|------------------|------------|
-| 1.6 | High | CSV format variations | Flexible parsing, extensive validation |
-| 1.7 | Medium | Data transformation complexity | Unit tests, incremental development |
-| 3.2-3.4 | High | Calculation accuracy | Peer review, comprehensive testing |
-| 4.1 | Medium | PDF export formatting | Early prototyping, design review |
+| Story ID | Risk Level | Risk Description               | Mitigation                             |
+| -------- | ---------- | ------------------------------ | -------------------------------------- |
+| 1.6      | High       | CSV format variations          | Flexible parsing, extensive validation |
+| 1.7      | Medium     | Data transformation complexity | Unit tests, incremental development    |
+| 3.2-3.4  | High       | Calculation accuracy           | Peer review, comprehensive testing     |
+| 4.1      | Medium     | PDF export formatting          | Early prototyping, design review       |
 
 ### Parallel Work Opportunities
 
 **Sprint 0**:
+
 - Developer 1: Stories 0.1, 0.2, 0.3, 0.6 (Infrastructure)
 - Developer 2: Stories 0.4, 0.5, 0.7, 0.8 (Frontend foundation)
 
 **Sprint 1**:
+
 - Developer 1: Stories 1.1, 1.2, 1.3 (Sprint CRUD)
 - Developer 2: Stories 1.4, 1.5 (CSV upload)
 - Then: Stories 1.6, 1.7, 1.8, 1.9 (Sequential processing)
 
 **Sprint 2**:
+
 - Developer 1: Stories 2.1, 2.2, 2.3, 2.4, 2.5 (Header & lists)
 - Developer 2: Stories 2.6, 2.7, 2.8, 2.9, 2.10 (Tables)
 - Then: Story 2.11 (Integration - both developers)
@@ -1448,6 +1575,7 @@ These stories must be completed in order and on time:
 ### Definition of Ready
 
 A story is ready for sprint planning when:
+
 - [ ] User story format complete (As a... I want... So that...)
 - [ ] Acceptance criteria defined and testable
 - [ ] Dependencies identified
@@ -1459,6 +1587,7 @@ A story is ready for sprint planning when:
 ### Definition of Done
 
 A story is done when:
+
 - [ ] All acceptance criteria met
 - [ ] Code written and reviewed
 - [ ] Unit tests written and passing
@@ -1474,10 +1603,10 @@ A story is done when:
 **Document Version**: 1.1 (Enhanced with technical details)  
 **Last Updated**: 2024-01-15
 
-**Next Steps**: 
+**Next Steps**:
+
 1. Review stories with development team
 2. Validate story point estimates
 3. Identify parallel work opportunities
 4. Create sprint backlog for Sprint 0
 5. Begin Sprint 0 implementation
-

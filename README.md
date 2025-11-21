@@ -20,23 +20,29 @@ An automated visualization tool that generates sprint overview documents from Az
 ### Getting Started
 
 1. **Clone the repository**
+
    ```bash
    git clone [repository-url]
    cd sprint-dashboard
    ```
 
 2. **Install dependencies** (after Story 0.1 is complete)
+
    ```bash
    npm install
    ```
 
 3. **Set up environment variables** (after Story 0.2 is complete)
+
    ```bash
    cp .env.example .env.local
    # Add your Supabase credentials
    ```
 
+   See [Supabase Setup Guide](./docs/SUPABASE_SETUP.md) for detailed instructions.
+
 4. **Run development server** (after Story 0.1 is complete)
+
    ```bash
    npm run dev
    ```
@@ -76,16 +82,16 @@ sprint-dashboard/
 
 ## Sprint 0 Stories
 
-| Story | Title | Assignee | Status |
-|-------|-------|----------|--------|
-| 0.1 | Initialize Next.js Project | dev1_front | 🔴 Not Started |
-| 0.2 | Set Up Supabase | dev_backend | 🔴 Blocked |
-| 0.3 | Create Database Schema | dev_backend | 🔴 Blocked |
-| 0.4 | State Management Setup | dev1_front | 🔴 Blocked |
-| 0.5 | Dev Tools & Git Hooks | dev2_front | 🔴 Blocked |
-| 0.6 | Vercel Deployment | dev2_front | 🔴 Blocked |
-| 0.7 | Design System | dev1_front | 🔴 Blocked |
-| 0.8 | Testing Framework | dev2_front | 🔴 Blocked |
+| Story | Title                      | Assignee    | Status         |
+| ----- | -------------------------- | ----------- | -------------- |
+| 0.1   | Initialize Next.js Project | dev1_front  | ✅ Done        |
+| 0.2   | Set Up Supabase            | dev_backend | ✅ Done        |
+| 0.3   | Create Database Schema     | dev_backend | ✅ Done        |
+| 0.4   | State Management Setup     | dev1_front  | 🟡 Ready       |
+| 0.5   | Dev Tools & Git Hooks      | dev2_front  | 🟡 Ready       |
+| 0.6   | Vercel Deployment          | dev2_front  | 🔴 Blocked     |
+| 0.7   | Design System              | dev1_front  | 🟡 Ready       |
+| 0.8   | Testing Framework          | dev2_front  | 🟡 Ready       |
 
 ## Documentation
 
@@ -94,6 +100,8 @@ sprint-dashboard/
 - [User Stories](./USER_STORIES.md) - All user stories
 - [Sprint 0 Planning](./SPRINT_0_PLANNING.md) - Sprint 0 overview
 - [Sprint 0 Index](./SPRINT_0_INDEX.md) - All Sprint 0 documents
+- [Supabase Setup Guide](./docs/SUPABASE_SETUP.md) - Supabase configuration guide
+- [Database Schema](./docs/DATABASE_SCHEMA.md) - Database schema documentation
 
 ## Team
 
@@ -116,4 +124,3 @@ sprint-dashboard/
 ---
 
 **Last Updated**: 2024-01-15
-

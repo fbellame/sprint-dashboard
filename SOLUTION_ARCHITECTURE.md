@@ -55,44 +55,44 @@ This document outlines the technical architecture for the Sprint Dashboard appli
 
 ### 3.1 Frontend
 
-| Technology | Purpose | Version |
-|------------|---------|---------|
-| **Next.js** | React framework with SSR/SSG | 14.x (App Router) |
-| **TypeScript** | Type-safe development | 5.x |
-| **React** | UI library | 18.x |
-| **Tailwind CSS** | Utility-first CSS framework | 3.x |
-| **PapaParse** | CSV parsing library | Latest |
-| **react-pdf / jsPDF** | PDF generation | Latest |
-| **Zustand / React Query** | State management & data fetching | Latest |
-| **React Hook Form** | Form handling | Latest |
-| **Zod** | Schema validation | Latest |
+| Technology                | Purpose                          | Version           |
+| ------------------------- | -------------------------------- | ----------------- |
+| **Next.js**               | React framework with SSR/SSG     | 14.x (App Router) |
+| **TypeScript**            | Type-safe development            | 5.x               |
+| **React**                 | UI library                       | 18.x              |
+| **Tailwind CSS**          | Utility-first CSS framework      | 3.x               |
+| **PapaParse**             | CSV parsing library              | Latest            |
+| **react-pdf / jsPDF**     | PDF generation                   | Latest            |
+| **Zustand / React Query** | State management & data fetching | Latest            |
+| **React Hook Form**       | Form handling                    | Latest            |
+| **Zod**                   | Schema validation                | Latest            |
 
 ### 3.2 Backend / API
 
-| Technology | Purpose | Version |
-|------------|---------|---------|
-| **Next.js API Routes** | Serverless API endpoints | 14.x |
-| **Vercel Edge Functions** | Edge computing for CSV processing | Latest |
-| **Supabase JS Client** | Database client | Latest |
-| **PostgreSQL** | Database (via Supabase) | 15.x |
+| Technology                | Purpose                           | Version |
+| ------------------------- | --------------------------------- | ------- |
+| **Next.js API Routes**    | Serverless API endpoints          | 14.x    |
+| **Vercel Edge Functions** | Edge computing for CSV processing | Latest  |
+| **Supabase JS Client**    | Database client                   | Latest  |
+| **PostgreSQL**            | Database (via Supabase)           | 15.x    |
 
 ### 3.3 Infrastructure
 
-| Service | Purpose |
-|---------|---------|
-| **Vercel** | Hosting, CDN, Serverless Functions, Edge Network |
-| **Supabase** | PostgreSQL Database, Storage (optional), Auth (future) |
-| **Vercel Analytics** | Performance monitoring (optional) |
+| Service              | Purpose                                                |
+| -------------------- | ------------------------------------------------------ |
+| **Vercel**           | Hosting, CDN, Serverless Functions, Edge Network       |
+| **Supabase**         | PostgreSQL Database, Storage (optional), Auth (future) |
+| **Vercel Analytics** | Performance monitoring (optional)                      |
 
 ### 3.4 Development Tools
 
-| Tool | Purpose |
-|------|---------|
-| **ESLint** | Code linting |
-| **Prettier** | Code formatting |
-| **Husky** | Git hooks |
-| **Vitest / Jest** | Testing framework |
-| **Playwright** | E2E testing (optional) |
+| Tool              | Purpose                |
+| ----------------- | ---------------------- |
+| **ESLint**        | Code linting           |
+| **Prettier**      | Code formatting        |
+| **Husky**         | Git hooks              |
+| **Vitest / Jest** | Testing framework      |
+| **Playwright**    | E2E testing (optional) |
 
 ---
 
@@ -181,7 +181,7 @@ CREATE INDEX idx_sprints_number ON sprints(sprint_number);
 ```sql
 -- View: Team Backlog Metrics
 CREATE VIEW team_backlog_metrics AS
-SELECT 
+SELECT
   sprint_id,
   COUNT(*) FILTER (WHERE created_date < (SELECT start_date FROM sprints WHERE id = work_items.sprint_id)) AS planned_count,
   SUM(story_points) FILTER (WHERE created_date < (SELECT start_date FROM sprints WHERE id = work_items.sprint_id)) AS planned_story_points,
@@ -194,7 +194,7 @@ GROUP BY sprint_id;
 
 -- View: Stories by State
 CREATE VIEW stories_by_state AS
-SELECT 
+SELECT
   sprint_id,
   work_item_type,
   state,
@@ -206,7 +206,7 @@ GROUP BY sprint_id, work_item_type, state;
 
 -- View: Top Features
 CREATE VIEW top_features AS
-SELECT 
+SELECT
   sprint_id,
   feature_name,
   COUNT(*) AS story_count,
@@ -285,6 +285,7 @@ GET    /api/sprints/:id/export/html     Export dashboard as HTML
 ### 5.2 API Request/Response Examples
 
 #### Create Sprint
+
 ```typescript
 POST /api/sprints
 Request:
@@ -306,6 +307,7 @@ Response:
 ```
 
 #### Upload CSV
+
 ```typescript
 POST /api/sprints/:id/upload
 Request: FormData with CSV file
@@ -319,6 +321,7 @@ Response:
 ```
 
 #### Get Dashboard Data
+
 ```typescript
 GET /api/sprints/:id/dashboard
 
@@ -409,7 +412,7 @@ app/
 
 #### 6.2.2 Shared Components
 
-- **StatusIndicator**: Reusable status icon component (✓, ✗, |, *)
+- **StatusIndicator**: Reusable status icon component (✓, ✗, |, \*)
 - **CSVUploader**: Drag-and-drop CSV upload with validation
 - **ExportButton**: PDF/HTML export functionality
 - **DataTable**: Reusable table component with formatting
@@ -466,13 +469,13 @@ app/
 ```typescript
 interface CSVRow {
   'Work Item ID': string;
-  'Title': string;
+  Title: string;
   'Work Item Type': string;
-  'State': string;
+  State: string;
   'Story Points': string; // May be empty
   'Assigned To': string;
   'Area Path': string;
-  'Tags': string; // Comma-separated
+  Tags: string; // Comma-separated
   'Created Date': string;
   'Changed Date': string;
   'Closed Date': string;
@@ -548,18 +551,18 @@ SUPABASE_SERVICE_ROLE_KEY=xxx (server-side only)
 
 ```typescript
 // lib/supabase.ts
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 // Server-side client with service role
 export const supabaseAdmin = createClient(
   supabaseUrl,
   process.env.SUPABASE_SERVICE_ROLE_KEY!
-)
+);
 ```
 
 ### 8.3 CI/CD Pipeline
@@ -757,20 +760,20 @@ supabase db push
 
 ### 16.1 Technical Risks
 
-| Risk | Mitigation |
-|------|------------|
-| CSV format changes | Flexible parsing, field mapping configuration |
-| Large file processing | Streaming parser, background jobs |
-| Database performance | Indexing, query optimization, connection pooling |
-| Vercel function timeouts | Optimize processing, use Edge Functions |
+| Risk                     | Mitigation                                       |
+| ------------------------ | ------------------------------------------------ |
+| CSV format changes       | Flexible parsing, field mapping configuration    |
+| Large file processing    | Streaming parser, background jobs                |
+| Database performance     | Indexing, query optimization, connection pooling |
+| Vercel function timeouts | Optimize processing, use Edge Functions          |
 
 ### 16.2 Operational Risks
 
-| Risk | Mitigation |
-|------|------------|
-| Data loss | Supabase automatic backups |
+| Risk             | Mitigation                             |
+| ---------------- | -------------------------------------- |
+| Data loss        | Supabase automatic backups             |
 | Service downtime | Vercel/Supabase SLA, monitoring alerts |
-| Cost overruns | Set up billing alerts, monitor usage |
+| Cost overruns    | Set up billing alerts, monitor usage   |
 
 ---
 
@@ -842,4 +845,3 @@ supabase db push
 **Last Updated**: 2024-01-15  
 **Author**: Solution Architecture Team  
 **Status**: Approved for Implementation
-

@@ -10,11 +10,11 @@
 
 ## Assigned Stories (13 points)
 
-| Story ID | Title | Points | Status | Priority |
-|----------|-------|--------|--------|----------|
-| 0.1 | Initialize Next.js Project | 3 | To Do | **P0 - CRITICAL** |
-| 0.4 | State Management Setup | 5 | To Do | P1 |
-| 0.7 | Design System | 5 | To Do | P1 |
+| Story ID | Title                      | Points | Status | Priority          |
+| -------- | -------------------------- | ------ | ------ | ----------------- |
+| 0.1      | Initialize Next.js Project | 3      | To Do  | **P0 - CRITICAL** |
+| 0.4      | State Management Setup     | 5      | To Do  | P1                |
+| 0.7      | Design System              | 5      | To Do  | P1                |
 
 ---
 
@@ -25,6 +25,7 @@
 ### Required Accounts
 
 #### GitHub Account
+
 - [ ] **GitHub Account**: You have a GitHub account
   - [ ] Can access GitHub: ☐
   - [ ] Have repository access: ☐
@@ -33,32 +34,39 @@
 ### Required Tools Installation
 
 #### Node.js & npm
+
 - [ ] **Node.js Installed**: Version 18.x or 20.x
+
   ```bash
   node --version
   ```
+
   - [ ] Version is 18.x or 20.x: ☐
-  - [ ] Version: ________________
+  - [ ] Version: ******\_\_\_\_******
 
 - [ ] **npm Installed**
   ```bash
   npm --version
   ```
+
   - [ ] npm is installed: ☐
-  - [ ] Version: ________________
+  - [ ] Version: ******\_\_\_\_******
 
 #### Git
+
 - [ ] **Git Installed and Configured**
   ```bash
   git --version
   git config --global user.name "Your Name"
   git config --global user.email "your.email@example.com"
   ```
+
   - [ ] Git is installed: ☐
   - [ ] User name configured: ☐
   - [ ] User email configured: ☐
 
 #### Code Editor
+
 - [ ] **VS Code Installed** (recommended)
   - [ ] VS Code installed: ☐
   - [ ] Recommended extensions installed:
@@ -70,6 +78,7 @@
 ### Verification Checklist
 
 Before starting Story 0.1, verify:
+
 - [ ] GitHub account accessible
 - [ ] Repository can be cloned
 - [ ] Node.js 18.x or 20.x installed
@@ -78,6 +87,7 @@ Before starting Story 0.1, verify:
 - [ ] VS Code (or preferred editor) ready
 
 ### Resources
+
 - [Node.js Download](https://nodejs.org/)
 - [Git Download](https://git-scm.com/downloads)
 - [VS Code Download](https://code.visualstudio.com/)
@@ -91,6 +101,7 @@ Before starting Story 0.1, verify:
 **Dependencies**: None
 
 ### Acceptance Criteria
+
 - [ ] Next.js 14.x project created with App Router
 - [ ] TypeScript 5.x configured with strict mode
 - [ ] Tailwind CSS 3.x installed and configured
@@ -102,6 +113,7 @@ Before starting Story 0.1, verify:
 ### Detailed Tasks
 
 #### Task 1: Create Next.js Project (1 hour)
+
 - [ ] Run: `npx create-next-app@latest sprint-dashboard --typescript --tailwind --app --no-src-dir`
 - [ ] Verify project structure:
   ```
@@ -117,6 +129,7 @@ Before starting Story 0.1, verify:
 - [ ] Test: `npm run build` - should build successfully
 
 #### Task 2: Configure TypeScript (1 hour)
+
 - [ ] Update `tsconfig.json`:
   - [ ] Enable `strict: true`
   - [ ] Enable `noUnusedLocals: true`
@@ -126,6 +139,7 @@ Before starting Story 0.1, verify:
 - [ ] Fix any TypeScript errors
 
 #### Task 3: Configure Tailwind CSS (1 hour)
+
 - [ ] Verify Tailwind is installed: `tailwind.config.ts` exists
 - [ ] Update `tailwind.config.ts` with custom colors:
   ```typescript
@@ -143,6 +157,7 @@ Before starting Story 0.1, verify:
 - [ ] Verify styles are applied correctly
 
 #### Task 4: Configure ESLint and Prettier (1 hour)
+
 - [ ] Verify ESLint config exists: `.eslintrc.json`
 - [ ] Add custom ESLint rules if needed
 - [ ] Install Prettier: `npm install -D prettier eslint-config-prettier`
@@ -168,6 +183,7 @@ Before starting Story 0.1, verify:
 - [ ] Test: `npm run lint` and `npm run format`
 
 #### Task 5: Create Basic Layout (1 hour)
+
 - [ ] Update `app/layout.tsx` with basic structure
 - [ ] Create `components/layout/Header.tsx` (placeholder)
 - [ ] Create `components/layout/Footer.tsx` (placeholder)
@@ -175,6 +191,7 @@ Before starting Story 0.1, verify:
 - [ ] Verify layout renders correctly
 
 #### Task 6: Project Structure Setup (1 hour)
+
 - [ ] Create directory structure:
   ```
   app/
@@ -193,6 +210,7 @@ Before starting Story 0.1, verify:
 - [ ] Commit initial project structure
 
 ### Definition of Done
+
 - [ ] All tasks completed
 - [ ] Code reviewed by Team Lead
 - [ ] Project runs locally without errors
@@ -200,9 +218,11 @@ Before starting Story 0.1, verify:
 - [ ] Changes committed and pushed to repository
 
 ### Blockers
+
 - None (this is the foundation story)
 
 ### Notes
+
 - This story is CRITICAL - all other developers are waiting on this
 - Complete this on Day 1-2 of Sprint 0
 - Notify team immediately when complete so others can start
@@ -216,6 +236,7 @@ Before starting Story 0.1, verify:
 **Dependencies**: Story 0.1 (must be complete)
 
 ### Acceptance Criteria
+
 - [ ] Zustand installed and configured for client state
 - [ ] React Query (`@tanstack/react-query`) installed and configured
 - [ ] React Query provider added to root layout
@@ -227,12 +248,15 @@ Before starting Story 0.1, verify:
 ### Detailed Tasks
 
 #### Task 1: Install Dependencies (30 min)
+
 - [ ] Install Zustand: `npm install zustand`
 - [ ] Install React Query: `npm install @tanstack/react-query`
 - [ ] Verify packages in `package.json`
 
 #### Task 2: Configure React Query (2 hours)
+
 - [ ] Create `lib/providers/QueryProvider.tsx`:
+
   ```typescript
   'use client'
   import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
@@ -255,43 +279,51 @@ Before starting Story 0.1, verify:
     )
   }
   ```
+
 - [ ] Update `app/layout.tsx` to wrap with QueryProvider
 - [ ] Test React Query is working (create a test query)
 
 #### Task 3: Create Zustand Store Structure (2 hours)
+
 - [ ] Create `stores/sprintStore.ts`:
+
   ```typescript
-  import { create } from 'zustand'
+  import { create } from 'zustand';
 
   interface SprintState {
-    selectedSprintId: string | null
-    setSelectedSprintId: (id: string | null) => void
+    selectedSprintId: string | null;
+    setSelectedSprintId: (id: string | null) => void;
   }
 
   export const useSprintStore = create<SprintState>((set) => ({
     selectedSprintId: null,
     setSelectedSprintId: (id) => set({ selectedSprintId: id }),
-  }))
+  }));
   ```
+
 - [ ] Create `stores/index.ts` for exporting all stores
 - [ ] Test store in a component
 
 #### Task 4: Create API Client Utilities (2 hours)
+
 - [ ] Create `lib/api/client.ts`:
+
   ```typescript
-  import { supabase } from '@/lib/supabase'
+  import { supabase } from '@/lib/supabase';
 
   export const apiClient = {
     // Base fetch wrapper with error handling
     async fetch(url: string, options?: RequestInit) {
       // Implementation
     },
-  }
+  };
   ```
+
 - [ ] Create `lib/api/types.ts` for API response types
 - [ ] Create `lib/api/errors.ts` for error handling utilities
 
 #### Task 5: Create Error Handling Utilities (1 hour)
+
 - [ ] Create `lib/utils/errors.ts`:
   - [ ] Error formatting functions
   - [ ] Error logging utilities
@@ -299,12 +331,14 @@ Before starting Story 0.1, verify:
 - [ ] Create `lib/utils/loading.ts` for loading state utilities
 
 #### Task 6: Testing and Documentation (1 hour)
+
 - [ ] Test state management in a sample component
 - [ ] Test React Query data fetching
 - [ ] Update README.md with state management patterns
 - [ ] Document store structure and usage
 
 ### Definition of Done
+
 - [ ] All tasks completed
 - [ ] Code reviewed by Team Lead or peer
 - [ ] React Query provider working
@@ -314,9 +348,11 @@ Before starting Story 0.1, verify:
 - [ ] Documentation updated
 
 ### Blockers
+
 - Must wait for Story 0.1 to be complete
 
 ### Notes
+
 - Start this after Story 0.1 is complete
 - Can work in parallel with Story 0.7 after Story 0.1 is done
 
@@ -329,6 +365,7 @@ Before starting Story 0.1, verify:
 **Dependencies**: Story 0.1 (must be complete)
 
 ### Acceptance Criteria
+
 - [ ] Tailwind color palette configured matching PRD:
   - [ ] Primary green (#22c55e)
   - [ ] Status colors (green, orange #f97316, red #ef4444)
@@ -337,12 +374,13 @@ Before starting Story 0.1, verify:
 - [ ] Base button component created
 - [ ] Base input component created
 - [ ] Base table component created
-- [ ] Status indicator component created (✓, ✗, |, *)
+- [ ] Status indicator component created (✓, ✗, |, \*)
 - [ ] Design tokens documented
 
 ### Detailed Tasks
 
 #### Task 1: Configure Tailwind Design Tokens (1 hour)
+
 - [ ] Update `tailwind.config.ts` with complete color palette
 - [ ] Add typography scale (font sizes, line heights)
 - [ ] Add spacing scale
@@ -350,12 +388,13 @@ Before starting Story 0.1, verify:
 - [ ] Test tokens in a sample component
 
 #### Task 2: Create Base Button Component (2 hours)
+
 - [ ] Create `components/common/Button.tsx`:
   ```typescript
   interface ButtonProps {
-    variant?: 'primary' | 'secondary' | 'outline'
-    size?: 'sm' | 'md' | 'lg'
-    children: ReactNode
+    variant?: 'primary' | 'secondary' | 'outline';
+    size?: 'sm' | 'md' | 'lg';
+    children: ReactNode;
     // ... other props
   }
   ```
@@ -366,11 +405,12 @@ Before starting Story 0.1, verify:
 - [ ] Create Storybook story or example usage
 
 #### Task 3: Create Base Input Component (1.5 hours)
+
 - [ ] Create `components/common/Input.tsx`:
   ```typescript
   interface InputProps {
-    label?: string
-    error?: string
+    label?: string;
+    error?: string;
     // ... other props
   }
   ```
@@ -380,11 +420,12 @@ Before starting Story 0.1, verify:
 - [ ] Make it accessible
 
 #### Task 4: Create Base Table Component (2 hours)
+
 - [ ] Create `components/common/Table.tsx`:
   ```typescript
   interface TableProps<T> {
-    data: T[]
-    columns: ColumnDef<T>[]
+    data: T[];
+    columns: ColumnDef<T>[];
     // ... other props
   }
   ```
@@ -395,15 +436,18 @@ Before starting Story 0.1, verify:
 - [ ] Make it accessible
 
 #### Task 5: Create Status Indicator Component (1.5 hours)
+
 - [ ] Create `components/common/StatusIndicator.tsx`:
+
   ```typescript
-  type StatusType = 'team-focus' | 'done' | 'ongoing' | 'not-done'
+  type StatusType = 'team-focus' | 'done' | 'ongoing' | 'not-done';
 
   interface StatusIndicatorProps {
-    status: StatusType
-    size?: 'sm' | 'md' | 'lg'
+    status: StatusType;
+    size?: 'sm' | 'md' | 'lg';
   }
   ```
+
 - [ ] Implement all status types:
   - [ ] `*` (Green asterisk) - Team Focus
   - [ ] `✓` (Green checkmark) - Done
@@ -414,6 +458,7 @@ Before starting Story 0.1, verify:
 - [ ] Create example usage
 
 #### Task 6: Typography System (1 hour)
+
 - [ ] Create `components/common/Typography.tsx` or use Tailwind classes
 - [ ] Define heading styles (h1-h6)
 - [ ] Define body text styles
@@ -421,6 +466,7 @@ Before starting Story 0.1, verify:
 - [ ] Document typography usage
 
 #### Task 7: Documentation (1 hour)
+
 - [ ] Create `docs/DESIGN_SYSTEM.md`
 - [ ] Document all components and their props
 - [ ] Add usage examples
@@ -429,6 +475,7 @@ Before starting Story 0.1, verify:
 - [ ] Update README.md with design system link
 
 ### Definition of Done
+
 - [ ] All tasks completed
 - [ ] Code reviewed by Team Lead or peer
 - [ ] All components accessible
@@ -437,9 +484,11 @@ Before starting Story 0.1, verify:
 - [ ] Components tested visually
 
 ### Blockers
+
 - Must wait for Story 0.1 to be complete
 
 ### Notes
+
 - Can work in parallel with Story 0.4 after Story 0.1 is done
 - Focus on reusability and consistency
 - Match PRD visual design exactly
@@ -449,10 +498,12 @@ Before starting Story 0.1, verify:
 ## Weekly Timeline
 
 ### Week 1 (Jan 15-19)
+
 - **Day 1-2**: Complete Story 0.1 (CRITICAL - notify team when done)
 - **Day 3-5**: Start Story 0.4 (State Management Setup)
 
 ### Week 2 (Jan 22-26)
+
 - **Day 1**: Complete Story 0.4
 - **Day 2-5**: Complete Story 0.7 (Design System)
 
@@ -491,4 +542,3 @@ Before starting Story 0.1, verify:
 **Document Version**: 1.0  
 **Last Updated**: 2024-01-15  
 **Status**: Ready for Sprint Execution
-
