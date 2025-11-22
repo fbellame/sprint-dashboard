@@ -31,7 +31,7 @@
 
 ### 2. Zod Validation Schemas ✅
 
-- **`lib/api/schemas/sprint.ts`**: 
+- **`lib/api/schemas/sprint.ts`**:
   - `createSprintSchema` - Validates sprint creation input
   - `updateSprintSchema` - Validates sprint update input
   - `sprintIdSchema` - Validates UUID format for sprint IDs
@@ -47,11 +47,13 @@
 ### 4. API Endpoints Implementation ✅
 
 #### GET /api/sprints
+
 - Lists all sprints
 - Ordered by sprint_number (descending)
 - Returns empty array if no sprints
 
 #### POST /api/sprints
+
 - Creates new sprint
 - Validates input with Zod
 - Checks for duplicate sprint numbers (with team_name consideration)
@@ -59,12 +61,14 @@
 - Returns 201 Created on success
 
 #### GET /api/sprints/:id
+
 - Gets single sprint by ID
 - Validates UUID format
 - Returns 404 if not found
 - Returns sprint data on success
 
 #### PUT /api/sprints/:id
+
 - Updates sprint
 - Validates input with Zod
 - Checks for duplicate sprint numbers
@@ -73,6 +77,7 @@
 - Returns 409 if duplicate sprint number
 
 #### DELETE /api/sprints/:id
+
 - Deletes sprint by ID
 - Validates UUID format
 - CASCADE delete removes related work_items
@@ -131,6 +136,7 @@ Duration  1.50s
 ### POST /api/sprints
 
 **Request Body**:
+
 ```json
 {
   "sprint_number": 31,
@@ -142,6 +148,7 @@ Duration  1.50s
 ```
 
 **Response** (201 Created):
+
 ```json
 {
   "success": true,
@@ -161,6 +168,7 @@ Duration  1.50s
 ### GET /api/sprints
 
 **Response** (200 OK):
+
 ```json
 {
   "success": true,
@@ -178,6 +186,7 @@ Duration  1.50s
 ### GET /api/sprints/:id
 
 **Response** (200 OK):
+
 ```json
 {
   "success": true,
@@ -192,6 +201,7 @@ Duration  1.50s
 ### PUT /api/sprints/:id
 
 **Request Body** (partial update):
+
 ```json
 {
   "sprint_name": "Updated Sprint 31"
@@ -199,6 +209,7 @@ Duration  1.50s
 ```
 
 **Response** (200 OK):
+
 ```json
 {
   "success": true,
@@ -213,6 +224,7 @@ Duration  1.50s
 ### DELETE /api/sprints/:id
 
 **Response** (200 OK):
+
 ```json
 {
   "success": true,
@@ -240,6 +252,7 @@ All errors follow this format:
 ```
 
 **Error Codes**:
+
 - `VALIDATION_ERROR` - Input validation failed (400)
 - `NOT_FOUND` - Resource not found (404)
 - `DUPLICATE_ENTRY` - Duplicate sprint number (409)
@@ -259,6 +272,7 @@ All errors follow this format:
 ### Critical Path
 
 Story 1.1 was on the **critical path** and blocks multiple stories. With this complete:
+
 - Frontend developers can start building UI components
 - CSV upload API can be implemented
 - Sprint management functionality is ready
@@ -299,4 +313,3 @@ Story 1.1 was on the **critical path** and blocks multiple stories. With this co
 **Status**: ✅ Complete  
 **Last Updated**: 2024-01-15  
 **Ready for**: Code Review
-

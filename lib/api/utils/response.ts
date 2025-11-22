@@ -57,7 +57,7 @@ export function validationErrorResponse(
       error: {
         message: 'Validation failed',
         code: 'VALIDATION_ERROR',
-        details: errors.errors,
+        details: errors.issues,
       },
     },
     { status: 400 }
