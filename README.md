@@ -8,7 +8,8 @@ An automated visualization tool that generates sprint overview documents from Az
 **Start Date**: 2024-01-15  
 **End Date**: 2024-01-29  
 **Progress**: 88.9% Complete (8/9 stories, 52/57 story points)  
-**Status**: 🟡 In Progress - Ahead of Schedule
+**Status**: 🟡 In Progress - Ahead of Schedule  
+**Last Updated**: 2024-01-15
 
 ### Sprint 1 Completed Stories ✅
 
@@ -69,20 +70,22 @@ An automated visualization tool that generates sprint overview documents from Az
 
 3. **Set up Supabase** (choose one option):
 
-   **Option A: Local Supabase (Recommended for Development)**
+   **Option A: Local Supabase (Recommended for Development) ✅**
+
+   Local Supabase is already configured and running! The `.env.local` file has been set up with local credentials.
 
    ```bash
-   # Install Supabase CLI
-   npm install -g supabase
-
-   # Initialize and start local Supabase (requires Docker)
-   supabase init
+   # Start local Supabase (if not already running)
    supabase start
 
-   # Get credentials and configure .env.local
+   # Check status and get credentials
    supabase status
-   # Copy the anon key and service_role key to .env.local
    ```
+
+   **Local Supabase URLs**:
+   - API: http://127.0.0.1:54331
+   - Studio: http://127.0.0.1:54333
+   - Database: postgresql://postgres:postgres@127.0.0.1:54332/postgres
 
    See [Local Supabase Setup Guide](./docs/LOCAL_SUPABASE_SETUP.md) for detailed instructions.
 
@@ -213,7 +216,8 @@ sprint-dashboard/
 
 **Sprint Status**: 🟡 In Progress (88.9% Complete - 8/9 stories)  
 **Story Points**: 52/57 completed  
-**Last Updated**: 2024-01-15
+**Last Updated**: 2024-01-15  
+**Local Supabase**: ✅ Configured and Running
 
 | Story | Title                      | Assignee    | Status   | Points | PR Link | Notes                                                                                                      |
 | ----- | -------------------------- | ----------- | -------- | ------ | ------- | ---------------------------------------------------------------------------------------------------------- |
@@ -386,6 +390,7 @@ const loadingState = createLoadingState(isLoading, isFetching, isError, error);
 - [Sprint 1 Progress](./SPRINT_1_PROGRESS.md) - Sprint 1 progress tracking
 - [Design System](./docs/DESIGN_SYSTEM.md) - Design system and component library
 - [Supabase Setup Guide](./docs/SUPABASE_SETUP.md) - Supabase configuration guide
+- [Local Supabase Setup Guide](./docs/LOCAL_SUPABASE_SETUP.md) - Local development with Docker
 - [Database Schema](./docs/DATABASE_SCHEMA.md) - Database schema documentation
 
 ## Team
