@@ -23,14 +23,17 @@ Go to: https://github.com/fbellame/sprint-dashboard/settings/secrets/actions
 Add these three secrets:
 
 **Secret 1: VERCEL_TOKEN**
+
 - Name: `VERCEL_TOKEN`
 - Value: [Paste token from Step 1]
 
 **Secret 2: VERCEL_ORG_ID**
+
 - Name: `VERCEL_ORG_ID`
 - Value: `team_JQA0H42e2w989PGtnkin3Boi`
 
 **Secret 3: VERCEL_PROJECT_ID**
+
 - Name: `VERCEL_PROJECT_ID`
 - Value: `prj_ExTFWgs8imGtKhq3TZZXaYgkWIXd`
 
@@ -45,16 +48,19 @@ Add these three secrets:
 ## Values to Copy
 
 ### VERCEL_TOKEN
+
 ```
 [Create from https://vercel.com/account/tokens]
 ```
 
 ### VERCEL_ORG_ID
+
 ```
 team_JQA0H42e2w989PGtnkin3Boi
 ```
 
 ### VERCEL_PROJECT_ID
+
 ```
 prj_ExTFWgs8imGtKhq3TZZXaYgkWIXd
 ```
@@ -64,6 +70,7 @@ prj_ExTFWgs8imGtKhq3TZZXaYgkWIXd
 ## Verification
 
 After adding secrets, verify:
+
 - ✅ All 3 secrets appear in GitHub Settings
 - ✅ Workflow re-runs successfully
 - ✅ Preview deployment appears in PR
@@ -71,4 +78,3 @@ After adding secrets, verify:
 ---
 
 **For detailed instructions**, see [PR_9_VERCEL_SETUP_INSTRUCTIONS.md](./PR_9_VERCEL_SETUP_INSTRUCTIONS.md)
-

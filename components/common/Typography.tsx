@@ -96,4 +96,3 @@ export function Typography({
  * - Text colors: text-gray-900, text-gray-700, text-gray-500
  * - Line heights: Default line heights are configured in tailwind.config.ts
  */
-

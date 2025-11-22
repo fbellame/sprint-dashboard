@@ -19,12 +19,14 @@
 ### Configuration Details
 
 **vercel.json**:
+
 - Framework: Next.js
 - Region: US East (iad1)
 - API route timeout: 30 seconds
 - Build command: `npm run build`
 
 **GitHub Actions Workflow**:
+
 - Runs on push to `main` and pull requests
 - Installs dependencies
 - Runs linter and tests
@@ -95,7 +97,6 @@ The following steps must be completed manually in the Vercel and GitHub dashboar
 2. **Add Secrets**
 
    Click "New repository secret" for each:
-
    - **Name**: `VERCEL_TOKEN`
      - **Value**: Token from Step 3
 
@@ -140,6 +141,7 @@ The following steps must be completed manually in the Vercel and GitHub dashboar
 ## 📋 Checklist
 
 ### Vercel Setup
+
 - [ ] Vercel account created
 - [ ] Project created and linked to GitHub repository
 - [ ] Project ID noted
@@ -148,18 +150,21 @@ The following steps must be completed manually in the Vercel and GitHub dashboar
 - [ ] Vercel token created
 
 ### GitHub Setup
+
 - [ ] `VERCEL_TOKEN` secret added
 - [ ] `VERCEL_ORG_ID` secret added
 - [ ] `VERCEL_PROJECT_ID` secret added
 - [ ] GitHub Actions workflow enabled
 
 ### Testing
+
 - [ ] Preview deployment tested (via PR)
 - [ ] Production deployment tested (via merge to main)
 - [ ] Application accessible and functional
 - [ ] Environment variables working correctly
 
 ### Documentation
+
 - [ ] Deployment guide reviewed
 - [ ] Team members informed of deployment process
 
@@ -253,4 +258,3 @@ After completing manual steps:
 
 **Status**: 🟡 Configuration Complete - Manual Steps Required  
 **Last Updated**: 2024-01-15
-

@@ -1,12 +1,25 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+/**
+ * Get Supabase admin client
+ * Creates client lazily to avoid errors during build when env vars are not set
+ */
+function getSupabaseAdmin() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-if (!supabaseUrl || !supabaseServiceRoleKey) {
-  throw new Error(
-    'Missing Supabase environment variables. Please check your .env.local file.'
-  );
+  if (!supabaseUrl || !supabaseServiceRoleKey) {
+    throw new Error(
+      'Missing Supabase environment variables. Please check your .env.local file.'
+    );
+  }
+
+  return createClient(supabaseUrl, supabaseServiceRoleKey, {
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false,
+    },
+  });
 }
 
 /**
@@ -15,9 +28,13 @@ if (!supabaseUrl || !supabaseServiceRoleKey) {
  * This client bypasses Row Level Security (RLS) policies
  * NEVER expose the service role key to the client
  */
-export const supabaseAdmin = createClient(supabaseUrl, supabaseServiceRoleKey, {
-  auth: {
-    autoRefreshToken: false,
-    persistSession: false,
-  },
-});
+export const supabaseAdmin = new Proxy(
+  {} as ReturnType<typeof getSupabaseAdmin>,
+  {
+    get(_target, prop) {
+      const client = getSupabaseAdmin();
+      const value = client[prop as keyof typeof client];
+      return typeof value === 'function' ? value.bind(client) : value;
+    },
+  }
+);

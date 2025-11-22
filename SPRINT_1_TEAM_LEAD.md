@@ -8,12 +8,12 @@
 
 ## Team Member Identification
 
-| Identifier      | Role                 | Name   | GitHub Username | Email   | Notes                           |
-| --------------- | -------------------- | ------ | --------------- | ------- | ------------------------------- |
+| Identifier      | Role                 | Name   | GitHub Username | Email   | Notes                                    |
+| --------------- | -------------------- | ------ | --------------- | ------- | ---------------------------------------- |
 | **dev1_front**  | Frontend Developer 1 | [Name] | [@username]     | [email] | Frontend UI - Stories 1.2, 1.3, 1.4, 1.9 |
-| **dev2_front**  | Frontend Developer 2 | [Name] | [@username]     | [email] | API Development - Stories 1.1, 1.5 |
-| **dev_backend** | Backend Developer    | [Name] | [@username]     | [email] | CSV Processing - Stories 1.6, 1.7, 1.8 |
-| **team_lead**   | Team Lead            | [Name] | [@username]     | [email] | Coordination & reviews          |
+| **dev2_front**  | Frontend Developer 2 | [Name] | [@username]     | [email] | API Development - Stories 1.1, 1.5       |
+| **dev_backend** | Backend Developer    | [Name] | [@username]     | [email] | CSV Processing - Stories 1.6, 1.7, 1.8   |
+| **team_lead**   | Team Lead            | [Name] | [@username]     | [email] | Coordination & reviews                   |
 
 **Usage**: Throughout this document, developers are referenced by their identifier (e.g., `dev1_front`, `dev2_front`, `dev_backend`).
 
@@ -312,12 +312,12 @@ As Team Lead, your primary responsibilities for Sprint 1 are:
 
 ### High-Risk Items
 
-| Risk                  | Impact                    | Mitigation                                     | Owner     |
-| --------------------- | ------------------------- | ---------------------------------------------- | --------- |
-| Story 1.1 delayed     | High - blocks 3 stories  | dev2_front starts immediately, monitor closely | Team Lead |
-| CSV parsing complexity | High - may take longer   | Test early, pair programming if needed        | dev_backend |
-| CSV format variations | Medium - validation issues | Flexible parsing, comprehensive testing        | dev_backend |
-| Performance issues    | Medium - large files     | Implement streaming/chunking early              | dev_backend |
+| Risk                   | Impact                     | Mitigation                                     | Owner       |
+| ---------------------- | -------------------------- | ---------------------------------------------- | ----------- |
+| Story 1.1 delayed      | High - blocks 3 stories    | dev2_front starts immediately, monitor closely | Team Lead   |
+| CSV parsing complexity | High - may take longer     | Test early, pair programming if needed         | dev_backend |
+| CSV format variations  | Medium - validation issues | Flexible parsing, comprehensive testing        | dev_backend |
+| Performance issues     | Medium - large files       | Implement streaming/chunking early             | dev_backend |
 
 ### Blocker Resolution Process
 
@@ -363,11 +363,11 @@ As Team Lead, your primary responsibilities for Sprint 1 are:
 
 Document all significant technical decisions:
 
-| Decision ID | Date | Decision | Rationale | Impacted Stories | Decision Maker |
-| ----------- | ---- | -------- | --------- | ---------------- | -------------- |
-| TD1         | TBD  | Use PapaParse for CSV | Industry standard | 1.6 | Team |
-| TD2         | TBD  | Validate with Zod | Type-safe validation | 1.6, 1.7 | Team |
-| TD3         | TBD  | Use batch inserts | Performance | 1.8 | dev_backend |
+| Decision ID | Date | Decision              | Rationale            | Impacted Stories | Decision Maker |
+| ----------- | ---- | --------------------- | -------------------- | ---------------- | -------------- |
+| TD1         | TBD  | Use PapaParse for CSV | Industry standard    | 1.6              | Team           |
+| TD2         | TBD  | Validate with Zod     | Type-safe validation | 1.6, 1.7         | Team           |
+| TD3         | TBD  | Use batch inserts     | Performance          | 1.8              | dev_backend    |
 
 **Process**:
 
@@ -502,4 +502,3 @@ Sprint 1 is successful when:
 **Document Version**: 1.0  
 **Last Updated**: [Current Date]  
 **Status**: Ready for Sprint Execution
-

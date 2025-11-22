@@ -11,11 +11,7 @@ export { Input } from './Input';
 export { Table } from './Table';
 export type { ColumnDef } from './Table';
 
-export {
-  StatusIndicator,
-  StatusIndicatorLegend,
-} from './StatusIndicator';
+export { StatusIndicator, StatusIndicatorLegend } from './StatusIndicator';
 export type { StatusType } from './StatusIndicator';
 
 export { Typography } from './Typography';
-

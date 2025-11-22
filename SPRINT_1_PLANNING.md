@@ -23,17 +23,17 @@
 
 ## Sprint Backlog
 
-| Story ID | Story Title                      | Story Points | Assignee    | Status | Dependencies | Priority |
-| -------- | -------------------------------- | ------------ | ----------- | ------ | ------------ | -------- |
-| 1.1      | Sprint Management API Endpoints  | 8            | dev2_front  | To Do  | 0.2, 0.3     | Critical |
-| 1.2      | Sprint Creation Form             | 5            | dev1_front  | To Do  | 1.1, 0.7     | High     |
-| 1.3      | Sprint List Page                 | 5            | dev1_front  | To Do  | 1.1, 0.4     | High     |
-| 1.4      | CSV Upload Component             | 5            | dev1_front  | To Do  | 0.7          | Medium   |
-| 1.5      | CSV Upload API Endpoint          | 5            | dev2_front  | To Do  | 0.3, 1.1     | High     |
-| 1.6      | CSV Parsing and Validation       | 8            | dev_backend | To Do  | 1.5          | Critical |
-| 1.7      | CSV Data Transformation          | 8            | dev_backend | To Do  | 1.6          | Critical |
-| 1.8      | Work Items Storage             | 8            | dev_backend | To Do  | 1.7, 0.3     | Critical |
-| 1.9      | CSV Upload Page                  | 5            | dev1_front  | To Do  | 1.4, 1.8     | High     |
+| Story ID | Story Title                     | Story Points | Assignee    | Status | Dependencies | Priority |
+| -------- | ------------------------------- | ------------ | ----------- | ------ | ------------ | -------- |
+| 1.1      | Sprint Management API Endpoints | 8            | dev2_front  | To Do  | 0.2, 0.3     | Critical |
+| 1.2      | Sprint Creation Form            | 5            | dev1_front  | To Do  | 1.1, 0.7     | High     |
+| 1.3      | Sprint List Page                | 5            | dev1_front  | To Do  | 1.1, 0.4     | High     |
+| 1.4      | CSV Upload Component            | 5            | dev1_front  | To Do  | 0.7          | Medium   |
+| 1.5      | CSV Upload API Endpoint         | 5            | dev2_front  | To Do  | 0.3, 1.1     | High     |
+| 1.6      | CSV Parsing and Validation      | 8            | dev_backend | To Do  | 1.5          | Critical |
+| 1.7      | CSV Data Transformation         | 8            | dev_backend | To Do  | 1.6          | Critical |
+| 1.8      | Work Items Storage              | 8            | dev_backend | To Do  | 1.7, 0.3     | Critical |
+| 1.9      | CSV Upload Page                 | 5            | dev1_front  | To Do  | 1.4, 1.8     | High     |
 
 **Total Story Points**: 57  
 **Remaining Points**: 57
@@ -45,12 +45,14 @@
 ### dev1_front - Frontend Developer 1 (20 points)
 
 **Stories**:
+
 - **Story 1.2**: Sprint Creation Form (5 points)
 - **Story 1.3**: Sprint List Page (5 points)
 - **Story 1.4**: CSV Upload Component (5 points)
 - **Story 1.9**: CSV Upload Page (5 points)
 
 **Timeline**:
+
 - **Week 1**:
   - Day 1-2: Wait for Story 1.1, start Story 1.4 (CSV Component) in parallel
   - Day 3-4: Complete Story 1.4, start Story 1.2 (Sprint Form) after 1.1 complete
@@ -60,16 +62,19 @@
   - Day 3-5: Wait for Story 1.8, then complete Story 1.9 (CSV Upload Page)
 
 **Dependencies**:
+
 - Story 1.2, 1.3: Blocked by Story 1.1
 - Story 1.9: Blocked by Story 1.8
 
 ### dev2_front - Frontend Developer 2 (13 points)
 
 **Stories**:
+
 - **Story 1.1**: Sprint Management API Endpoints (8 points) - **CRITICAL PATH**
 - **Story 1.5**: CSV Upload API Endpoint (5 points)
 
 **Timeline**:
+
 - **Week 1**:
   - Day 1-5: Complete Story 1.1 (Sprint API) - **CRITICAL PATH**
 - **Week 2**:
@@ -77,17 +82,20 @@
   - Day 4-5: Assist with testing or other stories if needed
 
 **Dependencies**:
+
 - Story 1.1: No blockers (depends on Sprint 0)
 - Story 1.5: Blocked by Story 1.1
 
 ### dev_backend - Backend Developer (24 points)
 
 **Stories**:
+
 - **Story 1.6**: CSV Parsing and Validation (8 points)
 - **Story 1.7**: CSV Data Transformation (8 points)
 - **Story 1.8**: Work Items Storage (8 points)
 
 **Timeline**:
+
 - **Week 1**:
   - Day 1-3: Wait for Story 1.5, prepare CSV parsing approach
   - Day 4-5: Start Story 1.6 (CSV Parsing) after 1.5 complete
@@ -96,6 +104,7 @@
   - Day 4-5: Complete Story 1.8 (Work Items Storage)
 
 **Dependencies**:
+
 - Story 1.6: Blocked by Story 1.5
 - Story 1.7: Blocked by Story 1.6
 - Story 1.8: Blocked by Story 1.7
@@ -103,6 +112,7 @@
 ### team_lead - Team Lead
 
 **Responsibilities**:
+
 - Coordinate daily standups
 - Review pull requests (priority: Story 1.1)
 - Verify API design consistency
@@ -137,6 +147,7 @@ Story 1.4 (CSV Component) - Can start in parallel (only depends on 0.7)
 **Critical Path**: Story 1.1 → 1.5 → 1.6 → 1.7 → 1.8 → 1.9
 
 **Key Milestones**:
+
 - **Day 3**: Story 1.1 should be complete (unblocks 1.2, 1.3, 1.5)
 - **Day 5**: Story 1.5 should be complete (unblocks 1.6)
 - **Day 8**: Story 1.6 should be complete (unblocks 1.7)
@@ -148,16 +159,19 @@ Story 1.4 (CSV Component) - Can start in parallel (only depends on 0.7)
 ## Parallel Work Streams
 
 ### Stream 1: Frontend UI (dev1_front)
+
 - Story 1.4 (can start immediately)
 - Story 1.2 (after 1.1)
 - Story 1.3 (after 1.1)
 - Story 1.9 (after 1.8)
 
 ### Stream 2: API Development (dev2_front)
+
 - Story 1.1 (critical path, start immediately)
 - Story 1.5 (after 1.1)
 
 ### Stream 3: CSV Processing (dev_backend)
+
 - Story 1.6 (after 1.5)
 - Story 1.7 (after 1.6)
 - Story 1.8 (after 1.7)
@@ -168,12 +182,14 @@ Story 1.4 (CSV Component) - Can start in parallel (only depends on 0.7)
 
 **Time**: [9:00 AM]  
 **Duration**: 15 minutes  
-**Format**: 
+**Format**:
+
 - What did I complete yesterday?
 - What will I work on today?
 - Any blockers or dependencies?
 
 **Focus Areas**:
+
 - Monitor Story 1.1 progress (critical path)
 - Track CSV processing stories (complex)
 - Identify blockers early
@@ -195,11 +211,13 @@ For each story to be considered "Done":
 - [ ] Story moved to "Done" status in tracking
 
 **Additional for API Stories**:
+
 - [ ] API tested with Postman/curl
 - [ ] Error responses tested
 - [ ] Input validation tested
 
 **Additional for Frontend Stories**:
+
 - [ ] UI tested in browser
 - [ ] Responsive design verified
 - [ ] Accessibility checked (keyboard navigation, screen reader)
@@ -208,34 +226,36 @@ For each story to be considered "Done":
 
 ## Risk Register
 
-| Risk ID | Risk Description                          | Probability | Impact | Mitigation                                    | Owner          | Status |
-| ------- | ----------------------------------------- | ----------- | ------ | -------------------------------------------- | -------------- | ------ |
-| R1      | Story 1.1 delayed, blocking multiple stories | Medium      | High   | dev2_front starts immediately, Team Lead monitors | Team Lead      | Open   |
-| R2      | CSV parsing edge cases not handled       | High        | High   | Test with real ADO CSV files early, comprehensive validation | dev_backend    | Open   |
-| R3      | CSV file format variations                | High        | Medium | Flexible parsing, field mapping, clear error messages | dev_backend    | Open   |
-| R4      | Large CSV files cause performance issues  | Medium      | Medium | Implement streaming/chunking, batch inserts | dev_backend    | Open   |
-| R5      | Story 1.8 bulk operations fail            | Low         | High   | Use transactions, test with large datasets   | dev_backend    | Open   |
+| Risk ID | Risk Description                             | Probability | Impact | Mitigation                                                   | Owner       | Status |
+| ------- | -------------------------------------------- | ----------- | ------ | ------------------------------------------------------------ | ----------- | ------ |
+| R1      | Story 1.1 delayed, blocking multiple stories | Medium      | High   | dev2_front starts immediately, Team Lead monitors            | Team Lead   | Open   |
+| R2      | CSV parsing edge cases not handled           | High        | High   | Test with real ADO CSV files early, comprehensive validation | dev_backend | Open   |
+| R3      | CSV file format variations                   | High        | Medium | Flexible parsing, field mapping, clear error messages        | dev_backend | Open   |
+| R4      | Large CSV files cause performance issues     | Medium      | Medium | Implement streaming/chunking, batch inserts                  | dev_backend | Open   |
+| R5      | Story 1.8 bulk operations fail               | Low         | High   | Use transactions, test with large datasets                   | dev_backend | Open   |
 
 ---
 
 ## Technical Decisions Log
 
-| Decision ID | Date | Decision | Rationale | Impacted Stories | Decision Maker |
-| ----------- | ---- | -------- | --------- | --------------- | -------------- |
-| TD1         | TBD  | Use PapaParse for CSV parsing | Industry standard, handles edge cases | 1.6 | Team |
-| TD2         | TBD  | Validate CSV with Zod schemas | Type-safe validation | 1.6, 1.7 | Team |
-| TD3         | TBD  | Use batch inserts for work items | Performance for large files | 1.8 | dev_backend |
+| Decision ID | Date | Decision                         | Rationale                             | Impacted Stories | Decision Maker |
+| ----------- | ---- | -------------------------------- | ------------------------------------- | ---------------- | -------------- |
+| TD1         | TBD  | Use PapaParse for CSV parsing    | Industry standard, handles edge cases | 1.6              | Team           |
+| TD2         | TBD  | Validate CSV with Zod schemas    | Type-safe validation                  | 1.6, 1.7         | Team           |
+| TD3         | TBD  | Use batch inserts for work items | Performance for large files           | 1.8              | dev_backend    |
 
 ---
 
 ## API Design Standards
 
 ### Endpoint Structure
+
 - Use RESTful conventions
 - Use consistent URL patterns: `/api/sprints/:id/...`
 - Use HTTP methods correctly (GET, POST, PUT, DELETE)
 
 ### Request/Response Format
+
 ```typescript
 // Success Response
 {
@@ -254,12 +274,14 @@ For each story to be considered "Done":
 ```
 
 ### Validation
+
 - Use Zod schemas for all input validation
 - Return 400 Bad Request for validation errors
 - Return 404 Not Found for missing resources
 - Return 500 Internal Server Error for unexpected errors
 
 ### Error Codes
+
 - `VALIDATION_ERROR`: Input validation failed
 - `NOT_FOUND`: Resource not found
 - `DUPLICATE_ENTRY`: Duplicate sprint number, etc.
@@ -270,12 +292,14 @@ For each story to be considered "Done":
 ## CSV Processing Standards
 
 ### Required Fields
+
 - Work Item ID
 - Title
 - Work Item Type
 - State
 
 ### Optional Fields
+
 - Story Points (convert to integer, handle empty)
 - Assigned To
 - Area Path (extract feature name)
@@ -284,12 +308,14 @@ For each story to be considered "Done":
 - Iteration Path
 
 ### Validation Rules
+
 - Required fields must be present and non-empty
 - Story Points must be integer or empty
 - Dates must be valid ISO 8601 or parseable format
 - Tags must be comma-separated
 
 ### Error Handling
+
 - Collect all validation errors per row
 - Return structured error report
 - Continue processing valid rows
@@ -300,17 +326,20 @@ For each story to be considered "Done":
 ## Testing Strategy
 
 ### Unit Tests
+
 - API endpoints (request/response)
 - CSV parsing functions
 - Data transformation functions
 - Validation functions
 
 ### Integration Tests
+
 - CSV upload → parsing → storage flow
 - Sprint creation → list → detail flow
 - Error handling scenarios
 
 ### Test Data
+
 - Create sample CSV files matching ADO format
 - Test with various edge cases:
   - Empty fields
@@ -355,16 +384,20 @@ For each story to be considered "Done":
 **Duration**: 1 hour
 
 ### What Went Well
+
 - [To be filled during retrospective]
 
 ### What Could Be Improved
+
 - [To be filled during retrospective]
 
 ### Action Items
+
 - [ ] Action 1 (Owner: [Name], Due: [Date])
 - [ ] Action 2 (Owner: [Name], Due: [Date])
 
 ### Metrics
+
 - **Velocity**: [X] story points
 - **Sprint Goal Achievement**: [X]%
 - **Stories Completed**: [X] / 9
@@ -393,15 +426,18 @@ Sprint 1 is successful when:
 ## Communication Plan
 
 ### Daily
+
 - **Standup**: 15 minutes at [9:00 AM]
 - **Slack/Teams**: Available for questions
 - **PR Reviews**: Within 24 hours (4 hours for critical)
 
 ### Weekly
+
 - **Progress Review**: End of Week 1
 - **Stakeholder Update**: If needed
 
 ### Sprint
+
 - **Sprint Review**: [TBD]
 - **Retrospective**: [TBD]
 
@@ -419,4 +455,3 @@ Sprint 1 is successful when:
 **Document Version**: 1.0  
 **Last Updated**: [Current Date]  
 **Status**: Ready for Sprint Execution
-

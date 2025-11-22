@@ -75,9 +75,7 @@ export function Table<T extends Record<string, unknown>>({
           </tr>
         </thead>
         <tbody
-          className={`bg-white divide-y divide-gray-200 ${
-            striped ? '' : ''
-          }`}
+          className={`bg-white divide-y divide-gray-200 ${striped ? '' : ''}`}
         >
           {data.length === 0 ? (
             <tr>
@@ -118,4 +116,3 @@ export function Table<T extends Record<string, unknown>>({
     </div>
   );
 }
-

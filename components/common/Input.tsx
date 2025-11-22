@@ -65,9 +65,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           id={inputId}
           className={`${baseStyles} ${errorStyles} ${disabledStyles} ${className}`}
           aria-invalid={error ? 'true' : 'false'}
-          aria-describedby={
-            error ? errorId : helperText ? helperId : undefined
-          }
+          aria-describedby={error ? errorId : helperText ? helperId : undefined}
           required={required}
           {...props}
         />
@@ -92,4 +90,3 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
 );
 
 Input.displayName = 'Input';
-
