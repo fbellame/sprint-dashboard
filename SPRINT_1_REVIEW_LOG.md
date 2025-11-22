@@ -28,9 +28,10 @@
 
 ## Code Reviews
 
-| Review ID | PR # | Story | Author      | Submitted  | Reviewed   | Status      | Reviewer  | Notes                                                            |
-| --------- | ---- | ----- | ----------- | ---------- | ---------- | ----------- | --------- | ---------------------------------------------------------------- |
-| R1        | #12  | 1.1   | dev2_front  | 2024-01-15 | 2024-01-15 | ✅ Approved | Team Lead | Excellent - All endpoints implemented, comprehensive tests, production-ready |
+| Review ID | PR # | Story | Author     | Submitted  | Reviewed   | Status      | Reviewer  | Notes                                                                        |
+| --------- | ---- | ----- | ---------- | ---------- | ---------- | ----------- | --------- | ---------------------------------------------------------------------------- |
+| R1        | #12  | 1.1   | dev2_front | 2024-01-15 | 2024-01-15 | ✅ Approved | Team Lead | Excellent - All endpoints implemented, comprehensive tests, production-ready |
+| R2        | #13  | 1.2   | dev1_front | 2024-01-15 | 2024-01-15 | ✅ Approved | Team Lead | Excellent - Comprehensive form with validation, error handling, responsive design |
 
 **Status Legend**:
 
@@ -53,6 +54,7 @@
 **Status**: ✅ **APPROVED**
 
 **Review Summary**:
+
 - ✅ All 5 API endpoints implemented (GET, POST, PUT, DELETE)
 - ✅ Comprehensive Zod validation schemas
 - ✅ Consistent error handling with appropriate HTTP status codes
@@ -62,6 +64,7 @@
 - ✅ Aligned with architecture document
 
 **Highlights**:
+
 - Excellent duplicate detection logic (handles team-specific sprints)
 - Comprehensive error handling (validation, not found, duplicates, database errors)
 - Well-structured test coverage
@@ -69,8 +72,34 @@
 
 **See**: [PR_12_REVIEW_STORY_1.1.md](./PR_12_REVIEW_STORY_1.1.md) for full review details.
 
+### Review R2: Story 1.2 - Sprint Creation Form
+
+**PR**: [#13](https://github.com/fbellame/sprint-dashboard/pull/13)  
+**Author**: dev1_front  
+**Submitted**: 2024-01-15  
+**Reviewed**: 2024-01-15  
+**Status**: ✅ **APPROVED**
+
+**Review Summary**:
+- ✅ Form page at `/sprints/new` with responsive layout
+- ✅ All required form fields with proper validation
+- ✅ React Hook Form with Zod integration
+- ✅ Comprehensive error handling (duplicates, validation, network errors)
+- ✅ Success redirect to sprint detail page
+- ✅ Uses design system components (Input, Button)
+- ✅ Responsive design (mobile-first approach)
+- ✅ Business rule validation (end_date >= start_date)
+
+**Highlights**:
+- Excellent form implementation with React Hook Form
+- Comprehensive validation with Zod
+- Robust error handling with field-level and general errors
+- Excellent UX with loading states and clear error messages
+- Proper use of design system components
+
+**See**: [PR_13_REVIEW_STORY_1.2.md](./PR_13_REVIEW_STORY_1.2.md) for full review details.
+
 ---
 
 **Last Updated**: 2024-01-15  
-**Next Review**: Story 1.2, 1.3, or 1.5 (when submitted)
-
+**Next Review**: Story 1.3, 1.4, or 1.5 (when submitted)
