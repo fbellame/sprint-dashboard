@@ -20,7 +20,9 @@ import type { CsvRow } from './csvParser';
 describe('CSV to Work Item Transformer', () => {
   describe('extractFeatureName', () => {
     it('should extract feature name from Area Path with backslashes', () => {
-      expect(extractFeatureName('Project\\Feature\\SubFeature')).toBe('Feature');
+      expect(extractFeatureName('Project\\Feature\\SubFeature')).toBe(
+        'Feature'
+      );
       expect(extractFeatureName('MyProject\\MyFeature')).toBe('MyFeature');
     });
 
@@ -51,7 +53,9 @@ describe('CSV to Work Item Transformer', () => {
     });
 
     it('should handle three or more segments', () => {
-      expect(extractFeatureName('Project\\Feature\\SubFeature\\Detail')).toBe('Feature');
+      expect(extractFeatureName('Project\\Feature\\SubFeature\\Detail')).toBe(
+        'Feature'
+      );
     });
   });
 
@@ -61,7 +65,11 @@ describe('CSV to Work Item Transformer', () => {
     });
 
     it('should trim whitespace from tags', () => {
-      expect(parseTags(' tag1 , tag2 , tag3 ')).toEqual(['tag1', 'tag2', 'tag3']);
+      expect(parseTags(' tag1 , tag2 , tag3 ')).toEqual([
+        'tag1',
+        'tag2',
+        'tag3',
+      ]);
     });
 
     it('should filter out empty tags', () => {
@@ -76,7 +84,11 @@ describe('CSV to Work Item Transformer', () => {
     });
 
     it('should preserve special characters in tags', () => {
-      expect(parseTags('tag-1,tag_2,tag.3')).toEqual(['tag-1', 'tag_2', 'tag.3']);
+      expect(parseTags('tag-1,tag_2,tag.3')).toEqual([
+        'tag-1',
+        'tag_2',
+        'tag.3',
+      ]);
     });
 
     it('should handle single tag', () => {
@@ -123,7 +135,9 @@ describe('CSV to Work Item Transformer', () => {
   describe('determineStatusIndicator', () => {
     it('should return * for Team Focus tag', () => {
       expect(determineStatusIndicator('Active', ['Team Focus'])).toBe('*');
-      expect(determineStatusIndicator('New', ['Some Tag', 'Team Focus Tag'])).toBe('*');
+      expect(
+        determineStatusIndicator('New', ['Some Tag', 'Team Focus Tag'])
+      ).toBe('*');
     });
 
     it('should return ✓ for Closed state', () => {
@@ -415,4 +429,3 @@ describe('CSV to Work Item Transformer', () => {
     });
   });
 });
-

@@ -57,6 +57,7 @@ Story 1.6 implements comprehensive CSV parsing and validation using PapaParse an
 ### Key Features
 
 #### 1. PapaParse Integration
+
 - Configured for Azure DevOps CSV format
 - Header detection and trimming
 - Empty line skipping
@@ -65,18 +66,21 @@ Story 1.6 implements comprehensive CSV parsing and validation using PapaParse an
 - Line break handling in fields
 
 #### 2. Zod Validation
+
 - Required field validation
 - Optional field handling
 - Type transformations (Story Points string → number)
 - Detailed error messages
 
 #### 3. Error Handling
+
 - Per-row error tracking
 - Field-level error reporting
 - Error summary with statistics
 - Structured error format for API responses
 
 #### 4. Edge Case Handling
+
 - ✅ BOM (Byte Order Mark) removal
 - ✅ Different delimiters (comma, semicolon, tab)
 - ✅ Quoted fields with commas
@@ -96,11 +100,13 @@ Story 1.6 implements comprehensive CSV parsing and validation using PapaParse an
 **Purpose**: Parse and validate CSV file content
 
 **Request Body Options**:
+
 1. JSON: `{ "file_content": "CSV string..." }`
 2. FormData: `{ file: File }`
 3. Direct CSV: `text/csv` content type
 
 **Response**:
+
 ```json
 {
   "success": true,
@@ -174,6 +180,7 @@ Tests  23 passed (23)
 ### Ready for Story 1.7
 
 The parsing results are ready to be transformed into work items:
+
 - Valid rows are available in `result.data`
 - Each row is validated and typed
 - Raw CSV data structure is preserved
@@ -181,6 +188,7 @@ The parsing results are ready to be transformed into work items:
 ### Works with Story 1.5
 
 The process endpoint can be called after file upload:
+
 1. Upload file via Story 1.5 endpoint
 2. Get file content
 3. Process via Story 1.6 endpoint
@@ -190,18 +198,18 @@ The process endpoint can be called after file upload:
 
 ## Edge Cases Handled
 
-| Edge Case | Status | Implementation |
-|-----------|--------|----------------|
-| BOM (Byte Order Mark) | ✅ | Manual removal before parsing |
-| Different delimiters | ✅ | Auto-detection (comma, semicolon, tab) |
-| Quoted fields with commas | ✅ | PapaParse handles automatically |
-| Line breaks in fields | ✅ | PapaParse handles automatically |
-| Missing columns | ✅ | Zod validation catches missing required fields |
-| Extra columns | ✅ | Ignored (only required fields validated) |
-| Empty CSV | ✅ | Returns empty result with 0 rows |
-| CSV with only headers | ✅ | Returns empty result with 0 rows |
-| Whitespace in headers/values | ✅ | Automatic trimming |
-| Invalid Story Points | ✅ | Transformed to null |
+| Edge Case                    | Status | Implementation                                 |
+| ---------------------------- | ------ | ---------------------------------------------- |
+| BOM (Byte Order Mark)        | ✅     | Manual removal before parsing                  |
+| Different delimiters         | ✅     | Auto-detection (comma, semicolon, tab)         |
+| Quoted fields with commas    | ✅     | PapaParse handles automatically                |
+| Line breaks in fields        | ✅     | PapaParse handles automatically                |
+| Missing columns              | ✅     | Zod validation catches missing required fields |
+| Extra columns                | ✅     | Ignored (only required fields validated)       |
+| Empty CSV                    | ✅     | Returns empty result with 0 rows               |
+| CSV with only headers        | ✅     | Returns empty result with 0 rows               |
+| Whitespace in headers/values | ✅     | Automatic trimming                             |
+| Invalid Story Points         | ✅     | Transformed to null                            |
 
 ---
 
@@ -247,4 +255,3 @@ The process endpoint can be called after file upload:
 
 **Status**: ✅ Complete  
 **Ready for**: Code Review & Story 1.7
-

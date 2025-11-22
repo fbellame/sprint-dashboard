@@ -96,19 +96,16 @@ export default function CSVUploadPage() {
       fileContent: string;
       uploadId: string;
     }): Promise<ProcessingResult> => {
-      const response = await fetch(
-        `/api/sprints/${sprintId}/upload/process`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            file_content: fileContent,
-            upload_id: uploadId,
-          }),
-        }
-      );
+      const response = await fetch(`/api/sprints/${sprintId}/upload/process`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          file_content: fileContent,
+          upload_id: uploadId,
+        }),
+      });
 
       if (!response.ok) {
         const error = await response.json();
@@ -209,8 +206,7 @@ export default function CSVUploadPage() {
     );
   }
 
-  const isUploading =
-    uploadMutation.isPending || processMutation.isPending;
+  const isUploading = uploadMutation.isPending || processMutation.isPending;
 
   return (
     <div className="min-h-screen bg-background p-4 sm:p-8">
@@ -338,7 +334,10 @@ export default function CSVUploadPage() {
           </h3>
           <ul className="text-xs text-gray-600 space-y-1 list-disc list-inside">
             <li>Export your work items from Azure DevOps as CSV</li>
-            <li>Ensure required fields are present: Work Item ID, Title, Work Item Type, State</li>
+            <li>
+              Ensure required fields are present: Work Item ID, Title, Work Item
+              Type, State
+            </li>
             <li>Maximum file size: 10MB per file</li>
             <li>You can upload multiple files at once</li>
             <li>Re-uploading will update existing work items</li>
@@ -348,4 +347,3 @@ export default function CSVUploadPage() {
     </div>
   );
 }
-

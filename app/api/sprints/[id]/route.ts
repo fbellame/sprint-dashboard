@@ -110,59 +110,65 @@ export async function PUT(
       return notFoundResponse('Sprint');
     }
 
-    // Check for duplicate sprint number if sprint_number is being updated
-    if (input.sprint_number !== undefined) {
-      const { data: duplicate } = await supabaseAdmin
+    // Check for duplicate sprint number if sprint_number or team_name is being updated
+    // We need to check based on the (sprint_number, team_name) combination
+    if (input.sprint_number !== undefined || input.team_name !== undefined) {
+      // Get current sprint to determine the team_name to check
+      const { data: currentSprint } = await supabaseAdmin
         .from('sprints')
-        .select('id')
-        .eq('sprint_number', input.sprint_number)
-        .neq('id', id)
+        .select('sprint_number, team_name')
+        .eq('id', id)
         .single();
 
+      if (!currentSprint) {
+        return notFoundResponse('Sprint');
+      }
+
+      // Determine the sprint_number and team_name to check
+      const checkSprintNumber =
+        input.sprint_number !== undefined
+          ? input.sprint_number
+          : currentSprint.sprint_number;
+      const checkTeamName =
+        input.team_name !== undefined
+          ? input.team_name
+          : currentSprint.team_name;
+
+      // Check for duplicate based on (sprint_number, team_name) combination
+      let duplicateQuery = supabaseAdmin
+        .from('sprints')
+        .select('id')
+        .eq('sprint_number', checkSprintNumber)
+        .neq('id', id);
+
+      // Match team_name (including null)
+      if (checkTeamName) {
+        duplicateQuery = duplicateQuery.eq('team_name', checkTeamName);
+      } else {
+        duplicateQuery = duplicateQuery.is('team_name', null);
+      }
+
+      // Use maybeSingle() instead of single() to handle "not found" gracefully
+      const { data: duplicate, error: duplicateError } =
+        await duplicateQuery.maybeSingle();
+
+      // If query error (not "not found"), return error
+      if (duplicateError && duplicateError.code !== 'PGRST116') {
+        return errorResponse(
+          'Failed to check for duplicate sprint',
+          500,
+          'DATABASE_ERROR',
+          duplicateError
+        );
+      }
+
+      // If duplicate exists, return conflict error
       if (duplicate) {
-        // Check if team_name matches (if provided)
-        if (input.team_name !== undefined) {
-          const { data: teamDuplicate } = await supabaseAdmin
-            .from('sprints')
-            .select('id')
-            .eq('sprint_number', input.sprint_number)
-            .eq('team_name', input.team_name)
-            .neq('id', id)
-            .single();
+        const errorMessage = checkTeamName
+          ? `A sprint with number ${checkSprintNumber} already exists for team "${checkTeamName}".`
+          : `A sprint with number ${checkSprintNumber} already exists (no team specified).`;
 
-          if (teamDuplicate) {
-            return errorResponse(
-              'Sprint with this number already exists for this team',
-              409,
-              'DUPLICATE_ENTRY'
-            );
-          }
-        } else {
-          // Get existing sprint to check team_name
-          const { data: currentSprint } = await supabaseAdmin
-            .from('sprints')
-            .select('team_name')
-            .eq('id', id)
-            .single();
-
-          if (currentSprint?.team_name) {
-            const { data: teamDuplicate } = await supabaseAdmin
-              .from('sprints')
-              .select('id')
-              .eq('sprint_number', input.sprint_number)
-              .eq('team_name', currentSprint.team_name)
-              .neq('id', id)
-              .single();
-
-            if (teamDuplicate) {
-              return errorResponse(
-                'Sprint with this number already exists for this team',
-                409,
-                'DUPLICATE_ENTRY'
-              );
-            }
-          }
-        }
+        return errorResponse(errorMessage, 409, 'DUPLICATE_ENTRY');
       }
     }
 

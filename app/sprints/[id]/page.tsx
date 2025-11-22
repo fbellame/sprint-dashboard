@@ -1,4 +1,3 @@
-
 /**
  * Sprint Detail Page (Placeholder)
  *
@@ -18,9 +17,7 @@ export default function SprintDetailPage({
         <h1 className="text-3xl font-bold text-gray-900 mb-4">
           Sprint Details
         </h1>
-        <p className="text-gray-600">
-          Sprint ID: {params.id}
-        </p>
+        <p className="text-gray-600">Sprint ID: {params.id}</p>
         <p className="text-sm text-gray-500 mt-4">
           Full sprint detail page will be implemented in a future story.
         </p>
@@ -28,4 +25,3 @@ export default function SprintDetailPage({
     </div>
   );
 }
-
