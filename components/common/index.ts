@@ -15,3 +15,5 @@ export { StatusIndicator, StatusIndicatorLegend } from './StatusIndicator';
 export type { StatusType } from './StatusIndicator';
 
 export { Typography } from './Typography';
+
+export { CSVUploader } from './CSVUploader';

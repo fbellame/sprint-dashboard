@@ -36,6 +36,8 @@
 | R4        | #16  | 1.6   | dev_backend | 2024-01-15 | 2024-01-15 | ✅ Approved | Team Lead | Excellent - Comprehensive CSV parsing, Zod validation, 23 tests passing, all edge cases handled |
 | R5        | #17  | 1.3   | dev1_front | 2024-01-15 | 2024-01-15 | ✅ Approved | Team Lead | Excellent - Sprint list page with loading/error/empty states, responsive design, production-ready |
 | R6        | #17  | 1.7   | dev_backend | 2024-01-15 | 2024-01-15 | ✅ Approved | Team Lead | Excellent - Comprehensive CSV transformation, 46 tests passing, all edge cases handled |
+| R7        | #18  | 1.4   | dev1_front | 2024-01-15 | 2024-01-15 | ✅ Approved | Team Lead | Excellent - Comprehensive CSV upload component, full accessibility, excellent UX, production-ready |
+| R8        | #18  | 1.8   | dev_backend | 2024-01-15 | 2024-01-15 | ✅ Approved | Team Lead | Excellent - Robust bulk storage with conflict resolution, batch processing, comprehensive error handling |
 
 **Status Legend**:
 
@@ -210,7 +212,62 @@
 
 **See**: [PR_17_REVIEW_STORY_1.3_AND_1.7.md](./PR_17_REVIEW_STORY_1.3_AND_1.7.md) for full review details.
 
+### Review R7: Story 1.4 - CSV Upload Component
+
+**PR**: [#18](https://github.com/fbellame/sprint-dashboard/pull/18)  
+**Author**: dev1_front  
+**Submitted**: 2024-01-15  
+**Reviewed**: 2024-01-15  
+**Status**: ✅ **APPROVED**
+
+**Review Summary**:
+- ✅ CSV uploader component with drag-and-drop functionality
+- ✅ File type validation (CSV only) - MIME type and extension
+- ✅ File size validation (max 10MB, configurable)
+- ✅ Upload progress indicator with spinner and percentage
+- ✅ Error messages for invalid files (per-file and general)
+- ✅ Support for multiple file selection (configurable limit)
+- ✅ Visual feedback during upload (status indicators, icons)
+- ✅ Full accessibility support (keyboard navigation, screen reader, ARIA)
+
+**Highlights**:
+- Excellent UX with comprehensive visual feedback
+- Full accessibility implementation (ARIA labels, keyboard navigation, screen reader support)
+- Comprehensive file validation with user-friendly error messages
+- Proper state management (pending, uploading, success, error)
+- Production-ready code quality
+
+**See**: [PR_18_REVIEW_STORY_1.4_AND_1.8.md](./PR_18_REVIEW_STORY_1.4_AND_1.8.md) for full review details.
+
+### Review R8: Story 1.8 - Work Items Storage
+
+**PR**: [#18](https://github.com/fbellame/sprint-dashboard/pull/18)  
+**Author**: dev_backend  
+**Submitted**: 2024-01-15  
+**Reviewed**: 2024-01-15  
+**Status**: ✅ **APPROVED**
+
+**Review Summary**:
+- ✅ `POST /api/sprints/:id/upload/process` endpoint updated to include storage
+- ✅ Bulk insert/update work items with batch processing (100 items/batch)
+- ✅ Handle duplicate work items (update existing via upsert with conflict resolution)
+- ✅ Transaction support (atomic per batch via Supabase upsert)
+- ✅ Update CSV upload status with counts and error messages
+- ✅ Return processing results (inserted, updated, failed counts, errors)
+- ✅ Comprehensive error handling with fallback to individual operations
+- ✅ Performance optimization for large files (batch processing)
+
+**Highlights**:
+- Robust bulk storage with conflict resolution using PostgreSQL ON CONFLICT
+- Excellent batch processing strategy with fallback to individual operations
+- Accurate tracking of inserts vs updates
+- Comprehensive error handling and reporting
+- Performance optimized for typical CSV sizes
+- Production-ready code quality
+
+**See**: [PR_18_REVIEW_STORY_1.4_AND_1.8.md](./PR_18_REVIEW_STORY_1.4_AND_1.8.md) for full review details.
+
 ---
 
 **Last Updated**: 2024-01-15  
-**Next Review**: Story 1.4, 1.8, or 1.9 (when submitted)
+**Next Review**: Story 1.9 (when submitted)
