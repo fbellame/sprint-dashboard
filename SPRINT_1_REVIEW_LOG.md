@@ -34,6 +34,8 @@
 | R2        | #13  | 1.2   | dev1_front | 2024-01-15 | 2024-01-15 | ✅ Approved | Team Lead | Excellent - Comprehensive form with validation, error handling, responsive design |
 | R3        | #14  | 1.5   | dev2_front | 2024-01-15 | 2024-01-15 | ✅ Approved | Team Lead | Excellent - Comprehensive file validation, metadata storage, 6 tests passing |
 | R4        | #16  | 1.6   | dev_backend | 2024-01-15 | 2024-01-15 | ✅ Approved | Team Lead | Excellent - Comprehensive CSV parsing, Zod validation, 23 tests passing, all edge cases handled |
+| R5        | #17  | 1.3   | dev1_front | 2024-01-15 | 2024-01-15 | ✅ Approved | Team Lead | Excellent - Sprint list page with loading/error/empty states, responsive design, production-ready |
+| R6        | #17  | 1.7   | dev_backend | 2024-01-15 | 2024-01-15 | ✅ Approved | Team Lead | Excellent - Comprehensive CSV transformation, 46 tests passing, all edge cases handled |
 
 **Status Legend**:
 
@@ -152,7 +154,63 @@
 
 **See**: [PR_16_REVIEW_STORY_1.6.md](./PR_16_REVIEW_STORY_1.6.md) for full review details.
 
+### Review R5: Story 1.3 - Sprint List Page
+
+**PR**: [#17](https://github.com/fbellame/sprint-dashboard/pull/17)  
+**Author**: dev1_front  
+**Submitted**: 2024-01-15  
+**Reviewed**: 2024-01-15  
+**Status**: ✅ **APPROVED**
+
+**Review Summary**:
+- ✅ Home page displays sprint list with SprintList component
+- ✅ Sprint cards show all required information (number, name, dates, team, created date)
+- ✅ Clicking card navigates to sprint detail page
+- ✅ Sprints sorted by sprint number (descending) - handled by API
+- ✅ Empty state with friendly message and CTA button
+- ✅ Loading state with spinner
+- ✅ Error state with retry functionality
+- ✅ Responsive grid layout (1/2/3 columns)
+
+**Highlights**:
+- Excellent UX with comprehensive state handling (loading, error, empty)
+- Responsive design works on all devices
+- Proper React Query integration
+- Uses design system components
+- Production-ready code quality
+
+**See**: [PR_17_REVIEW_STORY_1.3_AND_1.7.md](./PR_17_REVIEW_STORY_1.3_AND_1.7.md) for full review details.
+
+### Review R6: Story 1.7 - CSV Data Transformation
+
+**PR**: [#17](https://github.com/fbellame/sprint-dashboard/pull/17)  
+**Author**: dev_backend  
+**Submitted**: 2024-01-15  
+**Reviewed**: 2024-01-15  
+**Status**: ✅ **APPROVED**
+
+**Review Summary**:
+- ✅ Transform CSV rows to work item objects
+- ✅ Extract feature name from Area Path (handles multiple formats)
+- ✅ Parse tags from comma-separated string to array
+- ✅ Parse dates (handles multiple formats)
+- ✅ Determine status indicators based on state and tags
+- ✅ Identify PI commitments, sprint goals, highlights
+- ✅ Store raw CSV data in JSONB field
+- ✅ 46 comprehensive tests, all passing
+
+**Highlights**:
+- Excellent transformation logic with comprehensive edge case handling
+- Feature extraction handles backslash and forward slash separators
+- Date parsing handles multiple formats gracefully
+- Status indicator logic follows priority order correctly
+- Flag identification uses case-insensitive matching
+- All transformation functions are pure (no side effects)
+- Production-ready code quality
+
+**See**: [PR_17_REVIEW_STORY_1.3_AND_1.7.md](./PR_17_REVIEW_STORY_1.3_AND_1.7.md) for full review details.
+
 ---
 
 **Last Updated**: 2024-01-15  
-**Next Review**: Story 1.3, 1.4, or 1.7 (when submitted)
+**Next Review**: Story 1.4, 1.8, or 1.9 (when submitted)

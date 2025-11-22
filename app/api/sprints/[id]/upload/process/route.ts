@@ -1,11 +1,13 @@
 /**
  * POST /api/sprints/:id/upload/process
- * Process CSV file content - Parse and validate CSV data
+ * Process CSV file content - Parse, validate, and transform CSV data
  * 
- * Story: 1.6 - CSV Parsing and Validation
+ * Stories: 1.6 (CSV Parsing) + 1.7 (CSV Transformation)
  * 
- * This endpoint accepts CSV file content and returns parsing/validation results.
+ * This endpoint accepts CSV file content and returns parsing/validation/transformation results.
  * The file content should be sent in the request body as text or as a File object.
+ * 
+ * Note: Work items will be stored in database in Story 1.8
  */
 
 import { NextRequest } from 'next/server';
@@ -18,6 +20,7 @@ import {
 } from '@/lib/api/utils/response';
 import { sprintIdSchema } from '@/lib/api/schemas/sprint';
 import { parseCsvFile, formatParsingErrors } from '@/lib/transformers/csvParser';
+import { transformCsvRowsToWorkItems } from '@/lib/transformers/csvToWorkItem';
 
 /**
  * Process CSV file content
@@ -110,7 +113,10 @@ export async function POST(
     const errorDetails =
       result.errors.length > 0 ? formatParsingErrors(result.errors) : null;
 
-    // Return parsing results
+    // Transform valid CSV rows to work items
+    const workItems = transformCsvRowsToWorkItems(result.data, id);
+
+    // Return parsing and transformation results
     return successResponse({
       parsing_result: {
         total_rows: result.meta.totalRows,
@@ -119,9 +125,12 @@ export async function POST(
         skipped_rows: result.meta.skippedRows,
         errors: errorDetails,
       },
-      // Include sample of valid data (first 5 rows) for preview
-      sample_data: result.data.slice(0, 5),
-      // Note: Full data will be transformed and stored in Story 1.7
+      transformation_result: {
+        work_items_count: workItems.length,
+        // Include sample of transformed work items (first 3) for preview
+        sample_work_items: workItems.slice(0, 3),
+      },
+      // Note: Work items will be stored in database in Story 1.8
     });
   } catch (error) {
     return errorResponse(
