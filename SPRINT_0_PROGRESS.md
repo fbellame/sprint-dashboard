@@ -26,7 +26,7 @@
 | 0.3      | Create Database Schema     | dev_backend | ✅ Done  | 8      | 2024-01-15 | 2024-01-15 | -       | ✅ **APPROVED** - Excellent schema design |
 | 0.4      | State Management Setup     | dev1_front  | ✅ Done  | 5      | 2024-01-15 | 2024-01-15 | -       | ✅ **APPROVED** - Production-ready        |
 | 0.5      | Dev Tools & Git Hooks      | dev2_front  | ✅ Done  | 3      | 2024-01-15 | 2024-01-15 | -       | ✅ **APPROVED** - Excellent DX setup      |
-| 0.6      | Vercel Deployment          | dev2_front  | 🟢 In Review | 5      | 2024-01-15 | -          | -       | ✅ Workflow fixed (removed --yes flag), secrets configured |
+| 0.6      | Vercel Deployment          | dev2_front  | 🟢 In Review | 5      | 2024-01-15 | -          | -       | ✅ Workflow fixed (using --confirm flag), secrets configured |
 | 0.7      | Design System              | dev1_front  | 🟢 In Review | 5      | 2024-01-15 | -          | PR #9   | ✅ **APPROVED** - Pending Vercel secrets |
 | 0.8      | Testing Framework          | dev2_front  | ✅ Done  | 5      | 2024-01-15 | 2024-01-15 | PR #7   | ✅ **APPROVED** - Excellent testing setup |
 
