@@ -19,17 +19,17 @@
 
 ## Story Progress
 
-| Story ID | Story Title                     | Assignee    | Status   | Points | Started | Completed | PR Link | Notes          |
-| -------- | ------------------------------- | ----------- | -------- | ------ | ------- | --------- | ------- | -------------- |
+| Story ID | Story Title                     | Assignee    | Status   | Points | Started    | Completed  | PR Link | Notes                                                         |
+| -------- | ------------------------------- | ----------- | -------- | ------ | ---------- | ---------- | ------- | ------------------------------------------------------------- |
 | 1.1      | Sprint Management API Endpoints | dev2_front  | ✅ Done  | 8      | 2024-01-15 | 2024-01-15 | PR #12  | ✅ **APPROVED** - Excellent implementation, all tests passing |
-| 1.2      | Sprint Creation Form            | dev1_front  | 🟡 Ready | 5      | -       | -         | -       | ✅ Can start now (unblocked by 1.1) |
-| 1.3      | Sprint List Page                | dev1_front  | 🟡 Ready | 5      | -       | -         | -       | ✅ Can start now (unblocked by 1.1) |
-| 1.4      | CSV Upload Component            | dev1_front  | 🟡 Ready | 5      | -       | -         | -       | Can start now  |
-| 1.5      | CSV Upload API Endpoint         | dev2_front  | 🟡 Ready | 5      | -       | -         | -       | ✅ Can start now (unblocked by 1.1) |
-| 1.6      | CSV Parsing and Validation      | dev_backend | 🔴 To Do | 8      | -       | -         | -       | Blocked by 1.5 |
-| 1.7      | CSV Data Transformation         | dev_backend | 🔴 To Do | 8      | -       | -         | -       | Blocked by 1.6 |
-| 1.8      | Work Items Storage              | dev_backend | 🔴 To Do | 8      | -       | -         | -       | Blocked by 1.7 |
-| 1.9      | CSV Upload Page                 | dev1_front  | 🔴 To Do | 5      | -       | -         | -       | Blocked by 1.8 |
+| 1.2      | Sprint Creation Form            | dev1_front  | 🟡 Ready | 5      | -          | -          | -       | ✅ Can start now (unblocked by 1.1)                           |
+| 1.3      | Sprint List Page                | dev1_front  | 🟡 Ready | 5      | -          | -          | -       | ✅ Can start now (unblocked by 1.1)                           |
+| 1.4      | CSV Upload Component            | dev1_front  | 🟡 Ready | 5      | -          | -          | -       | Can start now                                                 |
+| 1.5      | CSV Upload API Endpoint         | dev2_front  | 🟡 Ready | 5      | -          | -          | -       | ✅ Can start now (unblocked by 1.1)                           |
+| 1.6      | CSV Parsing and Validation      | dev_backend | 🔴 To Do | 8      | -          | -          | -       | Blocked by 1.5                                                |
+| 1.7      | CSV Data Transformation         | dev_backend | 🔴 To Do | 8      | -          | -          | -       | Blocked by 1.6                                                |
+| 1.8      | Work Items Storage              | dev_backend | 🔴 To Do | 8      | -          | -          | -       | Blocked by 1.7                                                |
+| 1.9      | CSV Upload Page                 | dev1_front  | 🔴 To Do | 5      | -          | -          | -       | Blocked by 1.8                                                |
 
 **Legend**:
 
@@ -86,8 +86,8 @@
 
 ## Code Review Queue
 
-| PR # | Story | Author | Status | Reviewers | Priority | Created | Updated |
-| ---- | ----- | ------ | ------ | --------- | -------- | ------- | ------- |
+| PR # | Story | Author     | Status      | Reviewers | Priority | Created    | Updated    |
+| ---- | ----- | ---------- | ----------- | --------- | -------- | ---------- | ---------- |
 | #12  | 1.1   | dev2_front | ✅ Approved | Team Lead | Critical | 2024-01-15 | 2024-01-15 |
 
 **Review Priority**:
@@ -101,10 +101,10 @@
 
 ## Velocity Tracking
 
-| Week   | Planned Points | Completed Points | Velocity | Notes |
-| ------ | -------------- | ---------------- | -------- | ----- |
+| Week   | Planned Points | Completed Points | Velocity | Notes                       |
+| ------ | -------------- | ---------------- | -------- | --------------------------- |
 | Week 1 | 57             | 8                | 8        | Story 1.1 completed (Day 1) |
-| Week 2 | -              | -                | -        | -     |
+| Week 2 | -              | -                | -        | -                           |
 
 **Target Velocity**: 57 points (2 weeks)  
 **Current Velocity**: 0 points
