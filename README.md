@@ -4,13 +4,21 @@ An automated visualization tool that generates sprint overview documents from Az
 
 ## Project Status
 
-**Current Sprint**: Sprint 0 - Infrastructure & Foundation  
+**Current Sprint**: Sprint 1 - Sprint Management & CSV Upload  
 **Start Date**: 2024-01-15  
 **End Date**: 2024-01-29  
-**Progress**: 100% Complete (8/8 stories, 39/39 story points)  
-**Status**: ✅ Complete - All stories validated
+**Progress**: 33.3% Complete (3/9 stories, 18/57 story points)  
+**Status**: 🟡 In Progress - Ahead of Schedule
 
-### Completed Stories ✅
+### Sprint 1 Completed Stories ✅
+
+- Story 1.1: Sprint Management API Endpoints (8 points) - ✅ Approved - [PR #12](https://github.com/fbellame/sprint-dashboard/pull/12)
+- Story 1.2: Sprint Creation Form (5 points) - ✅ Approved - [PR #13](https://github.com/fbellame/sprint-dashboard/pull/13)
+- Story 1.5: CSV Upload API Endpoint (5 points) - ✅ Approved - [PR #14](https://github.com/fbellame/sprint-dashboard/pull/14)
+
+### Sprint 0 (Completed) ✅
+
+**Sprint 0**: Infrastructure & Foundation - ✅ **100% Complete** (8/8 stories, 39/39 story points)
 
 - Story 0.1: Initialize Next.js Project (3 points) - ✅ Validated
 - Story 0.2: Set Up Supabase (5 points) - ✅ Validated
@@ -177,11 +185,34 @@ sprint-dashboard/
 - `npm run type-check` - Run TypeScript type checking
 - `npm test` - Run tests (when testing framework is set up)
 
-## Sprint 0 Stories
+## Sprint 1 Stories
 
-**Sprint Status**: 🟡 In Progress (75% Complete - 6/8 stories)  
-**Story Points**: 29/39 completed  
+**Sprint Status**: 🟡 In Progress (33.3% Complete - 3/9 stories)  
+**Story Points**: 18/57 completed  
 **Last Updated**: 2024-01-15
+
+| Story | Title                     | Assignee    | Status   | Points | PR Link | Notes                                                         |
+| ----- | ------------------------- | ----------- | -------- | ------ | ------- | ------------------------------------------------------------- |
+| 1.1   | Sprint Management API     | dev2_front  | ✅ Done  | 8      | PR #12  | ✅ Approved - All endpoints implemented, comprehensive tests   |
+| 1.2   | Sprint Creation Form      | dev1_front  | ✅ Done  | 5      | PR #13  | ✅ Approved - Comprehensive validation, error handling        |
+| 1.3   | Sprint List Page          | dev1_front  | 🟡 Ready | 5      | -       | ✅ Can start now (unblocked by 1.1)                           |
+| 1.4   | CSV Upload Component      | dev1_front  | 🟡 Ready | 5      | -       | Can start now                                                 |
+| 1.5   | CSV Upload API Endpoint  | dev2_front  | ✅ Done  | 5      | PR #14  | ✅ Approved - Comprehensive validation, metadata storage       |
+| 1.6   | CSV Parsing and Validation | dev_backend | 🟡 Ready | 8      | -       | ✅ Can start now (unblocked by 1.5)                           |
+| 1.7   | CSV Data Transformation   | dev_backend | 🔴 To Do | 8      | -       | Blocked by 1.6                                                |
+| 1.8   | Work Items Storage        | dev_backend | 🔴 To Do | 8      | -       | Blocked by 1.7                                                |
+| 1.9   | CSV Upload Page           | dev1_front  | 🔴 To Do | 5      | -       | Blocked by 1.8                                                |
+
+**Legend**:
+
+- ✅ Done - Story complete and approved
+- 🟡 Ready - Can start (dependencies met)
+- 🔴 Blocked - Waiting for dependencies
+
+## Sprint 0 Stories (Completed) ✅
+
+**Sprint Status**: ✅ Complete (100% - 8/8 stories)  
+**Story Points**: 39/39 completed
 
 | Story | Title                      | Assignee    | Status  | Points | Notes                                                  |
 | ----- | -------------------------- | ----------- | ------- | ------ | ------------------------------------------------------ |
@@ -193,12 +224,6 @@ sprint-dashboard/
 | 0.6   | Vercel Deployment          | dev2_front  | ✅ Done | 5      | Validated - Workflow fixed, deployment working         |
 | 0.7   | Design System              | dev1_front  | ✅ Done | 5      | Validated - Code review approved, deployment validated |
 | 0.8   | Testing Framework          | dev2_front  | ✅ Done | 5      | Approved - Excellent testing setup                     |
-
-**Legend**:
-
-- ✅ Done - Story complete and approved
-- 🟡 Ready - Can start (dependencies met)
-- 🔴 Blocked - Waiting for dependencies
 
 ## State Management
 
@@ -331,8 +356,10 @@ const loadingState = createLoadingState(isLoading, isFetching, isError, error);
 - [PRD](./PRD.md) - Product Requirements Document
 - [Solution Architecture](./SOLUTION_ARCHITECTURE.md) - Technical architecture
 - [User Stories](./USER_STORIES.md) - All user stories
-- [Sprint 0 Planning](./SPRINT_0_PLANNING.md) - Sprint 0 overview
+- [Sprint 0 Planning](./SPRINT_0_PLANNING.md) - Sprint 0 overview (✅ Complete)
 - [Sprint 0 Index](./SPRINT_0_INDEX.md) - All Sprint 0 documents
+- [Sprint 1 Planning](./SPRINT_1_PLANNING.md) - Sprint 1 overview
+- [Sprint 1 Progress](./SPRINT_1_PROGRESS.md) - Sprint 1 progress tracking
 - [Design System](./docs/DESIGN_SYSTEM.md) - Design system and component library
 - [Supabase Setup Guide](./docs/SUPABASE_SETUP.md) - Supabase configuration guide
 - [Database Schema](./docs/DATABASE_SCHEMA.md) - Database schema documentation
