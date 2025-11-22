@@ -27,7 +27,12 @@ export function SprintList() {
     queryFn: () => apiClient.get<Sprint[]>('/api/sprints'),
   });
 
-  const loadingState = createLoadingState(isLoading, isFetching, isError, error);
+  const loadingState = createLoadingState(
+    isLoading,
+    isFetching,
+    isError,
+    error
+  );
 
   // Loading state
   if (loadingState.isInitialLoading) {
@@ -49,7 +54,9 @@ export function SprintList() {
         <h3 className="text-lg font-semibold text-red-800 mb-2">
           Error Loading Sprints
         </h3>
-        <p className="text-sm text-red-600 mb-4">{formattedError.userMessage}</p>
+        <p className="text-sm text-red-600 mb-4">
+          {formattedError.userMessage}
+        </p>
         <Button
           variant="outline"
           size="sm"
@@ -103,4 +110,3 @@ export function SprintList() {
     </div>
   );
 }
-

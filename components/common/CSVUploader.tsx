@@ -169,12 +169,16 @@ export function CSVUploader({
       // Mark as success
       setFiles((prev) =>
         prev.map((f) =>
-          pendingFiles.includes(f) ? { ...f, status: 'success', progress: 100 } : f
+          pendingFiles.includes(f)
+            ? { ...f, status: 'success', progress: 100 }
+            : f
         )
       );
     } catch (error) {
       const errorMessage =
-        error instanceof Error ? error.message : 'Upload failed. Please try again.';
+        error instanceof Error
+          ? error.message
+          : 'Upload failed. Please try again.';
 
       // Mark as error
       setFiles((prev) =>
@@ -251,7 +255,9 @@ export function CSVUploader({
         <div className="space-y-2">
           <div className="text-4xl mb-2">📄</div>
           <p className="text-lg font-medium text-gray-700">
-            {isDragging ? 'Drop CSV files here' : 'Drag and drop CSV files here'}
+            {isDragging
+              ? 'Drop CSV files here'
+              : 'Drag and drop CSV files here'}
           </p>
           <p className="text-sm text-gray-500">
             or{' '}
@@ -269,8 +275,8 @@ export function CSVUploader({
             className="text-xs text-gray-400 mt-2"
             role="note"
           >
-            Maximum {maxFiles} files, {formatFileSize(maxFileSize)} per file. Press Enter
-            or Space to browse files.
+            Maximum {maxFiles} files, {formatFileSize(maxFileSize)} per file.
+            Press Enter or Space to browse files.
           </p>
         </div>
       </div>
@@ -281,7 +287,9 @@ export function CSVUploader({
           className="p-4 bg-red-50 border border-red-200 rounded-md"
           role="alert"
         >
-          <p className="text-sm text-red-800 whitespace-pre-line">{uploadError}</p>
+          <p className="text-sm text-red-800 whitespace-pre-line">
+            {uploadError}
+          </p>
         </div>
       )}
 
@@ -328,7 +336,10 @@ export function CSVUploader({
                     </div>
                   )}
                   {fileWithStatus.status === 'success' && (
-                    <span className="text-green-600 text-sm" aria-label="Upload successful">
+                    <span
+                      className="text-green-600 text-sm"
+                      aria-label="Upload successful"
+                    >
                       ✓
                     </span>
                   )}
@@ -379,7 +390,8 @@ export function CSVUploader({
                 disabled={disabled || pendingFiles.length === 0}
                 className="w-full sm:w-auto"
               >
-                Upload {pendingFiles.length} file{pendingFiles.length > 1 ? 's' : ''}
+                Upload {pendingFiles.length} file
+                {pendingFiles.length > 1 ? 's' : ''}
               </Button>
             </div>
           )}
@@ -388,4 +400,3 @@ export function CSVUploader({
     </div>
   );
 }
-

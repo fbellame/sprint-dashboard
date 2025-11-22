@@ -67,11 +67,30 @@ An automated visualization tool that generates sprint overview documents from Az
 
    This will also set up Husky Git hooks automatically.
 
-3. **Set up environment variables**
+3. **Set up Supabase** (choose one option):
+
+   **Option A: Local Supabase (Recommended for Development)**
+
+   ```bash
+   # Install Supabase CLI
+   npm install -g supabase
+
+   # Initialize and start local Supabase (requires Docker)
+   supabase init
+   supabase start
+
+   # Get credentials and configure .env.local
+   supabase status
+   # Copy the anon key and service_role key to .env.local
+   ```
+
+   See [Local Supabase Setup Guide](./docs/LOCAL_SUPABASE_SETUP.md) for detailed instructions.
+
+   **Option B: Remote Supabase (For Production)**
 
    ```bash
    cp .env.example .env.local
-   # Add your Supabase credentials
+   # Add your Supabase credentials from https://app.supabase.com
    ```
 
    See [Supabase Setup Guide](./docs/SUPABASE_SETUP.md) for detailed instructions.
@@ -196,17 +215,17 @@ sprint-dashboard/
 **Story Points**: 52/57 completed  
 **Last Updated**: 2024-01-15
 
-| Story | Title                     | Assignee    | Status   | Points | PR Link | Notes                                                         |
-| ----- | ------------------------- | ----------- | -------- | ------ | ------- | ------------------------------------------------------------- |
-| 1.1   | Sprint Management API     | dev2_front  | ✅ Done  | 8      | PR #12  | ✅ Approved - All endpoints implemented, comprehensive tests   |
-| 1.2   | Sprint Creation Form      | dev1_front  | ✅ Done  | 5      | PR #13  | ✅ Approved - Comprehensive validation, error handling        |
-| 1.3   | Sprint List Page          | dev1_front  | ✅ Done  | 5      | PR #17  | ✅ Approved - Excellent UX, responsive design, loading/error/empty states |
-| 1.4   | CSV Upload Component      | dev1_front  | ✅ Done  | 5      | PR #18  | ✅ Approved - Comprehensive CSV upload component, full accessibility, excellent UX |
-| 1.5   | CSV Upload API Endpoint  | dev2_front  | ✅ Done  | 5      | PR #14  | ✅ Approved - Comprehensive validation, metadata storage       |
-| 1.6   | CSV Parsing and Validation | dev_backend | ✅ Done  | 8      | PR #16  | ✅ Approved - Comprehensive parsing, Zod validation, 23 tests passing |
-| 1.7   | CSV Data Transformation   | dev_backend | ✅ Done  | 8      | PR #17  | ✅ Approved - Comprehensive transformation, 46 tests passing, all edge cases handled |
-| 1.8   | Work Items Storage        | dev_backend | ✅ Done  | 8      | PR #18  | ✅ Approved - Robust bulk storage with conflict resolution, batch processing, comprehensive error handling |
-| 1.9   | CSV Upload Page           | dev1_front  | 🟡 Ready | 5      | -       | ✅ Can start now (unblocked by 1.4 and 1.8)                   |
+| Story | Title                      | Assignee    | Status   | Points | PR Link | Notes                                                                                                      |
+| ----- | -------------------------- | ----------- | -------- | ------ | ------- | ---------------------------------------------------------------------------------------------------------- |
+| 1.1   | Sprint Management API      | dev2_front  | ✅ Done  | 8      | PR #12  | ✅ Approved - All endpoints implemented, comprehensive tests                                               |
+| 1.2   | Sprint Creation Form       | dev1_front  | ✅ Done  | 5      | PR #13  | ✅ Approved - Comprehensive validation, error handling                                                     |
+| 1.3   | Sprint List Page           | dev1_front  | ✅ Done  | 5      | PR #17  | ✅ Approved - Excellent UX, responsive design, loading/error/empty states                                  |
+| 1.4   | CSV Upload Component       | dev1_front  | ✅ Done  | 5      | PR #18  | ✅ Approved - Comprehensive CSV upload component, full accessibility, excellent UX                         |
+| 1.5   | CSV Upload API Endpoint    | dev2_front  | ✅ Done  | 5      | PR #14  | ✅ Approved - Comprehensive validation, metadata storage                                                   |
+| 1.6   | CSV Parsing and Validation | dev_backend | ✅ Done  | 8      | PR #16  | ✅ Approved - Comprehensive parsing, Zod validation, 23 tests passing                                      |
+| 1.7   | CSV Data Transformation    | dev_backend | ✅ Done  | 8      | PR #17  | ✅ Approved - Comprehensive transformation, 46 tests passing, all edge cases handled                       |
+| 1.8   | Work Items Storage         | dev_backend | ✅ Done  | 8      | PR #18  | ✅ Approved - Robust bulk storage with conflict resolution, batch processing, comprehensive error handling |
+| 1.9   | CSV Upload Page            | dev1_front  | 🟡 Ready | 5      | -       | ✅ Can start now (unblocked by 1.4 and 1.8)                                                                |
 
 **Legend**:
 

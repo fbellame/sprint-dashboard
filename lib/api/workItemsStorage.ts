@@ -1,11 +1,11 @@
 /**
  * Work Items Storage Utilities
- * 
+ *
  * Handles bulk storage operations for work items including:
  * - Bulk insert/update with conflict resolution
  * - Batch processing for large datasets
  * - Transaction support
- * 
+ *
  * Story: 1.8 - Work Items Storage
  */
 
@@ -38,10 +38,10 @@ const BATCH_SIZE = 100;
 
 /**
  * Store work items in batches with conflict resolution
- * 
+ *
  * Uses PostgreSQL UPSERT (ON CONFLICT) to handle duplicates.
  * Duplicates are identified by (sprint_id, work_item_id) unique constraint.
- * 
+ *
  * @param workItems - Array of work items to store
  * @returns Storage result with counts and errors
  */
@@ -69,32 +69,13 @@ export async function bulkStoreWorkItems(
     const batch = workItems.slice(i, i + BATCH_SIZE);
 
     try {
-      // Use UPSERT (INSERT ... ON CONFLICT DO UPDATE)
-      // This handles duplicates by updating existing records
-      const { error } = await supabaseAdmin
-        .from('work_items')
-        .upsert(batch, {
-          onConflict: 'sprint_id,work_item_id',
-          ignoreDuplicates: false,
-        });
-
-      if (error) {
-        // If batch fails, try individual inserts to identify which ones failed
-        const batchResult = await storeWorkItemsIndividually(batch);
-        result.inserted += batchResult.inserted;
-        result.updated += batchResult.updated;
-        result.failed += batchResult.failed;
-        result.errors.push(...batchResult.errors);
-      } else {
-        // Batch succeeded - upsert handles both inserts and updates
-        // To distinguish, we check existence before upsert (for this batch)
-        // This is a trade-off: more queries but better reporting
-        const batchResult = await storeWorkItemsWithTracking(batch);
-        result.inserted += batchResult.inserted;
-        result.updated += batchResult.updated;
-        result.failed += batchResult.failed;
-        result.errors.push(...batchResult.errors);
-      }
+      // Check existence before upsert to track inserts vs updates
+      // This avoids performing the upsert twice
+      const batchResult = await storeWorkItemsWithTracking(batch);
+      result.inserted += batchResult.inserted;
+      result.updated += batchResult.updated;
+      result.failed += batchResult.failed;
+      result.errors.push(...batchResult.errors);
     } catch (error) {
       // If batch operation fails, try individual inserts
       const batchResult = await storeWorkItemsIndividually(batch);
@@ -110,9 +91,9 @@ export async function bulkStoreWorkItems(
 
 /**
  * Store work items with tracking of inserts vs updates
- * 
+ *
  * Checks existence before upserting to track inserted vs updated counts.
- * 
+ *
  * @param workItems - Array of work items to store
  * @returns Storage result with counts and errors
  */
@@ -154,17 +135,13 @@ async function storeWorkItemsWithTracking(
     return await storeWorkItemsIndividually(workItems);
   }
 
-  const existingIds = new Set(
-    existing?.map((item) => item.work_item_id) || []
-  );
+  const existingIds = new Set(existing?.map((item) => item.work_item_id) || []);
 
   // Perform upsert
-  const { error } = await supabaseAdmin
-    .from('work_items')
-    .upsert(workItems, {
-      onConflict: 'sprint_id,work_item_id',
-      ignoreDuplicates: false,
-    });
+  const { error } = await supabaseAdmin.from('work_items').upsert(workItems, {
+    onConflict: 'sprint_id,work_item_id',
+    ignoreDuplicates: false,
+  });
 
   if (error) {
     // If upsert fails, fall back to individual operations
@@ -185,9 +162,9 @@ async function storeWorkItemsWithTracking(
 
 /**
  * Store work items individually (fallback for error handling)
- * 
+ *
  * Used when batch operations fail to identify which items failed.
- * 
+ *
  * @param workItems - Array of work items to store
  * @returns Storage result with counts and errors
  */
@@ -248,8 +225,7 @@ async function storeWorkItemsIndividually(
       result.failed++;
       result.errors.push({
         work_item_id: workItem.work_item_id,
-        error:
-          error instanceof Error ? error.message : 'Unknown error',
+        error: error instanceof Error ? error.message : 'Unknown error',
       });
     }
   }
@@ -259,9 +235,9 @@ async function storeWorkItemsIndividually(
 
 /**
  * Delete all work items for a sprint
- * 
+ *
  * Used when re-uploading CSV to replace existing data.
- * 
+ *
  * @param sprintId - Sprint ID
  * @returns Number of deleted items
  */
@@ -283,7 +259,7 @@ export async function deleteWorkItemsBySprint(
 
 /**
  * Get count of work items for a sprint
- * 
+ *
  * @param sprintId - Sprint ID
  * @returns Count of work items
  */
@@ -299,4 +275,3 @@ export async function getWorkItemsCount(sprintId: string): Promise<number> {
 
   return count || 0;
 }
-

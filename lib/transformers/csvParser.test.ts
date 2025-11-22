@@ -77,7 +77,8 @@ describe('CSV Parser', () => {
     });
 
     it('should handle BOM (Byte Order Mark)', async () => {
-      const csv = '\uFEFFWork Item ID,Title,Work Item Type,State\n12345,Test Story,User Story,Active';
+      const csv =
+        '\uFEFFWork Item ID,Title,Work Item Type,State\n12345,Test Story,User Story,Active';
 
       const result = await parseCsvFile(csv);
 
@@ -196,7 +197,12 @@ with line break",User Story,Active`;
     });
 
     it('should handle headers with whitespace', () => {
-      const headers = [' Work Item ID ', ' Title ', ' Work Item Type ', ' State '];
+      const headers = [
+        ' Work Item ID ',
+        ' Title ',
+        ' Work Item Type ',
+        ' State ',
+      ];
 
       const result = validateCsvHeaders(headers);
 
@@ -286,4 +292,3 @@ with line break",User Story,Active`;
     });
   });
 });
-

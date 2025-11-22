@@ -1,16 +1,16 @@
 /**
  * POST /api/sprints/:id/upload/process
  * Process CSV file content - Parse, validate, transform, and store work items
- * 
+ *
  * Stories: 1.6 (CSV Parsing) + 1.7 (CSV Transformation) + 1.8 (Work Items Storage)
- * 
+ *
  * This endpoint:
  * 1. Parses and validates CSV content
  * 2. Transforms CSV rows to work items
  * 3. Stores work items in database (bulk insert/update with conflict resolution)
  * 4. Updates CSV upload status
  * 5. Returns processing results
- * 
+ *
  * The file content should be sent in the request body as text or as a File object.
  */
 
@@ -23,16 +23,19 @@ import {
   notFoundResponse,
 } from '@/lib/api/utils/response';
 import { sprintIdSchema } from '@/lib/api/schemas/sprint';
-import { parseCsvFile, formatParsingErrors } from '@/lib/transformers/csvParser';
+import {
+  parseCsvFile,
+  formatParsingErrors,
+} from '@/lib/transformers/csvParser';
 import { transformCsvRowsToWorkItems } from '@/lib/transformers/csvToWorkItem';
 import { bulkStoreWorkItems } from '@/lib/api/workItemsStorage';
 
 /**
  * Process CSV file content
- * 
+ *
  * Accepts CSV content in request body and returns parsing/validation results.
  * This is used after file upload to parse and validate the CSV data.
- * 
+ *
  * Request body can be:
  * - { file_content: string } - CSV content as string
  * - FormData with 'file' field - File object
@@ -97,7 +100,10 @@ export async function POST(
       }
 
       csvContent = await file.text();
-    } else if (contentType.includes('text/csv') || contentType.includes('text/plain')) {
+    } else if (
+      contentType.includes('text/csv') ||
+      contentType.includes('text/plain')
+    ) {
       // Direct CSV content
       csvContent = await request.text();
     } else {
@@ -110,7 +116,11 @@ export async function POST(
 
     // Validate CSV content is not empty
     if (!csvContent || csvContent.trim().length === 0) {
-      return errorResponse('CSV content cannot be empty', 400, 'EMPTY_CSV_CONTENT');
+      return errorResponse(
+        'CSV content cannot be empty',
+        400,
+        'EMPTY_CSV_CONTENT'
+      );
     }
 
     // Parse and validate CSV
@@ -163,8 +173,7 @@ export async function POST(
         updated: storageResult.updated,
         failed: storageResult.failed,
         total_stored: storageResult.inserted + storageResult.updated,
-        errors:
-          storageResult.errors.length > 0 ? storageResult.errors : null,
+        errors: storageResult.errors.length > 0 ? storageResult.errors : null,
       },
     });
   } catch (error) {
@@ -176,4 +185,3 @@ export async function POST(
     );
   }
 }
-

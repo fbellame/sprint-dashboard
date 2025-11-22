@@ -1,9 +1,9 @@
 /**
  * CSV Parser and Validator
- * 
+ *
  * Handles CSV parsing with PapaParse, validation with Zod,
  * and comprehensive error handling for Azure DevOps CSV exports.
- * 
+ *
  * Story: 1.6 - CSV Parsing and Validation
  */
 
@@ -101,7 +101,8 @@ function detectDelimiter(content: string): string {
   let detectedDelimiter = ','; // Default to comma
 
   for (const delimiter of delimiters) {
-    const count = (firstLine.match(new RegExp(`\\${delimiter}`, 'g')) || []).length;
+    const count = (firstLine.match(new RegExp(`\\${delimiter}`, 'g')) || [])
+      .length;
     if (count > maxCount) {
       maxCount = count;
       detectedDelimiter = delimiter;
@@ -129,7 +130,8 @@ export async function parseCsvFile(
   fileContent: string | File
 ): Promise<ParsingResult> {
   // Handle BOM removal for string content
-  let content = typeof fileContent === 'string' ? removeBOM(fileContent) : fileContent;
+  let content =
+    typeof fileContent === 'string' ? removeBOM(fileContent) : fileContent;
 
   // Detect delimiter if content is a string
   const delimiter =
@@ -198,7 +200,10 @@ export async function parseCsvFile(
         });
 
         const invalidRows = errors.length;
-        const skippedRows = Math.max(0, totalRows - validRows.length - invalidRows);
+        const skippedRows = Math.max(
+          0,
+          totalRows - validRows.length - invalidRows
+        );
 
         resolve({
           data: validRows,
@@ -248,12 +253,7 @@ export function validateCsvHeaders(headers: string[]): {
   missing: string[];
   extra: string[];
 } {
-  const requiredHeaders = [
-    'Work Item ID',
-    'Title',
-    'Work Item Type',
-    'State',
-  ];
+  const requiredHeaders = ['Work Item ID', 'Title', 'Work Item Type', 'State'];
 
   const normalizedHeaders = headers.map((h) => h.trim());
   const normalizedRequired = requiredHeaders.map((h) => h.trim());
@@ -276,8 +276,10 @@ export function validateCsvHeaders(headers: string[]): {
 export async function getCsvHeaders(
   fileContent: string | File
 ): Promise<string[]> {
-  let content = typeof fileContent === 'string' ? removeBOM(fileContent) : fileContent;
-  const delimiter = typeof content === 'string' ? detectDelimiter(content) : ',';
+  let content =
+    typeof fileContent === 'string' ? removeBOM(fileContent) : fileContent;
+  const delimiter =
+    typeof content === 'string' ? detectDelimiter(content) : ',';
 
   return new Promise((resolve, reject) => {
     Papa.parse<Record<string, string>>(content, {
@@ -343,4 +345,3 @@ export function formatParsingErrors(errors: ParsingError[]): {
     },
   };
 }
-

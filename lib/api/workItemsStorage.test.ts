@@ -4,7 +4,11 @@
  */
 
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { bulkStoreWorkItems, deleteWorkItemsBySprint, getWorkItemsCount } from './workItemsStorage';
+import {
+  bulkStoreWorkItems,
+  deleteWorkItemsBySprint,
+  getWorkItemsCount,
+} from './workItemsStorage';
 
 // Mock Supabase client
 vi.mock('@/lib/supabase/server', () => ({
@@ -56,4 +60,3 @@ describe('Work Items Storage', () => {
     });
   });
 });
-

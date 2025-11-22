@@ -87,7 +87,7 @@ describe('POST /api/sprints', () => {
       select: vi.fn().mockReturnThis(),
       eq: vi.fn().mockReturnThis(),
       is: vi.fn().mockReturnThis(),
-      single: vi.fn().mockResolvedValue({ data: null, error: null }),
+      maybeSingle: vi.fn().mockResolvedValue({ data: null, error: null }),
     };
 
     // Mock insert
@@ -133,7 +133,7 @@ describe('POST /api/sprints', () => {
     expect(data.error?.code).toBe('VALIDATION_ERROR');
   });
 
-  it('handles duplicate sprint numbers', async () => {
+  it('handles duplicate sprint numbers with team name', async () => {
     const newSprint = {
       sprint_number: 1,
       sprint_name: 'Sprint 1',
@@ -144,7 +144,7 @@ describe('POST /api/sprints', () => {
     vi.mocked(supabaseAdmin.from).mockReturnValue({
       select: vi.fn().mockReturnThis(),
       eq: vi.fn().mockReturnThis(),
-      single: vi.fn().mockResolvedValue({
+      maybeSingle: vi.fn().mockResolvedValue({
         data: { id: 'existing-id' },
         error: null,
       }),
@@ -161,5 +161,83 @@ describe('POST /api/sprints', () => {
     expect(response.status).toBe(409);
     expect(data.success).toBe(false);
     expect(data.error?.code).toBe('DUPLICATE_ENTRY');
+    expect(data.error?.message).toContain('already exists for team');
+  });
+
+  it('handles duplicate sprint numbers without team name', async () => {
+    const newSprint = {
+      sprint_number: 1,
+      sprint_name: 'Sprint 1',
+      // team_name is undefined/null
+    };
+
+    // Mock duplicate check (existing sprint found with null team_name)
+    vi.mocked(supabaseAdmin.from).mockReturnValue({
+      select: vi.fn().mockReturnThis(),
+      eq: vi.fn().mockReturnThis(),
+      is: vi.fn().mockReturnThis(),
+      maybeSingle: vi.fn().mockResolvedValue({
+        data: { id: 'existing-id' },
+        error: null,
+      }),
+    } as any);
+
+    const request = new NextRequest('http://localhost/api/sprints', {
+      method: 'POST',
+      body: JSON.stringify(newSprint),
+    });
+
+    const response = await POST(request);
+    const data = await response.json();
+
+    expect(response.status).toBe(409);
+    expect(data.success).toBe(false);
+    expect(data.error?.code).toBe('DUPLICATE_ENTRY');
+    expect(data.error?.message).toContain('already exists');
+  });
+
+  it('allows same sprint number for different teams', async () => {
+    const newSprint = {
+      sprint_number: 1,
+      sprint_name: 'Sprint 1',
+      team_name: 'Team B', // Different team
+    };
+
+    const createdSprint = {
+      id: 'sprint-id',
+      ...newSprint,
+      created_at: '2024-01-15T00:00:00Z',
+      updated_at: '2024-01-15T00:00:00Z',
+    };
+
+    // Mock duplicate check (no existing sprint for this team)
+    const mockDuplicateCheck = {
+      select: vi.fn().mockReturnThis(),
+      eq: vi.fn().mockReturnThis(),
+      maybeSingle: vi.fn().mockResolvedValue({ data: null, error: null }),
+    };
+
+    // Mock insert
+    const mockInsert = {
+      insert: vi.fn().mockReturnThis(),
+      select: vi.fn().mockReturnThis(),
+      single: vi.fn().mockResolvedValue({ data: createdSprint, error: null }),
+    };
+
+    vi.mocked(supabaseAdmin.from)
+      .mockReturnValueOnce(mockDuplicateCheck as any)
+      .mockReturnValueOnce(mockInsert as any);
+
+    const request = new NextRequest('http://localhost/api/sprints', {
+      method: 'POST',
+      body: JSON.stringify(newSprint),
+    });
+
+    const response = await POST(request);
+    const data = await response.json();
+
+    expect(response.status).toBe(201);
+    expect(data.success).toBe(true);
+    expect(data.data?.sprint_name).toBe('Sprint 1');
   });
 });

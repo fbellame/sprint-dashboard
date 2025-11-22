@@ -72,4 +72,3 @@ export function SprintCard({ sprint }: SprintCardProps) {
     </Link>
   );
 }
-

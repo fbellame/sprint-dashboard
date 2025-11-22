@@ -98,9 +98,11 @@
 ### SprintCard Component
 
 **Props:**
+
 - `sprint: Sprint` - Sprint data object
 
 **Features:**
+
 - Displays all required sprint information
 - Formatted dates (handles null values)
 - Conditional team name display
@@ -110,6 +112,7 @@
 ### SprintList Component
 
 **Features:**
+
 - React Query integration
 - Loading state with spinner
 - Error state with retry functionality
@@ -122,9 +125,11 @@
 ## API Integration
 
 The component uses the existing API endpoint:
+
 - `GET /api/sprints` - Returns all sprints sorted by sprint_number (descending)
 
 **Response Format:**
+
 ```json
 {
   "success": true,
@@ -148,17 +153,20 @@ The component uses the existing API endpoint:
 ## Responsive Design
 
 ### Mobile (< 768px)
+
 - Single column grid
 - Stacked header layout
 - Full-width buttons
 - Stacked date layout in cards
 
 ### Tablet (768px - 1024px)
+
 - Two column grid
 - Side-by-side header layout
 - Auto-width buttons
 
 ### Desktop (> 1024px)
+
 - Three column grid
 - Side-by-side header layout
 - Auto-width buttons
@@ -199,6 +207,7 @@ The component uses the existing API endpoint:
 ### ✅ Unblocked Stories
 
 With Story 1.3 complete, the following stories can now proceed:
+
 - ✅ **Story 1.9** (CSV Upload Page) - Can reference sprint list patterns
 - ✅ **Story 2.1+** (Dashboard components) - Can build on sprint navigation
 
@@ -209,6 +218,7 @@ With Story 1.3 complete, the following stories can now proceed:
 Story 1.3 is complete and ready for code review. The sprint list page is functional and provides an excellent user experience with proper loading, error, and empty states.
 
 **Optional Future Enhancements:**
+
 - Add component tests
 - Add search/filter functionality
 - Add pagination for large sprint lists
@@ -218,4 +228,3 @@ Story 1.3 is complete and ready for code review. The sprint list page is functio
 
 **Status**: ✅ Complete  
 **Ready for**: Code Review & Merge
-

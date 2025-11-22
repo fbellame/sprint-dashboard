@@ -62,6 +62,7 @@ Story 1.8 implements comprehensive work items storage with bulk insert/update op
 - Falls back to individual operations on batch failure
 
 **Conflict Resolution**:
+
 - Duplicate work items (same sprint_id + work_item_id) are updated
 - New work items are inserted
 - Uses PostgreSQL `ON CONFLICT DO UPDATE`
@@ -75,6 +76,7 @@ Story 1.8 implements comprehensive work items storage with bulk insert/update op
 - Trade-off: Additional query for better reporting accuracy
 
 **Fallback**: `storeWorkItemsIndividually()`
+
 - Used when batch operations fail
 - Processes items one by one
 - Provides detailed error reporting per item
@@ -107,6 +109,7 @@ Story 1.8 implements comprehensive work items storage with bulk insert/update op
 ### POST `/api/sprints/:id/upload/process`
 
 **Updated Flow**:
+
 1. Parse and validate CSV (Story 1.6)
 2. Transform to work items (Story 1.7)
 3. **Store work items in database (Story 1.8)** ← NEW
@@ -114,6 +117,7 @@ Story 1.8 implements comprehensive work items storage with bulk insert/update op
 5. Return complete results
 
 **Request Body** (JSON):
+
 ```json
 {
   "file_content": "CSV content...",
@@ -122,6 +126,7 @@ Story 1.8 implements comprehensive work items storage with bulk insert/update op
 ```
 
 **Response**:
+
 ```json
 {
   "success": true,
@@ -180,7 +185,7 @@ Story 1.8 implements comprehensive work items storage with bulk insert/update op
 ### Batch Processing
 
 - **Batch Size**: 100 items
-- **Rationale**: 
+- **Rationale**:
   - Supabase/PostgreSQL can handle this efficiently
   - Balances memory usage and network overhead
   - Reduces number of database round trips
@@ -254,11 +259,13 @@ Story 1.8 implements comprehensive work items storage with bulk insert/update op
 ### Testing Strategy
 
 **Unit Tests** (Current):
+
 - Basic function existence
 - Empty array handling
 - Type checking
 
 **Integration Tests** (Recommended):
+
 - Test with real Supabase database
 - Test batch operations
 - Test duplicate handling
@@ -283,12 +290,14 @@ Story 1.8 implements comprehensive work items storage with bulk insert/update op
 ### ✅ Works with Story 1.6 & 1.7
 
 The storage function receives transformed work items:
+
 - Input: `InsertWorkItem[]` (from Story 1.7)
 - Output: `StorageResult` (counts and errors)
 
 ### ✅ Updates Story 1.5
 
 The process endpoint now:
+
 - Stores work items after transformation
 - Updates CSV upload status
 - Returns complete processing pipeline results
@@ -296,6 +305,7 @@ The process endpoint now:
 ### ✅ Ready for Story 1.9
 
 Work items are now stored and can be:
+
 - Retrieved for dashboard display
 - Used for metrics calculations
 - Exported for reports
@@ -304,15 +314,15 @@ Work items are now stored and can be:
 
 ## Edge Cases Handled
 
-| Edge Case | Status | Implementation |
-|-----------|--------|----------------|
-| Empty work items array | ✅ | Returns empty result |
-| Duplicate work items | ✅ | Updates existing via upsert |
-| Batch failures | ✅ | Falls back to individual operations |
-| Database connection errors | ✅ | Caught and reported |
-| Partial batch failures | ✅ | Errors collected per item |
-| Large datasets | ✅ | Batch processing (100 items/batch) |
-| Missing upload_id | ✅ | Skips status update gracefully |
+| Edge Case                  | Status | Implementation                      |
+| -------------------------- | ------ | ----------------------------------- |
+| Empty work items array     | ✅     | Returns empty result                |
+| Duplicate work items       | ✅     | Updates existing via upsert         |
+| Batch failures             | ✅     | Falls back to individual operations |
+| Database connection errors | ✅     | Caught and reported                 |
+| Partial batch failures     | ✅     | Errors collected per item           |
+| Large datasets             | ✅     | Batch processing (100 items/batch)  |
+| Missing upload_id          | ✅     | Skips status update gracefully      |
 
 ---
 
@@ -321,15 +331,14 @@ Work items are now stored and can be:
 ### Upsert Syntax
 
 ```typescript
-supabaseAdmin
-  .from('work_items')
-  .upsert(workItems, {
-    onConflict: 'sprint_id,work_item_id',
-    ignoreDuplicates: false,
-  })
+supabaseAdmin.from('work_items').upsert(workItems, {
+  onConflict: 'sprint_id,work_item_id',
+  ignoreDuplicates: false,
+});
 ```
 
 **How it works**:
+
 - Tries to insert all items
 - On conflict (duplicate `sprint_id,work_item_id`), updates existing row
 - Uses PostgreSQL `ON CONFLICT DO UPDATE` under the hood
@@ -388,14 +397,15 @@ supabaseAdmin
 ## Files Created/Modified
 
 **Created**:
+
 - `lib/api/workItemsStorage.ts`
 - `lib/api/workItemsStorage.test.ts`
 
 **Modified**:
+
 - `app/api/sprints/[id]/upload/process/route.ts`
 
 ---
 
 **Status**: ✅ Complete  
 **Ready for**: Code Review & Story 1.9
-

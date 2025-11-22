@@ -68,6 +68,7 @@ Story 1.7 implements comprehensive CSV data transformation, converting validated
 - Handles empty/null values gracefully
 
 **Edge Cases Handled**:
+
 - ✅ Backslash and forward slash separators
 - ✅ Mixed separators
 - ✅ Single segment paths
@@ -84,6 +85,7 @@ Story 1.7 implements comprehensive CSV data transformation, converting validated
 - Preserves special characters
 
 **Edge Cases Handled**:
+
 - ✅ Empty/null strings → empty array
 - ✅ Extra whitespace → trimmed
 - ✅ Empty tags → filtered out
@@ -101,6 +103,7 @@ Story 1.7 implements comprehensive CSV data transformation, converting validated
 - Logs warnings for invalid dates (doesn't throw)
 
 **Edge Cases Handled**:
+
 - ✅ Multiple date formats
 - ✅ Invalid dates → null (with warning)
 - ✅ Empty/null values → null
@@ -111,12 +114,14 @@ Story 1.7 implements comprehensive CSV data transformation, converting validated
 **Function**: `determineStatusIndicator()`
 
 **Priority Order**:
+
 1. **Team Focus** (`*`) - if tag contains "Team Focus"
 2. **Done** (`✓`) - if state is Closed, Done, or Completed
 3. **Ongoing** (`|`) - if state is Active, Resolved, or In Progress
 4. **Not Done** (`✗`) - default for other states
 
 **Edge Cases Handled**:
+
 - ✅ Case-insensitive state matching
 - ✅ Case-insensitive tag matching
 - ✅ Partial tag matching
@@ -131,6 +136,7 @@ Story 1.7 implements comprehensive CSV data transformation, converting validated
 - Multiple tags supported
 
 **Edge Cases Handled**:
+
 - ✅ Case-insensitive matching
 - ✅ Partial string matching
 - ✅ Multiple tags in array
@@ -206,12 +212,14 @@ Tests  46 passed (46)
 ### ✅ Works with Story 1.6
 
 The transformer uses validated CSV rows from the parser:
+
 - Input: `CsvRow[]` (validated and typed)
 - Output: `InsertWorkItem[]` (ready for database)
 
 ### ✅ Ready for Story 1.8
 
 Transformed work items are ready to be stored:
+
 - All fields properly formatted
 - Database schema compatible
 - Bulk transformation supported
@@ -219,6 +227,7 @@ Transformed work items are ready to be stored:
 ### ✅ Updated Process Endpoint
 
 The `/api/sprints/:id/upload/process` endpoint now:
+
 - Parses CSV (Story 1.6)
 - Transforms to work items (Story 1.7)
 - Returns transformation results
@@ -228,17 +237,17 @@ The `/api/sprints/:id/upload/process` endpoint now:
 
 ## Edge Cases Handled
 
-| Edge Case | Status | Implementation |
-|-----------|--------|----------------|
-| Area Path with single backslash | ✅ | Returns null (single segment) |
-| Area Path with forward slashes | ✅ | Normalized to backslashes |
-| Tags with extra spaces | ✅ | Trimmed |
-| Tags with special characters | ✅ | Preserved |
-| Invalid date formats | ✅ | Returns null with warning |
-| Story Points as "0" vs empty | ✅ | Handled by Zod (0 → 0, empty → null) |
-| Multiple tags matching criteria | ✅ | Uses first match (some() method) |
-| State values with different casing | ✅ | Case-insensitive matching |
-| Empty/null optional fields | ✅ | Converted to null |
+| Edge Case                          | Status | Implementation                       |
+| ---------------------------------- | ------ | ------------------------------------ |
+| Area Path with single backslash    | ✅     | Returns null (single segment)        |
+| Area Path with forward slashes     | ✅     | Normalized to backslashes            |
+| Tags with extra spaces             | ✅     | Trimmed                              |
+| Tags with special characters       | ✅     | Preserved                            |
+| Invalid date formats               | ✅     | Returns null with warning            |
+| Story Points as "0" vs empty       | ✅     | Handled by Zod (0 → 0, empty → null) |
+| Multiple tags matching criteria    | ✅     | Uses first match (some() method)     |
+| State values with different casing | ✅     | Case-insensitive matching            |
+| Empty/null optional fields         | ✅     | Converted to null                    |
 
 ---
 
@@ -300,14 +309,15 @@ The process endpoint now returns:
 ## Files Created/Modified
 
 **Created**:
+
 - `lib/transformers/csvToWorkItem.ts`
 - `lib/transformers/csvToWorkItem.test.ts`
 
 **Modified**:
+
 - `app/api/sprints/[id]/upload/process/route.ts`
 
 ---
 
 **Status**: ✅ Complete  
 **Ready for**: Code Review & Story 1.8
-
