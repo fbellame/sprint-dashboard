@@ -32,6 +32,7 @@
 | --------- | ---- | ----- | ---------- | ---------- | ---------- | ----------- | --------- | ---------------------------------------------------------------------------- |
 | R1        | #12  | 1.1   | dev2_front | 2024-01-15 | 2024-01-15 | ✅ Approved | Team Lead | Excellent - All endpoints implemented, comprehensive tests, production-ready |
 | R2        | #13  | 1.2   | dev1_front | 2024-01-15 | 2024-01-15 | ✅ Approved | Team Lead | Excellent - Comprehensive form with validation, error handling, responsive design |
+| R3        | #14  | 1.5   | dev2_front | 2024-01-15 | 2024-01-15 | ✅ Approved | Team Lead | Excellent - Comprehensive file validation, metadata storage, 6 tests passing |
 
 **Status Legend**:
 
@@ -99,7 +100,32 @@
 
 **See**: [PR_13_REVIEW_STORY_1.2.md](./PR_13_REVIEW_STORY_1.2.md) for full review details.
 
+### Review R3: Story 1.5 - CSV Upload API Endpoint
+
+**PR**: [#14](https://github.com/fbellame/sprint-dashboard/pull/14)  
+**Author**: dev2_front  
+**Submitted**: 2024-01-15  
+**Reviewed**: 2024-01-15  
+**Status**: ✅ **APPROVED**
+
+**Review Summary**:
+- ✅ POST /api/sprints/:id/upload endpoint implemented
+- ✅ Accepts multipart/form-data with CSV file
+- ✅ Comprehensive file validation (type, size, empty file)
+- ✅ Stores file metadata in csv_uploads table
+- ✅ Returns upload ID and status
+- ✅ Comprehensive error handling
+- ✅ 6 unit tests, all passing
+
+**Highlights**:
+- Excellent file validation (multiple MIME types, extension check, size limit)
+- Comprehensive error handling for all edge cases
+- Proper metadata storage with row count calculation
+- Excellent test coverage covering all scenarios
+
+**See**: [PR_14_REVIEW_STORY_1.5.md](./PR_14_REVIEW_STORY_1.5.md) for full review details.
+
 ---
 
 **Last Updated**: 2024-01-15  
-**Next Review**: Story 1.3, 1.4, or 1.5 (when submitted)
+**Next Review**: Story 1.3, 1.4, or 1.6 (when submitted)
