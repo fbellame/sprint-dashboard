@@ -276,6 +276,38 @@ We aim for **80%+ coverage** on critical paths and **60%+ overall**. Coverage re
 
 For detailed testing guidelines, see [Testing Guide](./docs/TESTING.md).
 
+## Deployment
+
+This project is deployed on **Vercel** with automatic deployments from GitHub.
+
+### Automatic Deployments
+
+- **Production**: Deploys automatically on push to `main` branch
+- **Preview**: Creates preview deployments for pull requests
+
+### Manual Deployment
+
+```bash
+# Install Vercel CLI (if not installed)
+npm install -g vercel
+
+# Deploy to preview
+vercel
+
+# Deploy to production
+vercel --prod
+```
+
+### Environment Variables
+
+Environment variables must be configured in Vercel dashboard:
+
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY`
+
+For detailed deployment instructions, see [Deployment Guide](./docs/DEPLOYMENT.md).
+
 ### Error Handling
 
 Use `lib/utils/errors.ts` for consistent error formatting:
@@ -304,6 +336,7 @@ const loadingState = createLoadingState(isLoading, isFetching, isError, error);
 - [User Stories](./USER_STORIES.md) - All user stories
 - [Sprint 0 Planning](./SPRINT_0_PLANNING.md) - Sprint 0 overview
 - [Sprint 0 Index](./SPRINT_0_INDEX.md) - All Sprint 0 documents
+- [Design System](./docs/DESIGN_SYSTEM.md) - Design system and component library
 - [Supabase Setup Guide](./docs/SUPABASE_SETUP.md) - Supabase configuration guide
 - [Database Schema](./docs/DATABASE_SCHEMA.md) - Database schema documentation
 
