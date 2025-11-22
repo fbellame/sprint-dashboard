@@ -1,13 +1,17 @@
 /**
  * POST /api/sprints/:id/upload/process
- * Process CSV file content - Parse, validate, and transform CSV data
+ * Process CSV file content - Parse, validate, transform, and store work items
  * 
- * Stories: 1.6 (CSV Parsing) + 1.7 (CSV Transformation)
+ * Stories: 1.6 (CSV Parsing) + 1.7 (CSV Transformation) + 1.8 (Work Items Storage)
  * 
- * This endpoint accepts CSV file content and returns parsing/validation/transformation results.
+ * This endpoint:
+ * 1. Parses and validates CSV content
+ * 2. Transforms CSV rows to work items
+ * 3. Stores work items in database (bulk insert/update with conflict resolution)
+ * 4. Updates CSV upload status
+ * 5. Returns processing results
+ * 
  * The file content should be sent in the request body as text or as a File object.
- * 
- * Note: Work items will be stored in database in Story 1.8
  */
 
 import { NextRequest } from 'next/server';
@@ -21,6 +25,7 @@ import {
 import { sprintIdSchema } from '@/lib/api/schemas/sprint';
 import { parseCsvFile, formatParsingErrors } from '@/lib/transformers/csvParser';
 import { transformCsvRowsToWorkItems } from '@/lib/transformers/csvToWorkItem';
+import { bulkStoreWorkItems } from '@/lib/api/workItemsStorage';
 
 /**
  * Process CSV file content
@@ -64,13 +69,14 @@ export async function POST(
       );
     }
 
-    // Get CSV content from request
+    // Get CSV content and optional upload_id from request
     const contentType = request.headers.get('content-type') || '';
 
     let csvContent: string;
+    let uploadId: string | null = null;
 
     if (contentType.includes('application/json')) {
-      // JSON body with file_content
+      // JSON body with file_content and optional upload_id
       const body = await request.json();
       if (!body.file_content || typeof body.file_content !== 'string') {
         return errorResponse(
@@ -80,6 +86,7 @@ export async function POST(
         );
       }
       csvContent = body.file_content;
+      uploadId = body.upload_id || null;
     } else if (contentType.includes('multipart/form-data')) {
       // FormData with file
       const formData = await request.formData();
@@ -116,7 +123,30 @@ export async function POST(
     // Transform valid CSV rows to work items
     const workItems = transformCsvRowsToWorkItems(result.data, id);
 
-    // Return parsing and transformation results
+    // Store work items in database (bulk insert/update with conflict resolution)
+    const storageResult = await bulkStoreWorkItems(workItems);
+
+    // Update CSV upload status if upload_id provided
+    if (uploadId) {
+      const hasErrors = storageResult.failed > 0 || result.errors.length > 0;
+      const status = hasErrors ? 'failed' : 'processed';
+      const errorMessage =
+        hasErrors && storageResult.errors.length > 0
+          ? `Storage errors: ${storageResult.errors.length} items failed`
+          : null;
+
+      await supabaseAdmin
+        .from('csv_uploads')
+        .update({
+          status,
+          error_message: errorMessage,
+          row_count: storageResult.inserted + storageResult.updated,
+        })
+        .eq('id', uploadId)
+        .eq('sprint_id', id);
+    }
+
+    // Return complete processing results
     return successResponse({
       parsing_result: {
         total_rows: result.meta.totalRows,
@@ -127,10 +157,15 @@ export async function POST(
       },
       transformation_result: {
         work_items_count: workItems.length,
-        // Include sample of transformed work items (first 3) for preview
-        sample_work_items: workItems.slice(0, 3),
       },
-      // Note: Work items will be stored in database in Story 1.8
+      storage_result: {
+        inserted: storageResult.inserted,
+        updated: storageResult.updated,
+        failed: storageResult.failed,
+        total_stored: storageResult.inserted + storageResult.updated,
+        errors:
+          storageResult.errors.length > 0 ? storageResult.errors : null,
+      },
     });
   } catch (error) {
     return errorResponse(
