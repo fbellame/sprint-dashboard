@@ -183,7 +183,8 @@ Once the workflow succeeds:
 
 ### Issue: "Invalid token"
 
-**Solution**: 
+**Solution**:
+
 - Verify the token is correct
 - Check token hasn't expired
 - Create a new token if needed
@@ -191,6 +192,7 @@ Once the workflow succeeds:
 ### Issue: "Project not found"
 
 **Solution**:
+
 - Verify `VERCEL_PROJECT_ID` is correct
 - Ensure project exists in the specified organization
 - Check you have access to the project
@@ -198,6 +200,7 @@ Once the workflow succeeds:
 ### Issue: "Organization not found"
 
 **Solution**:
+
 - Verify `VERCEL_ORG_ID` is correct
 - Check you're a member of the organization
 - Ensure the organization name matches
@@ -205,6 +208,7 @@ Once the workflow succeeds:
 ### Issue: Workflow still failing
 
 **Solution**:
+
 1. Check workflow logs for specific error
 2. Verify all three secrets are set
 3. Ensure secrets are named exactly:
@@ -218,6 +222,7 @@ Once the workflow succeeds:
 ## Security Notes
 
 ⚠️ **Important**:
+
 - Never commit tokens or IDs to the repository
 - Tokens should only be in GitHub Secrets
 - Rotate tokens periodically (recommended: annually)
@@ -237,6 +242,7 @@ If you prefer not to set up automatic deployments:
    ```
 
 However, **automatic deployments are recommended** for:
+
 - Preview deployments on PRs
 - Automatic production deployments
 - Better CI/CD workflow
@@ -265,4 +271,3 @@ After adding secrets:
 **Status**: Ready for Setup  
 **Last Updated**: 2024-01-15  
 **Created By**: Team Lead
-

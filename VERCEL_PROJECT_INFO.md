@@ -10,11 +10,11 @@
 
 The following Vercel variables are configured in GitHub Actions:
 
-| Variable | Value | Status | Last Updated |
-|----------|-------|--------|--------------|
-| **VERCEL_ORG_ID** | `team_bD6PJ6Hd5Rrob4PQ8TnaqUGd` | ✅ Configured | 25 minutes ago |
-| **VERCEL_PROJECT_ID** | `prj_ARcVNPeqXGG1pjbvGiYM4JmlP8MW` | ✅ Configured | 18 minutes ago |
-| **VERCEL_TOKEN** | - | ⚠️ Needs to be added | - |
+| Variable              | Value                              | Status               | Last Updated   |
+| --------------------- | ---------------------------------- | -------------------- | -------------- |
+| **VERCEL_ORG_ID**     | `team_bD6PJ6Hd5Rrob4PQ8TnaqUGd`    | ✅ Configured        | 25 minutes ago |
+| **VERCEL_PROJECT_ID** | `prj_ARcVNPeqXGG1pjbvGiYM4JmlP8MW` | ✅ Configured        | 18 minutes ago |
+| **VERCEL_TOKEN**      | -                                  | ⚠️ Needs to be added | -              |
 
 ---
 
@@ -71,4 +71,3 @@ After adding VERCEL_TOKEN:
 
 **Status**: 🟡 Partially Configured (2/3 secrets)  
 **Priority**: High (blocks PR #9 deployment)
-

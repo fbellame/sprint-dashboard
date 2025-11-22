@@ -70,7 +70,7 @@ The workflow needs these three secrets:
    - If not already set, click **"New repository secret"**
    - **Name**: `VERCEL_PROJECT_ID` (exact, case-sensitive)
    - **Value**: `prj_ARcVNPeqXGG1pjbvGiYM4JmlP8MW`
-   - Click **"Add secret"`
+   - Click \*\*"Add secret"`
 
 **Note**: VERCEL_ORG_ID and VERCEL_PROJECT_ID are already configured as repository variables. You only need to add VERCEL_TOKEN as a secret.
 
@@ -80,7 +80,7 @@ After adding all three, you should see:
 
 ```
 ✅ VERCEL_TOKEN
-✅ VERCEL_ORG_ID  
+✅ VERCEL_ORG_ID
 ✅ VERCEL_PROJECT_ID
 ```
 
@@ -105,16 +105,19 @@ After adding all three, you should see:
 For convenience, here are the values to add:
 
 ### Secret 1: VERCEL_TOKEN
+
 ```
 [Create from Vercel Dashboard - see Step 1 above]
 ```
 
 ### Secret 2: VERCEL_ORG_ID (✅ Already configured)
+
 ```
 team_bD6PJ6Hd5Rrob4PQ8TnaqUGd
 ```
 
 ### Secret 3: VERCEL_PROJECT_ID (✅ Already configured)
+
 ```
 prj_ARcVNPeqXGG1pjbvGiYM4JmlP8MW
 ```
@@ -139,6 +142,7 @@ After setup, verify:
 ### "Invalid token" Error
 
 **Solution**:
+
 - Verify token was copied correctly (no extra spaces)
 - Check token hasn't expired
 - Create a new token if needed
@@ -146,6 +150,7 @@ After setup, verify:
 ### "Project not found" Error
 
 **Solution**:
+
 - Verify `VERCEL_PROJECT_ID` is exactly: `prj_ARcVNPeqXGG1pjbvGiYM4JmlP8MW`
 - Ensure project exists in Vercel dashboard
 - Check you have access to the project
@@ -153,6 +158,7 @@ After setup, verify:
 ### "Organization not found" Error
 
 **Solution**:
+
 - Verify `VERCEL_ORG_ID` is exactly: `team_bD6PJ6Hd5Rrob4PQ8TnaqUGd`
 - Check you're a member of the organization
 - Verify organization name in Vercel dashboard
@@ -160,6 +166,7 @@ After setup, verify:
 ### Workflow Still Failing
 
 **Solution**:
+
 1. Check workflow logs for specific error message
 2. Verify all three secrets are present (not just two)
 3. Ensure secret names match exactly (case-sensitive):
@@ -221,4 +228,3 @@ If you encounter issues:
 **Priority**: High (blocks PR #9)  
 **Estimated Time**: 5-10 minutes  
 **Last Updated**: 2024-01-15
-

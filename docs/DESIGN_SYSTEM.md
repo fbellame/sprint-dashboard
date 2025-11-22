@@ -17,13 +17,14 @@ This document describes the design system for the Sprint Dashboard application. 
 
 The primary color palette is based on green (#22c55e) as specified in the PRD.
 
-| Color | Hex | Usage |
-|-------|-----|-------|
-| Primary | `#22c55e` | Main accent color, buttons, links |
-| Primary 600 | `#16a34a` | Hover states |
-| Primary 700 | `#15803d` | Active states |
+| Color       | Hex       | Usage                             |
+| ----------- | --------- | --------------------------------- |
+| Primary     | `#22c55e` | Main accent color, buttons, links |
+| Primary 600 | `#16a34a` | Hover states                      |
+| Primary 700 | `#15803d` | Active states                     |
 
 **Tailwind Usage:**
+
 ```tsx
 <div className="bg-primary text-white">Primary background</div>
 <button className="bg-primary-600 hover:bg-primary-700">Button</button>
@@ -33,14 +34,15 @@ The primary color palette is based on green (#22c55e) as specified in the PRD.
 
 Status colors are used throughout the dashboard to indicate work item states.
 
-| Status | Color | Hex | Symbol | Usage |
-|--------|-------|-----|--------|-------|
-| Team Focus | Green | `#22c55e` | `*` | Team focus items |
-| Done | Green | `#22c55e` | `✓` | Completed items |
-| Ongoing | Orange | `#f97316` | `|` | In-progress items |
-| Not Done | Red | `#ef4444` | `✗` | Not completed items |
+| Status     | Color  | Hex       | Symbol | Usage               |
+| ---------- | ------ | --------- | ------ | ------------------- | ----------------- |
+| Team Focus | Green  | `#22c55e` | `*`    | Team focus items    |
+| Done       | Green  | `#22c55e` | `✓`    | Completed items     |
+| Ongoing    | Orange | `#f97316` | `      | `                   | In-progress items |
+| Not Done   | Red    | `#ef4444` | `✗`    | Not completed items |
 
 **Tailwind Usage:**
+
 ```tsx
 <span className="text-status-done">Done</span>
 <span className="text-status-ongoing">Ongoing</span>
@@ -51,14 +53,14 @@ Status colors are used throughout the dashboard to indicate work item states.
 
 Gray scale for UI elements, text, and backgrounds.
 
-| Color | Hex | Usage |
-|-------|-----|-------|
-| Gray 50 | `#f9fafb` | Secondary backgrounds |
-| Gray 100 | `#f3f4f6` | Light backgrounds |
-| Gray 200 | `#e5e7eb` | Borders, dividers |
-| Gray 500 | `#6b7280` | Secondary text |
-| Gray 700 | `#374151` | Body text |
-| Gray 900 | `#111827` | Headings |
+| Color    | Hex       | Usage                 |
+| -------- | --------- | --------------------- |
+| Gray 50  | `#f9fafb` | Secondary backgrounds |
+| Gray 100 | `#f3f4f6` | Light backgrounds     |
+| Gray 200 | `#e5e7eb` | Borders, dividers     |
+| Gray 500 | `#6b7280` | Secondary text        |
+| Gray 700 | `#374151` | Body text             |
+| Gray 900 | `#111827` | Headings              |
 
 ---
 
@@ -69,22 +71,30 @@ Gray scale for UI elements, text, and backgrounds.
 The application uses the system font stack for optimal performance:
 
 ```css
-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+font-family:
+  system-ui,
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  Arial,
+  sans-serif;
 ```
 
 ### Type Scale
 
-| Variant | Size | Line Height | Usage |
-|---------|------|-------------|-------|
-| H1 | 2.25rem (36px) | 2.5rem | Page titles |
-| H2 | 1.875rem (30px) | 2.25rem | Section titles |
-| H3 | 1.5rem (24px) | 2rem | Subsection titles |
-| H4 | 1.25rem (20px) | 1.75rem | Card titles |
-| H5 | 1.125rem (18px) | 1.75rem | Small headings |
-| H6 | 1rem (16px) | 1.5rem | Smallest headings |
-| Body | 1rem (16px) | 1.5rem | Body text |
-| Body Small | 0.875rem (14px) | 1.25rem | Secondary text |
-| Caption | 0.75rem (12px) | 1rem | Labels, captions |
+| Variant    | Size            | Line Height | Usage             |
+| ---------- | --------------- | ----------- | ----------------- |
+| H1         | 2.25rem (36px)  | 2.5rem      | Page titles       |
+| H2         | 1.875rem (30px) | 2.25rem     | Section titles    |
+| H3         | 1.5rem (24px)   | 2rem        | Subsection titles |
+| H4         | 1.25rem (20px)  | 1.75rem     | Card titles       |
+| H5         | 1.125rem (18px) | 1.75rem     | Small headings    |
+| H6         | 1rem (16px)     | 1.5rem      | Smallest headings |
+| Body       | 1rem (16px)     | 1.5rem      | Body text         |
+| Body Small | 0.875rem (14px) | 1.25rem     | Secondary text    |
+| Caption    | 0.75rem (12px)  | 1rem        | Labels, captions  |
 
 ### Typography Component
 
@@ -114,17 +124,18 @@ You can also use Tailwind classes directly:
 
 The design system uses Tailwind's default spacing scale (0.25rem increments):
 
-| Size | Value | Usage |
-|------|-------|-------|
-| 0 | 0 | No spacing |
-| 1 | 0.25rem (4px) | Tight spacing |
-| 2 | 0.5rem (8px) | Small spacing |
-| 4 | 1rem (16px) | Default spacing |
-| 6 | 1.5rem (24px) | Medium spacing |
-| 8 | 2rem (32px) | Large spacing |
-| 12 | 3rem (48px) | Extra large spacing |
+| Size | Value         | Usage               |
+| ---- | ------------- | ------------------- |
+| 0    | 0             | No spacing          |
+| 1    | 0.25rem (4px) | Tight spacing       |
+| 2    | 0.5rem (8px)  | Small spacing       |
+| 4    | 1rem (16px)   | Default spacing     |
+| 6    | 1.5rem (24px) | Medium spacing      |
+| 8    | 2rem (32px)   | Large spacing       |
+| 12   | 3rem (48px)   | Extra large spacing |
 
 **Usage:**
+
 ```tsx
 <div className="p-4">Padding 4</div>
 <div className="mt-8">Margin top 8</div>
@@ -135,17 +146,18 @@ The design system uses Tailwind's default spacing scale (0.25rem increments):
 
 ## Border Radius
 
-| Size | Value | Usage |
-|------|-------|-------|
-| sm | 0.125rem (2px) | Small elements |
-| DEFAULT | 0.25rem (4px) | Default (buttons, inputs) |
-| md | 0.375rem (6px) | Medium elements |
-| lg | 0.5rem (8px) | Large elements |
-| xl | 0.75rem (12px) | Cards, containers |
-| 2xl | 1rem (16px) | Large containers |
-| full | 9999px | Pills, badges |
+| Size    | Value          | Usage                     |
+| ------- | -------------- | ------------------------- |
+| sm      | 0.125rem (2px) | Small elements            |
+| DEFAULT | 0.25rem (4px)  | Default (buttons, inputs) |
+| md      | 0.375rem (6px) | Medium elements           |
+| lg      | 0.5rem (8px)   | Large elements            |
+| xl      | 0.75rem (12px) | Cards, containers         |
+| 2xl     | 1rem (16px)    | Large containers          |
+| full    | 9999px         | Pills, badges             |
 
 **Usage:**
+
 ```tsx
 <button className="rounded-md">Button</button>
 <div className="rounded-lg">Card</div>
@@ -160,6 +172,7 @@ The design system uses Tailwind's default spacing scale (0.25rem increments):
 A reusable button component with variants, sizes, and loading states.
 
 **Props:**
+
 - `variant`: `'primary' | 'secondary' | 'outline'` (default: `'primary'`)
 - `size`: `'sm' | 'md' | 'lg'` (default: `'md'`)
 - `loading`: `boolean` (default: `false`)
@@ -167,6 +180,7 @@ A reusable button component with variants, sizes, and loading states.
 - Standard HTML button attributes
 
 **Example:**
+
 ```tsx
 import { Button } from '@/components/common/Button';
 
@@ -184,6 +198,7 @@ import { Button } from '@/components/common/Button';
 A form input component with label, error states, and validation feedback.
 
 **Props:**
+
 - `label`: `string` - Input label
 - `error`: `string` - Error message
 - `helperText`: `string` - Helper text
@@ -191,6 +206,7 @@ A form input component with label, error states, and validation feedback.
 - Standard HTML input attributes
 
 **Example:**
+
 ```tsx
 import { Input } from '@/components/common/Input';
 
@@ -200,7 +216,7 @@ import { Input } from '@/components/common/Input';
   placeholder="Enter your email"
   error={errors.email}
   required
-/>
+/>;
 ```
 
 ### Table
@@ -208,12 +224,14 @@ import { Input } from '@/components/common/Input';
 A flexible table component with configurable columns and responsive design.
 
 **Props:**
+
 - `data`: `T[]` - Array of data objects
 - `columns`: `ColumnDef<T>[]` - Column definitions
 - `striped`: `boolean` - Alternating row colors (default: `true`)
 - `hover`: `boolean` - Hover effect on rows (default: `true`)
 
 **Example:**
+
 ```tsx
 import { Table, ColumnDef } from '@/components/common/Table';
 
@@ -233,7 +251,7 @@ const columns: ColumnDef<User>[] = [
   },
 ];
 
-<Table data={users} columns={columns} />
+<Table data={users} columns={columns} />;
 ```
 
 ### StatusIndicator
@@ -241,10 +259,12 @@ const columns: ColumnDef<User>[] = [
 Displays status indicators matching PRD requirements.
 
 **Props:**
+
 - `status`: `'team-focus' | 'done' | 'ongoing' | 'not-done'`
 - `size`: `'sm' | 'md' | 'lg'` (default: `'md'`)
 
 **Example:**
+
 ```tsx
 import { StatusIndicator, StatusIndicatorLegend } from '@/components/common/StatusIndicator';
 
@@ -256,6 +276,7 @@ import { StatusIndicator, StatusIndicatorLegend } from '@/components/common/Stat
 ```
 
 **Status Symbols:**
+
 - `*` (Green) - Team Focus
 - `✓` (Green) - Done
 - `|` (Orange) - Ongoing
@@ -266,11 +287,13 @@ import { StatusIndicator, StatusIndicatorLegend } from '@/components/common/Stat
 Provides consistent typography styles.
 
 **Props:**
+
 - `variant`: `'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body' | 'body-sm' | 'caption' | 'label'`
 - `as`: HTML element to render (optional)
 - `children`: ReactNode
 
 **Example:**
+
 ```tsx
 import { Typography } from '@/components/common/Typography';
 
@@ -291,6 +314,7 @@ All components follow accessibility best practices:
 - **Screen Readers**: Semantic HTML and ARIA labels for screen readers
 
 **Example:**
+
 ```tsx
 <Button aria-label="Submit form">Submit</Button>
 <Input aria-label="Email address" aria-invalid={hasError} />
@@ -322,7 +346,9 @@ Components can be composed together:
 
 ```tsx
 <div className="p-6 bg-white rounded-lg shadow-md">
-  <Typography variant="h2" className="mb-4">Dashboard</Typography>
+  <Typography variant="h2" className="mb-4">
+    Dashboard
+  </Typography>
   <Table data={items} columns={columns} />
   <div className="mt-4 flex gap-2">
     <Button variant="primary">Save</Button>
@@ -356,4 +382,3 @@ All design tokens are defined in `tailwind.config.ts`:
 **Document Version**: 1.0  
 **Last Updated**: 2024-01-15  
 **Maintained By**: Frontend Team
-
