@@ -19,8 +19,9 @@
 
 ### 📖 Project Documentation
 
-- **[PRD](./PRD.md)** - Product Requirements Document
-- **[Solution Architecture](./SOLUTION_ARCHITECTURE.md)** - Technical architecture
+- **[PRD](../../docs/PRD.md)** - Product Requirements Document
+- **[Solution Architecture](../../docs/SOLUTION_ARCHITECTURE.md)** - Technical architecture
+- **[User Stories](../USER_STORIES.md)** - All user stories with acceptance criteria
 - **[User Stories](./USER_STORIES.md)** - All user stories with acceptance criteria
 - **[Project Summary](./PROJECT_SUMMARY.md)** - Project overview and timeline
 
@@ -39,7 +40,7 @@
 
 1. Review **[Sprint Planning](./SPRINT_1_PLANNING.md)** for your story assignments
 2. Check **[User Stories](./USER_STORIES.md)** for detailed acceptance criteria
-3. Reference **[Solution Architecture](./SOLUTION_ARCHITECTURE.md)** for API design
+3. Reference **[Solution Architecture](../../docs/SOLUTION_ARCHITECTURE.md)** for API design
 4. Update **[Progress Tracking](./SPRINT_1_PROGRESS.md)** as you complete work
 
 ### For New Team Members
@@ -47,7 +48,7 @@
 1. Read **[Sprint Review](./SPRINT_1_REVIEW.md)** for Sprint 0 completion
 2. Review **[Sprint Planning](./SPRINT_1_PLANNING.md)** for current sprint
 3. Study **[User Stories](./USER_STORIES.md)** for Sprint 1 stories
-4. Check **[Solution Architecture](./SOLUTION_ARCHITECTURE.md)** for technical details
+4. Check **[Solution Architecture](../../docs/SOLUTION_ARCHITECTURE.md)** for technical details
 
 ---
 

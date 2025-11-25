@@ -778,8 +778,8 @@ Before starting Story 0.2, verify:
 
 - [Supabase Documentation](https://supabase.com/docs)
 - [PostgreSQL Documentation](https://www.postgresql.org/docs/)
-- [SOLUTION_ARCHITECTURE.md](./SOLUTION_ARCHITECTURE.md) - Section 4.1 (Database Schema)
-- [USER_STORIES.md](./USER_STORIES.md) - Story 0.3 (Implementation Details)
+- [SOLUTION_ARCHITECTURE.md](../../docs/SOLUTION_ARCHITECTURE.md) - Section 4.1 (Database Schema)
+- [USER_STORIES.md](../USER_STORIES.md) - Story 0.3 (Implementation Details)
 
 ---
 

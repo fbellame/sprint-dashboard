@@ -445,10 +445,10 @@ Sprint 1 is successful when:
 
 ## Resources
 
-- **[USER_STORIES.md](./USER_STORIES.md)** - Detailed story acceptance criteria
-- **[SOLUTION_ARCHITECTURE.md](./SOLUTION_ARCHITECTURE.md)** - API design patterns
-- **[SPRINT_1_REVIEW.md](./SPRINT_1_REVIEW.md)** - Sprint 0 review and readiness
-- **[SPRINT_0_PROGRESS.md](./SPRINT_0_PROGRESS.md)** - Sprint 0 completion status
+- **[USER_STORIES.md](../USER_STORIES.md)** - Detailed story acceptance criteria
+- **[SOLUTION_ARCHITECTURE.md](../../docs/SOLUTION_ARCHITECTURE.md)** - API design patterns
+- **[SPRINT_1_REVIEW.md](./SPRINT_1_REVIEW.md)** - Sprint 1 review and readiness
+- **[SPRINT_0_PROGRESS.md](../sprint0/SPRINT_0_PROGRESS.md)** - Sprint 0 completion status
 
 ---
 

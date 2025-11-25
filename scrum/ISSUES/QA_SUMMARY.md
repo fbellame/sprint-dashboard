@@ -110,7 +110,7 @@ None
 
 ## Files Generated
 
-- `/E2E_TEST_PLAN.md` - Complete test plan with results
+- `../E2E_TEST_PLAN.md` - Complete test plan with results
 - `/ISSUES/BACKEND_ISSUE_001_DUPLICATE_SPRINT_VALIDATION.md` - Backend issue details
 - `/ISSUES/FRONTEND_ISSUE_001_REQUIRED_FIELD_VALIDATION.md` - Frontend issue details
 - `/ISSUES/QA_SUMMARY.md` - This summary document

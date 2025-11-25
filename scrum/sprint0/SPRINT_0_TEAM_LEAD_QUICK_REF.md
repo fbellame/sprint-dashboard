@@ -83,9 +83,9 @@
 
 ### Project Documents
 
-- [PRD](./PRD.md) - Product requirements
-- [Solution Architecture](./SOLUTION_ARCHITECTURE.md) - Technical architecture
-- [User Stories](./USER_STORIES.md) - All user stories
+- [PRD](../../docs/PRD.md) - Product requirements
+- [Solution Architecture](../../docs/SOLUTION_ARCHITECTURE.md) - Technical architecture
+- [User Stories](../USER_STORIES.md) - All user stories
 
 ---
 

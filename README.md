@@ -381,13 +381,14 @@ const loadingState = createLoadingState(isLoading, isFetching, isError, error);
 
 ## Documentation
 
-- [PRD](./PRD.md) - Product Requirements Document
-- [Solution Architecture](./SOLUTION_ARCHITECTURE.md) - Technical architecture
-- [User Stories](./USER_STORIES.md) - All user stories
-- [Sprint 0 Planning](./SPRINT_0_PLANNING.md) - Sprint 0 overview (✅ Complete)
-- [Sprint 0 Index](./SPRINT_0_INDEX.md) - All Sprint 0 documents
-- [Sprint 1 Planning](./SPRINT_1_PLANNING.md) - Sprint 1 overview
-- [Sprint 1 Progress](./SPRINT_1_PROGRESS.md) - Sprint 1 progress tracking
+- [PRD](./docs/PRD.md) - Product Requirements Document
+- [Solution Architecture](./docs/SOLUTION_ARCHITECTURE.md) - Technical architecture
+- [User Stories](./scrum/USER_STORIES.md) - All user stories
+- [Scrum Documentation](./scrum/README.md) - Sprint organization and documentation
+- [Sprint 0 Planning](./scrum/sprint0/SPRINT_0_PLANNING.md) - Sprint 0 overview (✅ Complete)
+- [Sprint 0 Index](./scrum/sprint0/SPRINT_0_INDEX.md) - All Sprint 0 documents
+- [Sprint 1 Planning](./scrum/sprint1/SPRINT_1_PLANNING.md) - Sprint 1 overview
+- [Sprint 1 Progress](./scrum/sprint1/SPRINT_1_PROGRESS.md) - Sprint 1 progress tracking
 - [Design System](./docs/DESIGN_SYSTEM.md) - Design system and component library
 - [Supabase Setup Guide](./docs/SUPABASE_SETUP.md) - Supabase configuration guide
 - [Local Supabase Setup Guide](./docs/LOCAL_SUPABASE_SETUP.md) - Local development with Docker
