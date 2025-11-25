@@ -96,11 +96,14 @@ export function CreateSprintForm() {
       if (error instanceof ClientApiError) {
         // Handle duplicate sprint number (409 Conflict)
         if (error.statusCode === 409) {
+          const errorMessage =
+            error.message ||
+            'A sprint with this number already exists for this team.';
           setError('sprint_number', {
             type: 'manual',
-            message: 'A sprint with this number already exists for this team.',
+            message: errorMessage,
           });
-          setSubmitError('A sprint with this number already exists.');
+          setSubmitError(errorMessage);
         } else if (error.statusCode === 400) {
           // Validation error from server
           const formattedError = formatError(error);
