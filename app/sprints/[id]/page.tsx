@@ -5,6 +5,7 @@ import { apiClient } from '@/lib/api/client';
 import type { Sprint } from '@/lib/api/types';
 import { SprintHeader } from '@/components/dashboard/SprintHeader';
 import { PICommitments } from '@/components/dashboard/PICommitments';
+import { SprintGoals } from '@/components/dashboard/SprintGoals';
 import { formatError } from '@/lib/utils/errors';
 import { createLoadingState } from '@/lib/utils/loading';
 
@@ -97,6 +98,9 @@ export default function SprintDetailPage({ params }: SprintDetailPageProps) {
 
         {/* PI Commitments Component */}
         <PICommitments sprintId={sprint.id} className="mb-8" />
+
+        {/* Sprint Goals Component */}
+        <SprintGoals sprintId={sprint.id} className="mb-8" />
 
         {/* Placeholder for future dashboard components */}
         <div className="p-6 bg-gray-50 border border-gray-200 rounded-lg">
