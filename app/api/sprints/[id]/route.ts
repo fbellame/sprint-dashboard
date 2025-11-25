@@ -111,44 +111,44 @@ export async function PUT(
     }
 
     // Check for duplicate sprint number if sprint_number or team_name is being updated
-    // We need to check based on the (sprint_number, team_name) combination
+    // Sprint numbers must be unique per team, matching database constraint UNIQUE(sprint_number, team_name)
     if (input.sprint_number !== undefined || input.team_name !== undefined) {
-      // Get current sprint to determine the team_name to check
-      const { data: currentSprint } = await supabaseAdmin
-        .from('sprints')
-        .select('sprint_number, team_name')
-        .eq('id', id)
-        .single();
+      // Get the current sprint to check against
+      const { data: currentSprint, error: currentSprintError } =
+        await supabaseAdmin
+          .from('sprints')
+          .select('sprint_number, team_name')
+          .eq('id', id)
+          .single();
 
-      if (!currentSprint) {
+      if (currentSprintError || !currentSprint) {
         return notFoundResponse('Sprint');
       }
 
-      // Determine the sprint_number and team_name to check
-      const checkSprintNumber =
-        input.sprint_number !== undefined
-          ? input.sprint_number
-          : currentSprint.sprint_number;
+      // Get the team_name to check (use updated value if provided, otherwise current sprint's team_name)
       const checkTeamName =
         input.team_name !== undefined
           ? input.team_name
           : currentSprint.team_name;
+      const checkSprintNumber =
+        input.sprint_number !== undefined
+          ? input.sprint_number
+          : currentSprint.sprint_number;
 
-      // Check for duplicate based on (sprint_number, team_name) combination
+      // Build duplicate check query
       let duplicateQuery = supabaseAdmin
         .from('sprints')
-        .select('id')
+        .select('id, sprint_number, team_name')
         .eq('sprint_number', checkSprintNumber)
         .neq('id', id);
 
-      // Match team_name (including null)
+      // Match team_name: if provided, check exact match; if null, check for null
       if (checkTeamName) {
         duplicateQuery = duplicateQuery.eq('team_name', checkTeamName);
       } else {
         duplicateQuery = duplicateQuery.is('team_name', null);
       }
 
-      // Use maybeSingle() instead of single() to handle "not found" gracefully
       const { data: duplicate, error: duplicateError } =
         await duplicateQuery.maybeSingle();
 
@@ -164,11 +164,14 @@ export async function PUT(
 
       // If duplicate exists, return conflict error
       if (duplicate) {
-        const errorMessage = checkTeamName
-          ? `A sprint with number ${checkSprintNumber} already exists for team "${checkTeamName}".`
-          : `A sprint with number ${checkSprintNumber} already exists (no team specified).`;
-
-        return errorResponse(errorMessage, 409, 'DUPLICATE_ENTRY');
+        const teamContext = checkTeamName
+          ? ` for team "${checkTeamName}"`
+          : ' (no team)';
+        return errorResponse(
+          `A sprint with number ${checkSprintNumber} already exists${teamContext}.`,
+          409,
+          'DUPLICATE_ENTRY'
+        );
       }
     }
 

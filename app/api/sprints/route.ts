@@ -55,22 +55,20 @@ export async function POST(request: NextRequest) {
 
     const input = validationResult.data;
 
-    // Check for duplicate sprint number based on (sprint_number, team_name) combination
-    // The database has UNIQUE(sprint_number, team_name) constraint
-    // This allows same sprint number for different teams, but not for same team
+    // Check for duplicate sprint number (team-based uniqueness)
+    // Sprint numbers must be unique per team, matching database constraint UNIQUE(sprint_number, team_name)
     let duplicateQuery = supabaseAdmin
       .from('sprints')
-      .select('id')
+      .select('id, sprint_number, team_name')
       .eq('sprint_number', input.sprint_number);
 
-    // Match team_name (including null)
+    // Match team_name: if provided, check exact match; if null, check for null
     if (input.team_name) {
       duplicateQuery = duplicateQuery.eq('team_name', input.team_name);
     } else {
       duplicateQuery = duplicateQuery.is('team_name', null);
     }
 
-    // Use maybeSingle() instead of single() to handle "not found" gracefully
     const { data: existing, error: duplicateError } =
       await duplicateQuery.maybeSingle();
 
@@ -86,11 +84,14 @@ export async function POST(request: NextRequest) {
 
     // If sprint exists, return conflict error
     if (existing) {
-      const errorMessage = input.team_name
-        ? `A sprint with number ${input.sprint_number} already exists for team "${input.team_name}".`
-        : `A sprint with number ${input.sprint_number} already exists (no team specified).`;
-
-      return errorResponse(errorMessage, 409, 'DUPLICATE_ENTRY');
+      const teamContext = input.team_name
+        ? ` for team "${input.team_name}"`
+        : ' (no team)';
+      return errorResponse(
+        `A sprint with number ${input.sprint_number} already exists${teamContext}.`,
+        409,
+        'DUPLICATE_ENTRY'
+      );
     }
 
     // Create sprint
