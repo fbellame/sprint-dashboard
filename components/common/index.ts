@@ -20,3 +20,4 @@ export { CSVUploader } from './CSVUploader';
 
 // Dashboard components
 export { SprintHeader } from '../dashboard/SprintHeader';
+export { PICommitments } from '../dashboard/PICommitments';
