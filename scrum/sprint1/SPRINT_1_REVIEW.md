@@ -405,9 +405,9 @@ Sprint 1 is successful when:
 
 ## References
 
-- **[USER_STORIES.md](./USER_STORIES.md)** - Sprint 1 story details
-- **[SOLUTION_ARCHITECTURE.md](./SOLUTION_ARCHITECTURE.md)** - API design
-- **[SPRINT_0_PROGRESS.md](./SPRINT_0_PROGRESS.md)** - Sprint 0 completion
+- **[USER_STORIES.md](../USER_STORIES.md)** - Sprint 1 story details
+- **[SOLUTION_ARCHITECTURE.md](../../docs/SOLUTION_ARCHITECTURE.md)** - API design
+- **[SPRINT_0_PROGRESS.md](../sprint0/SPRINT_0_PROGRESS.md)** - Sprint 0 completion
 - **[SPRINT_1_PLANNING.md](./SPRINT_1_PLANNING.md)** - Sprint 1 planning details
 
 ---

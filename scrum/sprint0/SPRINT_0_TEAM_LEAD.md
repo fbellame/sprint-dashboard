@@ -658,9 +658,9 @@ Sprint 0 is successful when:
 
 ## Resources
 
-- [PRD.md](./PRD.md) - Product requirements
-- [SOLUTION_ARCHITECTURE.md](./SOLUTION_ARCHITECTURE.md) - Technical architecture
-- [USER_STORIES.md](./USER_STORIES.md) - Story details
+- [PRD.md](../../docs/PRD.md) - Product requirements
+- [SOLUTION_ARCHITECTURE.md](../../docs/SOLUTION_ARCHITECTURE.md) - Technical architecture
+- [USER_STORIES.md](../USER_STORIES.md) - Story details
 - [SPRINT_0_PLANNING.md](./SPRINT_0_PLANNING.md) - Sprint planning overview
 
 ---

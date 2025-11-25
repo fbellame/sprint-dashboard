@@ -25,7 +25,7 @@ The PR title only mentions Story 1.4, but the commit message indicates Story 1.8
 
 ## ⚠️ CRITICAL: Configuration Issue
 
-**BLOCKING ISSUE**: According to `E2E_TEST_PLAN.md`, the Supabase database is **not configured**, causing all API calls to return 500 errors. This blocks testing of:
+**BLOCKING ISSUE**: According to `../E2E_TEST_PLAN.md`, the Supabase database is **not configured**, causing all API calls to return 500 errors. This blocks testing of:
 
 - Sprint creation success flow
 - Sprint list display

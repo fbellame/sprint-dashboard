@@ -661,7 +661,7 @@ Before starting Story 0.6, verify:
 - [Vitest Documentation](https://vitest.dev/)
 - [React Testing Library Documentation](https://testing-library.com/react)
 - [Husky Documentation](https://typicode.github.io/husky/)
-- [SOLUTION_ARCHITECTURE.md](./SOLUTION_ARCHITECTURE.md) - Deployment details
+- [SOLUTION_ARCHITECTURE.md](../../docs/SOLUTION_ARCHITECTURE.md) - Deployment details
 
 ---
 

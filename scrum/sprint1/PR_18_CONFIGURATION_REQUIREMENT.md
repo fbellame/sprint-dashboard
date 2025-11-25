@@ -10,7 +10,7 @@
 
 ### Problem
 
-According to `E2E_TEST_PLAN.md`, the Supabase database is **not configured**, causing all API calls to return 500 errors. This blocks:
+According to `../E2E_TEST_PLAN.md`, the Supabase database is **not configured**, causing all API calls to return 500 errors. This blocks:
 
 - ✅ Sprint creation success flow
 - ✅ Sprint list display
@@ -103,7 +103,7 @@ The code implementation is excellent and production-ready. However, **configurat
 ### References
 
 - Supabase Setup Guide: `docs/SUPABASE_SETUP.md`
-- E2E Test Plan: `E2E_TEST_PLAN.md`
+- E2E Test Plan: `../E2E_TEST_PLAN.md`
 - Vercel Deployment: `docs/VERCEL_GITHUB_SECRETS_SETUP.md`
 
 ---

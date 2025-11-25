@@ -32,10 +32,10 @@
 
 ### 📖 Project Documentation
 
-- **[PRD](./PRD.md)** - Product Requirements Document
-- **[Solution Architecture](./SOLUTION_ARCHITECTURE.md)** - Technical architecture
-- **[User Stories](./USER_STORIES.md)** - All user stories with acceptance criteria
-- **[Project Summary](./PROJECT_SUMMARY.md)** - Project overview and timeline
+- **[PRD](../../docs/PRD.md)** - Product Requirements Document
+- **[Solution Architecture](../../docs/SOLUTION_ARCHITECTURE.md)** - Technical architecture
+- **[User Stories](../USER_STORIES.md)** - All user stories with acceptance criteria
+- **[Project Summary](../../PROJECT_SUMMARY.md)** - Project overview and timeline
 
 ---
 
@@ -62,8 +62,8 @@
 ### For New Team Members
 
 1. Read **[Project Summary](./PROJECT_SUMMARY.md)** for project overview
-2. Review **[PRD](./PRD.md)** for product requirements
-3. Study **[Solution Architecture](./SOLUTION_ARCHITECTURE.md)** for technical details
+2. Review **[PRD](../../docs/PRD.md)** for product requirements
+3. Study **[Solution Architecture](../../docs/SOLUTION_ARCHITECTURE.md)** for technical details
 4. Check **[Sprint Planning](./SPRINT_0_PLANNING.md)** for current sprint
 
 ---

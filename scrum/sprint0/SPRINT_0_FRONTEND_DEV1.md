@@ -536,8 +536,8 @@ Before starting Story 0.1, verify:
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [Zustand Documentation](https://zustand-demo.pmnd.rs/)
 - [React Query Documentation](https://tanstack.com/query/latest)
-- [PRD.md](./PRD.md) - Design requirements
-- [SOLUTION_ARCHITECTURE.md](./SOLUTION_ARCHITECTURE.md) - Technical details
+- [PRD.md](../../docs/PRD.md) - Design requirements
+- [SOLUTION_ARCHITECTURE.md](../../docs/SOLUTION_ARCHITECTURE.md) - Technical details
 
 ---
 

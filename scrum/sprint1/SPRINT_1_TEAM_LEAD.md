@@ -492,10 +492,10 @@ Sprint 1 is successful when:
 
 ## Resources
 
-- **[USER_STORIES.md](./USER_STORIES.md)** - Story details
-- **[SOLUTION_ARCHITECTURE.md](./SOLUTION_ARCHITECTURE.md)** - Technical architecture
+- **[USER_STORIES.md](../USER_STORIES.md)** - Story details
+- **[SOLUTION_ARCHITECTURE.md](../../docs/SOLUTION_ARCHITECTURE.md)** - Technical architecture
 - **[SPRINT_1_PLANNING.md](./SPRINT_1_PLANNING.md)** - Sprint planning
-- **[SPRINT_1_REVIEW.md](./SPRINT_1_REVIEW.md)** - Sprint 0 review
+- **[SPRINT_1_REVIEW.md](./SPRINT_1_REVIEW.md)** - Sprint 1 review
 
 ---
 
