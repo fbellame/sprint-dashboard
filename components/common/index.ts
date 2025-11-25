@@ -17,3 +17,6 @@ export type { StatusType } from './StatusIndicator';
 export { Typography } from './Typography';
 
 export { CSVUploader } from './CSVUploader';
+
+// Dashboard components
+export { SprintHeader } from '../dashboard/SprintHeader';

@@ -19,10 +19,14 @@ scrum/
 │   ├── SPRINT_0_*.md           # Sprint 0 planning, progress, reviews
 │   ├── STORY_0.*.md            # Story completion documents
 │   └── PR_*_REVIEW_STORY_0.*.md # Code reviews for Sprint 0 stories
-└── sprint1/                     # Sprint 1: Sprint Management & CSV Upload
-    ├── SPRINT_1_*.md           # Sprint 1 planning, progress, reviews
-    ├── STORY_1.*.md            # Story completion documents
-    └── PR_*_REVIEW_STORY_1.*.md # Code reviews for Sprint 1 stories
+├── sprint1/                     # Sprint 1: Sprint Management & CSV Upload
+│   ├── SPRINT_1_*.md           # Sprint 1 planning, progress, reviews
+│   ├── STORY_1.*.md            # Story completion documents
+│   └── PR_*_REVIEW_STORY_1.*.md # Code reviews for Sprint 1 stories
+└── sprint2/                     # Sprint 2: Dashboard Components & Data Display
+    ├── SPRINT_2_*.md           # Sprint 2 planning, progress, reviews
+    ├── STORY_2.*.md            # Story completion documents
+    └── PR_*_REVIEW_STORY_2.*.md # Code reviews for Sprint 2 stories
 ```
 
 ## Sprint 0: Infrastructure & Foundation
@@ -37,13 +41,23 @@ scrum/
 
 ## Sprint 1: Sprint Management & CSV Upload
 
-**Status**: 🟡 In Progress (88.9% - 8/9 stories, 52/57 story points)
+**Status**: ✅ Complete (100% - 9/9 stories, 57/57 story points)
 
 - [Sprint 1 Index](./sprint1/SPRINT_1_INDEX.md)
 - [Sprint 1 Planning](./sprint1/SPRINT_1_PLANNING.md)
 - [Sprint 1 Progress](./sprint1/SPRINT_1_PROGRESS.md)
 - [Sprint 1 Review Log](./sprint1/SPRINT_1_REVIEW_LOG.md)
 - [Sprint 1 Team Lead Guide](./sprint1/SPRINT_1_TEAM_LEAD.md)
+
+## Sprint 2: Dashboard Components & Data Display
+
+**Status**: 🟡 In Progress (18% - 2/11 stories, 6/53 story points)
+
+- [Sprint 2 Index](./sprint2/SPRINT_2_INDEX.md)
+- [Sprint 2 Planning](./sprint2/SPRINT_2_PLANNING.md)
+- [Sprint 2 Progress](./sprint2/SPRINT_2_PROGRESS.md)
+- [Sprint 2 Review](./sprint2/SPRINT_2_REVIEW.md)
+- [Sprint 2 Stories Review](./sprint2/SPRINT_2_STORIES_REVIEW.md) - Stories 2.1, 2.2
 
 ## Core Documentation
 
@@ -63,3 +77,13 @@ scrum/
 ---
 
 **Last Updated**: 2024-01-15
+
+---
+
+## Sprint Status Summary
+
+| Sprint   | Status         | Completion | Stories | Points | Focus                          |
+| -------- | -------------- | ---------- | ------- | ------ | ------------------------------ |
+| Sprint 0 | ✅ Complete    | 100%       | 8/8     | 39/39  | Infrastructure                 |
+| Sprint 1 | ✅ Complete    | 100%       | 9/9     | 57/57  | Sprint Management & CSV Upload |
+| Sprint 2 | 🟡 In Progress | 18%        | 2/11    | 6/53   | Dashboard Components           |
