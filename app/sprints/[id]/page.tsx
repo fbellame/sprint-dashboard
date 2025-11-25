@@ -7,6 +7,7 @@ import { SprintHeader } from '@/components/dashboard/SprintHeader';
 import { PICommitments } from '@/components/dashboard/PICommitments';
 import { SprintGoals } from '@/components/dashboard/SprintGoals';
 import { SprintHighlights } from '@/components/dashboard/SprintHighlights';
+import { StatusIndicatorLegend } from '@/components/common/StatusIndicator';
 import { formatError } from '@/lib/utils/errors';
 import { createLoadingState } from '@/lib/utils/loading';
 
@@ -107,11 +108,14 @@ export default function SprintDetailPage({ params }: SprintDetailPageProps) {
         <SprintHighlights sprintId={sprint.id} className="mb-8" />
 
         {/* Placeholder for future dashboard components */}
-        <div className="p-6 bg-gray-50 border border-gray-200 rounded-lg">
+        <div className="p-6 bg-gray-50 border border-gray-200 rounded-lg mb-8">
           <p className="text-sm text-gray-600">
             Additional dashboard components will be added in future stories.
           </p>
         </div>
+
+        {/* Status Legend Component - At bottom of page per PRD */}
+        <StatusIndicatorLegend />
       </div>
     </div>
   );
