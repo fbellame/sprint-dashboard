@@ -22,3 +22,4 @@ export { CSVUploader } from './CSVUploader';
 export { SprintHeader } from '../dashboard/SprintHeader';
 export { PICommitments } from '../dashboard/PICommitments';
 export { SprintGoals } from '../dashboard/SprintGoals';
+export { SprintHighlights } from '../dashboard/SprintHighlights';

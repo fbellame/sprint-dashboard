@@ -6,6 +6,7 @@ import type { Sprint } from '@/lib/api/types';
 import { SprintHeader } from '@/components/dashboard/SprintHeader';
 import { PICommitments } from '@/components/dashboard/PICommitments';
 import { SprintGoals } from '@/components/dashboard/SprintGoals';
+import { SprintHighlights } from '@/components/dashboard/SprintHighlights';
 import { formatError } from '@/lib/utils/errors';
 import { createLoadingState } from '@/lib/utils/loading';
 
@@ -101,6 +102,9 @@ export default function SprintDetailPage({ params }: SprintDetailPageProps) {
 
         {/* Sprint Goals Component */}
         <SprintGoals sprintId={sprint.id} className="mb-8" />
+
+        {/* Sprint Highlights Component */}
+        <SprintHighlights sprintId={sprint.id} className="mb-8" />
 
         {/* Placeholder for future dashboard components */}
         <div className="p-6 bg-gray-50 border border-gray-200 rounded-lg">
