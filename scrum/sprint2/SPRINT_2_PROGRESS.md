@@ -10,10 +10,10 @@
 ## Sprint Status
 
 **Overall Status**: 🟡 In Progress  
-**Completion**: 36% (4/11 stories)  
-**Story Points Completed**: 16/53  
+**Completion**: 45% (5/11 stories)  
+**Story Points Completed**: 21/53  
 **Days Remaining**: 14  
-**Last Action**: Stories 2.3 and 2.4 completed on 2024-01-15
+**Last Action**: Story 2.5 completed on 2024-01-15
 
 ---
 
@@ -25,7 +25,7 @@
 | 2.2      | Status Indicator Component       | dev1_front  | ✅ Done    | 3      | 2024-01-15 | 2024-01-15 | -       | ✅ Complete - Verified from Story 0.7     |
 | 2.3      | PI Commitments Component         | dev1_front  | ✅ Done    | 5      | 2024-01-15 | 2024-01-15 | -       | ✅ Complete - See review                  |
 | 2.4      | Sprint Goals Component           | dev1_front  | ✅ Done    | 5      | 2024-01-15 | 2024-01-15 | -       | ✅ Complete - See review                  |
-| 2.5      | Sprint Highlights Component      | dev1_front  | 🟢 Ready   | 5      | -          | -          | -       | Can start immediately                     |
+| 2.5      | Sprint Highlights Component      | dev1_front  | ✅ Done    | 5      | 2024-01-15 | 2024-01-15 | -       | ✅ Complete - See review                  |
 | 2.6      | Team Backlog Table Component     | dev2_front  | 🟢 Ready   | 5      | -          | -          | -       | Can start immediately                     |
 | 2.7      | Stories Table Component          | dev2_front  | 🟢 Ready   | 8      | -          | -          | -       | Can start immediately                     |
 | 2.8      | Top Features Table Component     | dev2_front  | 🟢 Ready   | 5      | -          | -          | -       | Can start immediately                     |
@@ -102,13 +102,13 @@
 
 ## Velocity Tracking
 
-| Week   | Planned Points | Completed Points | Velocity | Notes                               |
-| ------ | -------------- | ---------------- | -------- | ----------------------------------- |
-| Week 1 | 53             | 16               | 16       | Stories 2.1, 2.2, 2.3, 2.4 complete |
-| Week 2 | -              | -                | -        | -                                   |
+| Week   | Planned Points | Completed Points | Velocity | Notes                                    |
+| ------ | -------------- | ---------------- | -------- | ---------------------------------------- |
+| Week 1 | 53             | 21               | 21       | Stories 2.1, 2.2, 2.3, 2.4, 2.5 complete |
+| Week 2 | -              | -                | -        | -                                        |
 
 **Target Velocity**: 53 points (2 weeks)  
-**Current Velocity**: 16 points (30.2% of sprint)
+**Current Velocity**: 21 points (39.6% of sprint)
 
 ---
 
